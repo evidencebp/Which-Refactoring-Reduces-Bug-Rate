@@ -1,0 +1,2593 @@
+repo_name,commit,subject,message,bug_fix_regex_count,valid_fix_regex_count,negeted_bug_fix_regex,bq_classification,Is_bug,Bug_Justification,English_classification,Is_English,Comment,Type,Is_Refactor
+UPES-CSI/GenericQuiz,4bb9498100b8cd66dba2447ff3b47ff142cb6f14,Added Participate.html Quiz Layout,"Added Participate.html
+Quiz Layout
+",0,0,0,FALSE,FALSE,Added,FALSE,TRUE,,adaptive,
+mayqueenEMBEDDED/mq-kernel,9e495a2603334f9c8fcc6802300c22fc8a0eae02,ath9k: Remove ath9k rate control,"ath9k: Remove ath9k rate control
+
+There is no benefit in retaining the legacy rate control module
+in the driver codebase.
+
+It is known to be buggy and has less than optimal performance
+in real-world environments compared with minstrel. The only
+reason that it was kept when we made the switch to minstrel
+as default was that it showed higher throughput numbers in a
+clean/ideal environment.
+
+This is no longer the case and minstrel can push ath9k to
+the same throughput levels. In TCP, with 3-stream cards, more than
+295 Mbps can be obtained in open air, with 2-stream cards,
+210 Mbps is easily reached. To test performance issues,
+instead of using a broken rate control module, it is better
+to use the fixed-rate interface provided by mac80211 anyway.
+
+The ath9k RC has not received any bug fixes in years and is
+just bit-rotting away - this patch removes it.
+
+Signed-off-by: Sujith Manoharan <1240f8b9a8d4f8f6d54c4d059a9fef2470495ad4@qca.qualcomm.com>
+Signed-off-by: John W. Linville <2a53bac7a5d324865ef46ec4c38b2c0fba1456b4@tuxdriver.com>
+",1,0,1,FALSE,FALSE,"no bug fix, removed",TRUE,TRUE,,adaptive,
+Orion116/kernel_samsung_lt03wifi,a852daa00ad91350fe603da47becaf3d5af4f2bd,[PATCH] i2c: writing-client doc update complement,"[PATCH] i2c: writing-client doc update complement
+
+My latest update to the writing-clients i2c documentation file was
+incomplete, here's the complement.
+
+Large parts of this file are still way out-of-date, but at least now
+the memory allocation and freeing instructions are consistent.
+
+Signed-off-by: Jean Delvare <49ad6a9f5aa17024c23048df346d55bda6837e01@linux-fr.org>
+Signed-off-by: Greg Kroah-Hartman <4645f7897fd33786a2ee1264d590b3c400559d85@suse.de>
+",0,0,0,FALSE,FALSE,update,TRUE,TRUE,,adaptive,
+pombredanne/bcm11351,360f9452def0be1d6e29cee07a0f0640cd1d7b22,hwmon: (adm9240) Add individual alarm files,"hwmon: (adm9240) Add individual alarm files
+
+The new libsensors needs these individual alarm files.
+
+Signed-off-by: Jean Delvare <49ad6a9f5aa17024c23048df346d55bda6837e01@linux-fr.org>
+Tested-by: Grant Coady <5e41c6ebc945e14599d937c811b66fc81be96d8a@gmail.com>
+Signed-off-by: Mark M. Hoffman <5aed555d2bd1319e6397948a784e5d0b93442eeb@lightlink.com>
+",0,0,0,FALSE,FALSE,added,TRUE,TRUE,,adaptive,
+danielschwierzeck/linux,f4a51222041c1c65bb248b1091f619bfeca27e54,[media] pvrusb2: get rid of warning: no previous prototype,"[media] pvrusb2: get rid of warning: no previous prototype
+
+drivers/media/usb/pvrusb2/pvrusb2-v4l2.c:199:5: warning: no previous prototype for 'pvr2_s_std' [-Wmissing-prototypes]
+drivers/media/usb/pvrusb2/pvrusb2-v4l2.c:368:5: warning: no previous prototype for 'pvr2_s_frequency' [-Wmissing-prototypes]
+
+Acked-by: Mike Isely <2ea935d8c40c107fcce175c9ba49ff51e4d69087@pobox.com>
+Signed-off-by: Mauro Carvalho Chehab <ad86ba2154032c9f55743a190faa2459a9d61d42@redhat.com>
+",0,0,0,FALSE,FALSE,get rid,TRUE,TRUE,,perfective,FALSE
+jcadduono/nethunter_kernel_klte,d77a283d9bc8c6327e9dd6059fe09104f3ad4bf9,[MIPS] i8259: Add disable method.,"[MIPS] i8259: Add disable method.
+
+After 76d2160147f43f982dfe881404cfde9fd0a9da21, the qemu NE2000 was
+frequently producing WATCHDOG timeouts.
+
+Signed-off-by: Kyungmin Park <504c23c4986a3760712724894be3105092c27331@samsung.com>
+Cc: Ralf Baechle <92f48d309cda194c8eda36aa8f9ae28c488fa208@linux-mips.org>
+Cc: Ingo Molnar <9dbbbf0688fedc85ad4da37637f1a64b8c718ee2@elte.hu>
+Signed-off-by: Andrew Morton <5c1e68b099950c134891f0b6e179498a8ebe9cf9@linux-foundation.org>
+Signed-off-by: Ralf Baechle <92f48d309cda194c8eda36aa8f9ae28c488fa208@linux-mips.org>
+",0,0,0,FALSE,TRUE,add,TRUE,TRUE,,corrective,FALSE
+AOKP/kernel_motorola_msm8960dt,d77a283d9bc8c6327e9dd6059fe09104f3ad4bf9,[MIPS] i8259: Add disable method.,"[MIPS] i8259: Add disable method.
+
+After 76d2160147f43f982dfe881404cfde9fd0a9da21, the qemu NE2000 was
+frequently producing WATCHDOG timeouts.
+
+Signed-off-by: Kyungmin Park <504c23c4986a3760712724894be3105092c27331@samsung.com>
+Cc: Ralf Baechle <92f48d309cda194c8eda36aa8f9ae28c488fa208@linux-mips.org>
+Cc: Ingo Molnar <9dbbbf0688fedc85ad4da37637f1a64b8c718ee2@elte.hu>
+Signed-off-by: Andrew Morton <5c1e68b099950c134891f0b6e179498a8ebe9cf9@linux-foundation.org>
+Signed-off-by: Ralf Baechle <92f48d309cda194c8eda36aa8f9ae28c488fa208@linux-mips.org>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+montekki/linux-2.6-acedia,1ce211a9dbf2a40b16132789735a127696bb6699,ALSA: ice1712/aureon.c: fix coding style,"ALSA: ice1712/aureon.c: fix coding style
+
+before:
+total: 304 errors, 137 warnings, 2259 lines checked
+
+after:
+total: 0 errors, 121 warnings, 2284 lines checked
+
+Compile tested, size is different because of include was changed,
+but without that change md5sum is different because of cmp cx,dx/cmp
+dx,cx swap and __LINE__ was changed in printk function.
+
+Signed-off-by: Alexander Beregalov <435b083b31024cbc6ffdb70c015fef51b502cce2@gmail.com>
+Signed-off-by: Takashi Iwai <4596b3305151c7ee743192a95d394341e3d3b644@suse.de>
+Signed-off-by: Jaroslav Kysela <72edd5e1a572f82f059ccbb83c92b74d6cb051ff@perex.cz>
+",1,1,0,FALSE,FALSE,fixed coding,TRUE,TRUE,,perfective,FALSE
+lloydchang/ubuntu-oneiric,9103eb7d3a78ec6e49e49412c45e3b0a2589cbce,[POWERPC] iSeries: Move find_Device_Node to avoid a forward declaration,"[POWERPC] iSeries: Move find_Device_Node to avoid a forward declaration
+
+Also remove another unnecessary forward declaration.
+
+Signed-off-by: Stephen Rothwell <4bf0fb350827ce8d86875e76c923a478597c3cef@canb.auug.org.au>
+Signed-off-by: Paul Mackerras <19a0ba370c443ba08d20b5061586430ab449ee8c@samba.org>
+",0,0,0,FALSE,FALSE,move,TRUE,TRUE,,perfective,TRUE
+gingerboy92/android_kernel_xiaomi_msm8916---messedup,9103eb7d3a78ec6e49e49412c45e3b0a2589cbce,[POWERPC] iSeries: Move find_Device_Node to avoid a forward declaration,"[POWERPC] iSeries: Move find_Device_Node to avoid a forward declaration
+
+Also remove another unnecessary forward declaration.
+
+Signed-off-by: Stephen Rothwell <4bf0fb350827ce8d86875e76c923a478597c3cef@canb.auug.org.au>
+Signed-off-by: Paul Mackerras <19a0ba370c443ba08d20b5061586430ab449ee8c@samba.org>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+Komzpa/omim,1b2d3483ae8a13b9193737c7f17111f8ef40dcb6,[l11s] Fixes Hungarian translation.,[l11s] Fixes Hungarian translation.,1,0,0,TRUE,FALSE,fixes translation,FALSE,TRUE,,perfective,FALSE
+latur19318/d3,683d5fb526d7706794d671c6190b139c91ff753b,Shorter.,"Shorter.
+",0,0,0,FALSE,FALSE,No syntactic evidence,FALSE,TRUE,,?,?
+SlimRoms/kernel_motorola_shamu,325322ee34d726bff922853d509e135c8d262e2f,iwlagn: add statistic notification structure for WiFi/BT devices,"iwlagn: add statistic notification structure for WiFi/BT devices
+
+If its WiFi/BT combo device, the statistics notification sent by
+uCode will include the additional BT related statistics counters.
+
+Adding new data structure to support the new layout.
+
+Signed-off-by: Wey-Yi Guy <15ba08e2ad0b84ec2e6b8e47b27706f8a8e5edd0@intel.com>
+",0,0,0,FALSE,FALSE,add,TRUE,TRUE,,adaptive,
+ncultra/linux-stable,325322ee34d726bff922853d509e135c8d262e2f,iwlagn: add statistic notification structure for WiFi/BT devices,"iwlagn: add statistic notification structure for WiFi/BT devices
+
+If its WiFi/BT combo device, the statistics notification sent by
+uCode will include the additional BT related statistics counters.
+
+Adding new data structure to support the new layout.
+
+Signed-off-by: Wey-Yi Guy <15ba08e2ad0b84ec2e6b8e47b27706f8a8e5edd0@intel.com>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+CyanogenMod/android_kernel_samsung_exynos5420,325322ee34d726bff922853d509e135c8d262e2f,iwlagn: add statistic notification structure for WiFi/BT devices,"iwlagn: add statistic notification structure for WiFi/BT devices
+
+If its WiFi/BT combo device, the statistics notification sent by
+uCode will include the additional BT related statistics counters.
+
+Adding new data structure to support the new layout.
+
+Signed-off-by: Wey-Yi Guy <15ba08e2ad0b84ec2e6b8e47b27706f8a8e5edd0@intel.com>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+desteam/android_kernel_huawei_msm7x30,325322ee34d726bff922853d509e135c8d262e2f,iwlagn: add statistic notification structure for WiFi/BT devices,"iwlagn: add statistic notification structure for WiFi/BT devices
+
+If its WiFi/BT combo device, the statistics notification sent by
+uCode will include the additional BT related statistics counters.
+
+Adding new data structure to support the new layout.
+
+Signed-off-by: Wey-Yi Guy <15ba08e2ad0b84ec2e6b8e47b27706f8a8e5edd0@intel.com>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+csd-dev/snipe-it,2bf57febd8830087897fa428c3c5de2cad4d02cd,Spanish Translation,"Spanish Translation
+
+Ver 1.1
+",0,0,0,FALSE,FALSE,translation,FALSE,TRUE,,perfective,FALSE
+Varcain/android_kernel_lge_d605,051031143544ff196d94927be8f384864fbca6a4,Trivial: xhci: Fix copy-paste error.,"Trivial: xhci: Fix copy-paste error.
+
+The xHCI driver will create an xhci_hcd structure, not an ehci_hci
+structure.
+
+Signed-off-by: Sarah Sharp <d4c4fc5069677be84f589aa6e14eedffef9ba12f@linux.intel.com>
+",2,0,0,TRUE,TRUE,"fix, error",TRUE,TRUE,,corrective,FALSE
+bluechiptechnology/linux-bctrx3,051031143544ff196d94927be8f384864fbca6a4,Trivial: xhci: Fix copy-paste error.,"Trivial: xhci: Fix copy-paste error.
+
+The xHCI driver will create an xhci_hcd structure, not an ehci_hci
+structure.
+
+Signed-off-by: Sarah Sharp <d4c4fc5069677be84f589aa6e14eedffef9ba12f@linux.intel.com>
+",2,0,0,TRUE,,,TRUE,,duplicated,,
+Rashed97/caf-kernel-msm-3.18,051031143544ff196d94927be8f384864fbca6a4,Trivial: xhci: Fix copy-paste error.,"Trivial: xhci: Fix copy-paste error.
+
+The xHCI driver will create an xhci_hcd structure, not an ehci_hci
+structure.
+
+Signed-off-by: Sarah Sharp <d4c4fc5069677be84f589aa6e14eedffef9ba12f@linux.intel.com>
+",2,0,0,TRUE,,,TRUE,,duplicated,,
+AOKP/lge-kernel-star,c17a1abae2f29047a0f57324240b01609489261b,ALSA: hda - Use snd_hda_codec_get_pincfg() in the rest places,"ALSA: hda - Use snd_hda_codec_get_pincfg() in the rest places
+
+Replace with snd_hda_codec_get_pincfg() in the places where available.
+
+Signed-off-by: Takashi Iwai <4596b3305151c7ee743192a95d394341e3d3b644@suse.de>
+",0,0,0,FALSE,FALSE,replace,TRUE,TRUE,,perfective,TRUE
+linux-scraping/linux-grsecurity,f8bb5327a8aae4469563b2e47b6cef1bd2eb3555,m68knommu: make 528x UART platform addressing consistent,"m68knommu: make 528x UART platform addressing consistent
+
+If we make all UART addressing consistent across all ColdFire family members
+then we will be able to remove the duplicated plaform data and use a single
+setup for all.
+
+So modify the ColdFire 528x UART addressing so that:
+
+. UARTs are numbered from 0 up
+. use a common name for IRQs used
+
+Signed-off-by: Greg Ungerer <ed22c22dbde360207569092e60b4298397efb8da@uclinux.org>
+",0,0,0,FALSE,FALSE,make,TRUE,TRUE,,perfective,TRUE
+skristiansson/eco32-linux,0e7f011a19696cc25d68a8d6631fc6c5aa60a54c,svcrdma: Simplify receive buffer posting,"svcrdma: Simplify receive buffer posting
+
+The svcrdma transport provider currently allocates receive buffers
+to the RQ through the xpo_release_rqst method. This approach is overly
+complicated since it means that the rqstp rq_xprt_ctxt has to be
+selectively set based on whether the RPC is going to be processed
+immediately or deferred. Instead, just post the receive buffer when
+we are certain that we are replying in the send_reply function.
+
+Signed-off-by: Tom Tucker <96835dd8bfa718bd6447ccc87af89ae1675daeca@opengridcomputing.com>
+",0,0,0,FALSE,FALSE,simplify,TRUE,TRUE,,perfective,TRUE
+mattdesl/three.js,97fa70d93329d16a04031ce75aed77e6fa9b7809,cleanup the ParametricGeometries files,"cleanup the ParametricGeometries files
+",0,0,0,FALSE,FALSE,cleanup,TRUE,TRUE,,perfective,TRUE
+hunterhu/linux-sunxi,744a82b004b0a08d55f579daa55e32d963353edc,ide: Fix drive's DWORD-IO handling,"ide: Fix drive's DWORD-IO handling
+
+According the documentation, id[ATA_ID_DWORD_IO] is non-zero if
+the drive supports dword IO, while the code disables support by
+setting IDE_DFLAG_NO_IO_32BIT. In addition, this word has been
+reused by the ATA8 specification. This patch fixes both cases.
+
+Signed-off-by: Mario Schwalbe <6befcd6443eb8a2409414e1f822b0e84d643b629@inf.tu-dresden.de>
+Cc: Sergei Shtylyov <38a867ea26f35d3eeb42270f1bc7b9d1d135e6a2@ru.mvista.com>
+[bart: remove id[ATA_ID_DWORD_IO] check altogether per Sergei's suggestion]
+Signed-off-by: Bartlomiej Zolnierkiewicz <248de9df611a028e5eceb9d893a2ed6c24c89ef4@gmail.com>
+",2,0,0,TRUE,TRUE,fix,TRUE,TRUE,,corrective,FALSE
+DerTeufel/cm7,744a82b004b0a08d55f579daa55e32d963353edc,ide: Fix drive's DWORD-IO handling,"ide: Fix drive's DWORD-IO handling
+
+According the documentation, id[ATA_ID_DWORD_IO] is non-zero if
+the drive supports dword IO, while the code disables support by
+setting IDE_DFLAG_NO_IO_32BIT. In addition, this word has been
+reused by the ATA8 specification. This patch fixes both cases.
+
+Signed-off-by: Mario Schwalbe <6befcd6443eb8a2409414e1f822b0e84d643b629@inf.tu-dresden.de>
+Cc: Sergei Shtylyov <38a867ea26f35d3eeb42270f1bc7b9d1d135e6a2@ru.mvista.com>
+[bart: remove id[ATA_ID_DWORD_IO] check altogether per Sergei's suggestion]
+Signed-off-by: Bartlomiej Zolnierkiewicz <248de9df611a028e5eceb9d893a2ed6c24c89ef4@gmail.com>
+",2,0,0,TRUE,,,TRUE,,duplicated,,
+switchboardOp/ansible,1bcba4f4a2db9e66db5a8a14a3c2150bb9dc41bf,"test/TestRunner.py now executes false with no directory prefix as it is /bin/false on many systems but /usr/bin/false on OS X test/playbook1.yml now just does command true, rather than command /bin/true, again so that it works on OS X","test/TestRunner.py now executes false with no directory prefix
+as it is /bin/false on many systems but /usr/bin/false on OS X
+test/playbook1.yml now just does command true, rather than command /bin/true,
+again so that it works on OS X
+
+Changed from using which false to just using command false to
+make it simpler and also match how playbook1.yml works
+",0,0,0,FALSE,FALSE,changed,TRUE,TRUE,,adaptive,
+adichola/linux,60b59beafba875aef6d378078bce0baf2287ae14,fbdev: mm: Deferred IO support,"fbdev: mm: Deferred IO support
+
+This implements deferred IO support in fbdev.  Deferred IO is a way to delay
+and repurpose IO.  This implementation is done using mm's page_mkwrite and
+page_mkclean hooks in order to detect, delay and then rewrite IO.  This
+functionality is used by hecubafb.
+
+[adaplas]
+This is useful for graphics hardware with no directly addressable/mappable
+framebuffer. Implementing this will allow the ""framebuffer"" to be accesible
+from user space via mmap().
+
+Signed-off-by: Jaya Kumar <0c2a6cec462dd133a84c8dd2f380e35deb9fbf17@gmail.com>
+Signed-off-by: Antonino Daplas <be03a811842969f6b435f66cb85a30eb479a8702@gmail.com>
+Signed-off-by: Andrew Morton <5c1e68b099950c134891f0b6e179498a8ebe9cf9@linux-foundation.org>
+Signed-off-by: Linus Torvalds <69652caca27c8b940640ad396ab71f93cacec34f@linux-foundation.org>
+",0,0,0,FALSE,FALSE,Deferred,TRUE,TRUE,,adaptive,
+N3uTr0nRom/android_kernel_motorola_msm8916,60b59beafba875aef6d378078bce0baf2287ae14,fbdev: mm: Deferred IO support,"fbdev: mm: Deferred IO support
+
+This implements deferred IO support in fbdev.  Deferred IO is a way to delay
+and repurpose IO.  This implementation is done using mm's page_mkwrite and
+page_mkclean hooks in order to detect, delay and then rewrite IO.  This
+functionality is used by hecubafb.
+
+[adaplas]
+This is useful for graphics hardware with no directly addressable/mappable
+framebuffer. Implementing this will allow the ""framebuffer"" to be accesible
+from user space via mmap().
+
+Signed-off-by: Jaya Kumar <0c2a6cec462dd133a84c8dd2f380e35deb9fbf17@gmail.com>
+Signed-off-by: Antonino Daplas <be03a811842969f6b435f66cb85a30eb479a8702@gmail.com>
+Signed-off-by: Andrew Morton <5c1e68b099950c134891f0b6e179498a8ebe9cf9@linux-foundation.org>
+Signed-off-by: Linus Torvalds <69652caca27c8b940640ad396ab71f93cacec34f@linux-foundation.org>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+dianlujitao/CAF_kernel_msm-3.10,60b59beafba875aef6d378078bce0baf2287ae14,fbdev: mm: Deferred IO support,"fbdev: mm: Deferred IO support
+
+This implements deferred IO support in fbdev.  Deferred IO is a way to delay
+and repurpose IO.  This implementation is done using mm's page_mkwrite and
+page_mkclean hooks in order to detect, delay and then rewrite IO.  This
+functionality is used by hecubafb.
+
+[adaplas]
+This is useful for graphics hardware with no directly addressable/mappable
+framebuffer. Implementing this will allow the ""framebuffer"" to be accesible
+from user space via mmap().
+
+Signed-off-by: Jaya Kumar <0c2a6cec462dd133a84c8dd2f380e35deb9fbf17@gmail.com>
+Signed-off-by: Antonino Daplas <be03a811842969f6b435f66cb85a30eb479a8702@gmail.com>
+Signed-off-by: Andrew Morton <5c1e68b099950c134891f0b6e179498a8ebe9cf9@linux-foundation.org>
+Signed-off-by: Linus Torvalds <69652caca27c8b940640ad396ab71f93cacec34f@linux-foundation.org>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+jamison904/android_kernel_samsung_hlte,60b59beafba875aef6d378078bce0baf2287ae14,fbdev: mm: Deferred IO support,"fbdev: mm: Deferred IO support
+
+This implements deferred IO support in fbdev.  Deferred IO is a way to delay
+and repurpose IO.  This implementation is done using mm's page_mkwrite and
+page_mkclean hooks in order to detect, delay and then rewrite IO.  This
+functionality is used by hecubafb.
+
+[adaplas]
+This is useful for graphics hardware with no directly addressable/mappable
+framebuffer. Implementing this will allow the ""framebuffer"" to be accesible
+from user space via mmap().
+
+Signed-off-by: Jaya Kumar <0c2a6cec462dd133a84c8dd2f380e35deb9fbf17@gmail.com>
+Signed-off-by: Antonino Daplas <be03a811842969f6b435f66cb85a30eb479a8702@gmail.com>
+Signed-off-by: Andrew Morton <5c1e68b099950c134891f0b6e179498a8ebe9cf9@linux-foundation.org>
+Signed-off-by: Linus Torvalds <69652caca27c8b940640ad396ab71f93cacec34f@linux-foundation.org>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+SOKP/kernel_mediatek_sprout,8195096bf2e3756264561d7a47d547bafd4e9100,memstick: drivers/memstick/host/jmb38x_ms.c: suppress uninitialized var warning,"memstick: drivers/memstick/host/jmb38x_ms.c: suppress uninitialized var warning
+
+drivers/memstick/host/jmb38x_ms.c: In function 'jmb38x_ms_transfer_data':
+drivers/memstick/host/jmb38x_ms.c:294: warning: 'p_off' may be used uninitialized in this function
+
+Cc: Alex Dubov <0a193e7d03987b78e75066c10bd5e348c29e066c@yahoo.com>
+Signed-off-by: Andrew Morton <5c1e68b099950c134891f0b6e179498a8ebe9cf9@linux-foundation.org>
+Signed-off-by: Linus Torvalds <69652caca27c8b940640ad396ab71f93cacec34f@linux-foundation.org>
+",0,0,0,FALSE,,suppress warning,TRUE,,,perfective,TRUE
+RaspberryPi-CM/android_kernel_raspberry_pi2,8195096bf2e3756264561d7a47d547bafd4e9100,memstick: drivers/memstick/host/jmb38x_ms.c: suppress uninitialized var warning,"memstick: drivers/memstick/host/jmb38x_ms.c: suppress uninitialized var warning
+
+drivers/memstick/host/jmb38x_ms.c: In function 'jmb38x_ms_transfer_data':
+drivers/memstick/host/jmb38x_ms.c:294: warning: 'p_off' may be used uninitialized in this function
+
+Cc: Alex Dubov <0a193e7d03987b78e75066c10bd5e348c29e066c@yahoo.com>
+Signed-off-by: Andrew Morton <5c1e68b099950c134891f0b6e179498a8ebe9cf9@linux-foundation.org>
+Signed-off-by: Linus Torvalds <69652caca27c8b940640ad396ab71f93cacec34f@linux-foundation.org>
+",0,0,0,FALSE,FALSE,duplicated,TRUE,TRUE,,,
+ehigh2014/linux,935c500c377d8e414bbe08e0e169f6c85d2a4273,MIPS: Lantiq: Add more gpio drivers,"MIPS: Lantiq: Add more gpio drivers
+
+The XWAY family allows to extend the number of gpios by using shift
+registers or latches. This patch adds the 2 drivers needed for this. The
+extended gpios are output only.
+
+[92f48d309cda194c8eda36aa8f9ae28c488fa208@linux-mips.org: Fixed ltq_stp_probe section() attributes.]
+
+Signed-off-by: John Crispin <be6487f9df4dce44a640672d6c07330104d43593@openwrt.org>
+Signed-off-by: Ralph Hempel <2e12486d0bf20820866ea5a6ce227e6e52a2d900@lantiq.com>
+Cc: 562397917b9a8bf316569a848858b12fb417723f@linux-mips.org
+Patchwork: https://patchwork.linux-mips.org/patch/2258/
+Signed-off-by: Ralf Baechle <92f48d309cda194c8eda36aa8f9ae28c488fa208@linux-mips.org>
+",1,0,0,TRUE,TRUE,fixed coding,TRUE,TRUE,,corrective,FALSE
+SlimSaber/android_kernel_oppo_msm8974,16f1c746755836aa823658000493cdab8ce7b098,[POWERPC] Small fixes & cleanups in segment page size demotion,"[POWERPC] Small fixes & cleanups in segment page size demotion
+
+The code for demoting segments to 4K had some issues, like for example,
+when using _PAGE_4K_PFN flag, the first CPU to hit it would do the
+demotion, but other CPUs hitting the same page wouldn't properly flush
+their SLBs if mmu_ci_restriction isn't set.  There are also potential
+issues with hash_preload not handling _PAGE_4K_PFN.  All of these are
+non issues on current hardware but might bite us in the future.
+
+This patch thus fixes it by:
+
+ - Taking the test comparing the mm and current CPU context page
+sizes to decide to flush SLBs out of the mmu_ci_restrictions test
+since that can also be triggered by _PAGE_4K_PFN pages
+
+ - Due to the above being done all the time, demote_segment_4k
+doesn't need update the context and flush the SLB
+
+ - demote_segment_4k can be static and doesn't need an EXPORT_SYMBOL
+
+ - Making hash_preload ignore anything that has either _PAGE_4K_PFN
+or _PAGE_NO_CACHE set, thus avoiding duplication of the complicated
+logic in hash_page() (and possibly making hash_preload a little bit
+faster for the normal case).
+
+Signed-off-by: Benjamin Herrenschmidt <a7089bb6e7e92505d88aaff006cbdd60cc9120b6@kernel.crashing.org>
+Signed-off-by: Paul Mackerras <19a0ba370c443ba08d20b5061586430ab449ee8c@samba.org>
+",2,0,0,TRUE,TRUE,fixes,TRUE,TRUE,,corrective,FALSE
+kbc-developers/android_kernel_samsung_msm8660,775ba7ad491a154f99871fe603f03366e84ae159,Merge git://git.kernel.org/pub/scm/linux/kernel/git/bunk/trivial,"Merge git://git.kernel.org/pub/scm/linux/kernel/git/bunk/trivial
+
+* git://git.kernel.org/pub/scm/linux/kernel/git/bunk/trivial:
+  Fix inotify maintainers entry
+  Fix typo in new debug options.
+  Jon needs a new shift key.
+  fs: Convert kmalloc() + memset() to kzalloc() in fs/.
+  configfs.h: Remove dead macro definitions.
+  kconfig: Standardize ""depends"" -> ""depends on"" in Kconfig files
+  e100: replace kmalloc with kcalloc
+  um: replace kmalloc+memset with kzalloc
+  fix typo in net/ipv4/ip_fragment.c
+  include/linux/compiler.h: reject gcc 3 < gcc 3.2
+  Kconfig: fix spelling error in config KALLSYMS help text
+  Remove duplicate ""have to"" in comment
+  Fix small typo in drivers/serial/icom.c
+  Use consistent casing in help message
+  EXT{2,3,4}_FS: remove outdated part of the help text
+",6,4,0,TRUE,TRUE,fix,TRUE,TRUE,,corrective,FALSE
+0xD34D/kernel_omap_bowser-common,d801145d910cc4a0fb418dda1dee227cec993cbd,[PATCH] s390: qeth bug fixes,"[PATCH] s390: qeth bug fixes
+
+[patch 7/10] s390: qeth bug fixes.
+
+From: Frank Pavlic <3b6272f55be06e4affbede317bd2b4b10c795760@de.ibm.com>
+
+qeth network driver changes:
+ - Removed redundant code, use the same qeth_fill_buffer_frag
+   for TSO path either
+ - Using skb->frags solely is not correct since skb->data still
+   points to the beginning of the whole data, even when it is
+   a small portion we have to fill the qdio buffer with it.
+
+Signed-off-by: Frank Pavlic <3b6272f55be06e4affbede317bd2b4b10c795760@de.ibm.com>
+",3,0,0,TRUE,TRUE,bug fixes,TRUE,TRUE,,corrective,FALSE
+Kshitij-Jain/android_kernel_cyanogen_msm8916,d801145d910cc4a0fb418dda1dee227cec993cbd,[PATCH] s390: qeth bug fixes,"[PATCH] s390: qeth bug fixes
+
+[patch 7/10] s390: qeth bug fixes.
+
+From: Frank Pavlic <3b6272f55be06e4affbede317bd2b4b10c795760@de.ibm.com>
+
+qeth network driver changes:
+ - Removed redundant code, use the same qeth_fill_buffer_frag
+   for TSO path either
+ - Using skb->frags solely is not correct since skb->data still
+   points to the beginning of the whole data, even when it is
+   a small portion we have to fill the qdio buffer with it.
+
+Signed-off-by: Frank Pavlic <3b6272f55be06e4affbede317bd2b4b10c795760@de.ibm.com>
+",3,0,0,TRUE,,,TRUE,,duplicated,,
+dutchanddutch/ti81xx-linux,d801145d910cc4a0fb418dda1dee227cec993cbd,[PATCH] s390: qeth bug fixes,"[PATCH] s390: qeth bug fixes
+
+[patch 7/10] s390: qeth bug fixes.
+
+From: Frank Pavlic <3b6272f55be06e4affbede317bd2b4b10c795760@de.ibm.com>
+
+qeth network driver changes:
+ - Removed redundant code, use the same qeth_fill_buffer_frag
+   for TSO path either
+ - Using skb->frags solely is not correct since skb->data still
+   points to the beginning of the whole data, even when it is
+   a small portion we have to fill the qdio buffer with it.
+
+Signed-off-by: Frank Pavlic <3b6272f55be06e4affbede317bd2b4b10c795760@de.ibm.com>
+",3,0,0,TRUE,,,TRUE,,duplicated,,
+wutiejun/linux,d801145d910cc4a0fb418dda1dee227cec993cbd,[PATCH] s390: qeth bug fixes,"[PATCH] s390: qeth bug fixes
+
+[patch 7/10] s390: qeth bug fixes.
+
+From: Frank Pavlic <3b6272f55be06e4affbede317bd2b4b10c795760@de.ibm.com>
+
+qeth network driver changes:
+ - Removed redundant code, use the same qeth_fill_buffer_frag
+   for TSO path either
+ - Using skb->frags solely is not correct since skb->data still
+   points to the beginning of the whole data, even when it is
+   a small portion we have to fill the qdio buffer with it.
+
+Signed-off-by: Frank Pavlic <3b6272f55be06e4affbede317bd2b4b10c795760@de.ibm.com>
+",3,0,0,TRUE,,,TRUE,,duplicated,,
+kissthink/aufs4-linux,187fd030d801b02b0daeb010dbf7c0113be3156d,ext4: remove unused variable from ext4_ext_in_cache(),"ext4: remove unused variable from ext4_ext_in_cache()
+
+Signed-off-by: ""Theodore Ts'o"" <4ed386e0495d3e109932df055831d9ec2f824927@mit.edu>
+Signed-off-by: Zhi Yong Wu <271485df608e5866f00a6b53bd62a5efc2bd3593@linux.vnet.ibm.com>
+Reviewed-by: Zheng Liu <cd65f188c5a0fcbc824d6256aeb36f04ccc1effa@gmail.com>
+",0,0,0,FALSE,FALSE,remove unused,TRUE,TRUE,,perfective,FALSE
+MoKee/android_kernel_oppo_n3,8b36ac445ad5af861d05846029230b8c6b434efb,staging: brcm80211: reducing indentation levels in bcmsdh_sdmmc.c,"staging: brcm80211: reducing indentation levels in bcmsdh_sdmmc.c
+
+Some functions in the source file had a lot of indentation levels
+forcing statements to be spread over multiple lines impairing the
+readability of the code.
+
+Reported-by: Joe Perches <16a9a54ddf4259952e3c118c763138e83693d7fd@perches.com>
+Reviewed-by: Franky (Zhenhui) Lin <c740ae0f5dfc9bd2203ae1a0d3155a31e94c745d@broadcom.com>
+Reviewed-by: Roland Vossen <45182f14eed14f589e080b05abc22e5a7f6ee742@broadcom.com>
+Signed-off-by: Franky Lin <c740ae0f5dfc9bd2203ae1a0d3155a31e94c745d@broadcom.com>
+Signed-off-by: Greg Kroah-Hartman <4645f7897fd33786a2ee1264d590b3c400559d85@suse.de>
+",0,0,0,FALSE,FALSE,indentation,TRUE,TRUE,,perfective,FALSE
+somcom3x/android_kernel_nvidia_tegratab,54f2d7361da09f3fc2b5407f93ad3b86df951577,MAINTAINERS: update Kalle's email address,"MAINTAINERS: update Kalle's email address
+
+My nokia.com email address won't work anymore, use my private iki.fi address
+instead.
+
+Signed-off-by: Kalle Valo <caa20ba0e0e4cb20683f1eb6eacae433f722076d@iki.fi>
+Signed-off-by: John W. Linville <2a53bac7a5d324865ef46ec4c38b2c0fba1456b4@tuxdriver.com>
+",0,0,0,FALSE,FALSE,update,TRUE,TRUE,,perfective,FALSE
+bmsitech/linux-imx6,54f2d7361da09f3fc2b5407f93ad3b86df951577,MAINTAINERS: update Kalle's email address,"MAINTAINERS: update Kalle's email address
+
+My nokia.com email address won't work anymore, use my private iki.fi address
+instead.
+
+Signed-off-by: Kalle Valo <caa20ba0e0e4cb20683f1eb6eacae433f722076d@iki.fi>
+Signed-off-by: John W. Linville <2a53bac7a5d324865ef46ec4c38b2c0fba1456b4@tuxdriver.com>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+joelittlejohn/curator,e04eb47171bbafe49ee8c080c08a7156c386777a,refine failure assertion,"refine failure assertion
+",1,0,0,TRUE,TRUE,,FALSE,,Code stoped raising exception,corrective,FALSE
+bthorne79/android_kernel_samsung_d2,95f4efb2d78661065aaf0be57f5bf00e4d2aea1d,selinux: simplify and clean up inode_has_perm(),"selinux: simplify and clean up inode_has_perm()
+
+This is a rather hot function that is called with a potentially NULL
+""struct common_audit_data"" pointer argument.  And in that case it has to
+provide and initialize its own dummy common_audit_data structure.
+
+However, all the _common_ cases already pass it a real audit-data
+structure, so that uncommon NULL case not only creates a silly run-time
+test, more importantly it causes that function to have a big stack frame
+for the dummy variable that isn't even used in the common case!
+
+So get rid of that stupid run-time behavior, and make the (few)
+functions that currently call with a NULL pointer just call a new helper
+function instead (naturally called inode_has_perm_noapd(), since it has
+no adp argument).
+
+This makes the run-time test be a static code generation issue instead,
+and allows for a much denser stack since none of the common callers need
+the dummy structure.  And a denser stack not only means less stack space
+usage, it means better cache behavior.  So we have a win-win-win from
+this simplification: less code executed, smaller stack footprint, and
+better cache behavior.
+
+Signed-off-by: Linus Torvalds <69652caca27c8b940640ad396ab71f93cacec34f@linux-foundation.org>
+",1,0,0,TRUE,FALSE,"simplify, cleanup",TRUE,TRUE,,perfective,TRUE
+mifl/android_kernel_pantech_ef52s,95f4efb2d78661065aaf0be57f5bf00e4d2aea1d,selinux: simplify and clean up inode_has_perm(),"selinux: simplify and clean up inode_has_perm()
+
+This is a rather hot function that is called with a potentially NULL
+""struct common_audit_data"" pointer argument.  And in that case it has to
+provide and initialize its own dummy common_audit_data structure.
+
+However, all the _common_ cases already pass it a real audit-data
+structure, so that uncommon NULL case not only creates a silly run-time
+test, more importantly it causes that function to have a big stack frame
+for the dummy variable that isn't even used in the common case!
+
+So get rid of that stupid run-time behavior, and make the (few)
+functions that currently call with a NULL pointer just call a new helper
+function instead (naturally called inode_has_perm_noapd(), since it has
+no adp argument).
+
+This makes the run-time test be a static code generation issue instead,
+and allows for a much denser stack since none of the common callers need
+the dummy structure.  And a denser stack not only means less stack space
+usage, it means better cache behavior.  So we have a win-win-win from
+this simplification: less code executed, smaller stack footprint, and
+better cache behavior.
+
+Signed-off-by: Linus Torvalds <69652caca27c8b940640ad396ab71f93cacec34f@linux-foundation.org>
+",1,0,0,TRUE,,,TRUE,,duplicated,,
+xiaoyingLJ/azure-quickstart-templates,4409ee63a57b090eb893e06e2f75f2f1e610c4df,Merge pull request #282 from github/ghe,"Merge pull request #282 from github/ghe
+
+Update github-enterprise template",0,0,0,FALSE,FALSE,update,TRUE,TRUE,,adaptive,
+pravi/fog,b0a2d06f28a2e3409ff96d936140fce8940a7855,[aws|compute] when extracting non-filters describe_images should delete them,"[aws|compute] when extracting non-filters describe_images should delete them
+",0,0,0,FALSE,FALSE,other action,TRUE,TRUE,,adaptive,
+tarungarg546/angular.js,705f4bbf115d2408e33b25f56edbf1f383aabb82,fix($compile): attach scope to the directive element when templateUrl and replace=true,"fix($compile): attach scope to the directive element when templateUrl and replace=true
+
+We forgot to reattach the scope to the replacement element. This affected only
+directives that had templateUrl and replace:true properties.
+
+Reported on the mailing list:
+https://groups.google.com/forum/?fromgroups#!topic/angular/zwjLr1msS2Y
+http://jsfiddle.net/lukebayes/g9Sh9/
+",0,0,0,FALSE,TRUE,fix,TRUE,TRUE,,corrective,FALSE
+jassycliq/flo-kernel,16f1c746755836aa823658000493cdab8ce7b098,[POWERPC] Small fixes & cleanups in segment page size demotion,"[POWERPC] Small fixes & cleanups in segment page size demotion
+
+The code for demoting segments to 4K had some issues, like for example,
+when using _PAGE_4K_PFN flag, the first CPU to hit it would do the
+demotion, but other CPUs hitting the same page wouldn't properly flush
+their SLBs if mmu_ci_restriction isn't set.  There are also potential
+issues with hash_preload not handling _PAGE_4K_PFN.  All of these are
+non issues on current hardware but might bite us in the future.
+
+This patch thus fixes it by:
+
+ - Taking the test comparing the mm and current CPU context page
+sizes to decide to flush SLBs out of the mmu_ci_restrictions test
+since that can also be triggered by _PAGE_4K_PFN pages
+
+ - Due to the above being done all the time, demote_segment_4k
+doesn't need update the context and flush the SLB
+
+ - demote_segment_4k can be static and doesn't need an EXPORT_SYMBOL
+
+ - Making hash_preload ignore anything that has either _PAGE_4K_PFN
+or _PAGE_NO_CACHE set, thus avoiding duplication of the complicated
+logic in hash_page() (and possibly making hash_preload a little bit
+faster for the normal case).
+
+Signed-off-by: Benjamin Herrenschmidt <a7089bb6e7e92505d88aaff006cbdd60cc9120b6@kernel.crashing.org>
+Signed-off-by: Paul Mackerras <19a0ba370c443ba08d20b5061586430ab449ee8c@samba.org>
+",2,0,0,TRUE,TRUE,fixes,TRUE,TRUE,duplicated,corrective,FALSE
+nsat/zynq-linux,16f1c746755836aa823658000493cdab8ce7b098,[POWERPC] Small fixes & cleanups in segment page size demotion,"[POWERPC] Small fixes & cleanups in segment page size demotion
+
+The code for demoting segments to 4K had some issues, like for example,
+when using _PAGE_4K_PFN flag, the first CPU to hit it would do the
+demotion, but other CPUs hitting the same page wouldn't properly flush
+their SLBs if mmu_ci_restriction isn't set.  There are also potential
+issues with hash_preload not handling _PAGE_4K_PFN.  All of these are
+non issues on current hardware but might bite us in the future.
+
+This patch thus fixes it by:
+
+ - Taking the test comparing the mm and current CPU context page
+sizes to decide to flush SLBs out of the mmu_ci_restrictions test
+since that can also be triggered by _PAGE_4K_PFN pages
+
+ - Due to the above being done all the time, demote_segment_4k
+doesn't need update the context and flush the SLB
+
+ - demote_segment_4k can be static and doesn't need an EXPORT_SYMBOL
+
+ - Making hash_preload ignore anything that has either _PAGE_4K_PFN
+or _PAGE_NO_CACHE set, thus avoiding duplication of the complicated
+logic in hash_page() (and possibly making hash_preload a little bit
+faster for the normal case).
+
+Signed-off-by: Benjamin Herrenschmidt <a7089bb6e7e92505d88aaff006cbdd60cc9120b6@kernel.crashing.org>
+Signed-off-by: Paul Mackerras <19a0ba370c443ba08d20b5061586430ab449ee8c@samba.org>
+",2,0,0,TRUE,,,TRUE,,duplicated,,
+LCameron/linux-xlnx,16f1c746755836aa823658000493cdab8ce7b098,[POWERPC] Small fixes & cleanups in segment page size demotion,"[POWERPC] Small fixes & cleanups in segment page size demotion
+
+The code for demoting segments to 4K had some issues, like for example,
+when using _PAGE_4K_PFN flag, the first CPU to hit it would do the
+demotion, but other CPUs hitting the same page wouldn't properly flush
+their SLBs if mmu_ci_restriction isn't set.  There are also potential
+issues with hash_preload not handling _PAGE_4K_PFN.  All of these are
+non issues on current hardware but might bite us in the future.
+
+This patch thus fixes it by:
+
+ - Taking the test comparing the mm and current CPU context page
+sizes to decide to flush SLBs out of the mmu_ci_restrictions test
+since that can also be triggered by _PAGE_4K_PFN pages
+
+ - Due to the above being done all the time, demote_segment_4k
+doesn't need update the context and flush the SLB
+
+ - demote_segment_4k can be static and doesn't need an EXPORT_SYMBOL
+
+ - Making hash_preload ignore anything that has either _PAGE_4K_PFN
+or _PAGE_NO_CACHE set, thus avoiding duplication of the complicated
+logic in hash_page() (and possibly making hash_preload a little bit
+faster for the normal case).
+
+Signed-off-by: Benjamin Herrenschmidt <a7089bb6e7e92505d88aaff006cbdd60cc9120b6@kernel.crashing.org>
+Signed-off-by: Paul Mackerras <19a0ba370c443ba08d20b5061586430ab449ee8c@samba.org>
+",2,0,0,TRUE,,,TRUE,,duplicated,,
+ramr/kubernetes,fbc6e7f5f5361bfc7910d8ce5c6d3c81504fec7a,Merge pull request #11008 from krousey/nodesflake,"Merge pull request #11008 from krousey/nodesflake
+
+Adding polling to all node readiness",0,0,0,FALSE,FALSE,adding,TRUE,TRUE,,adaptive,
+zhangmingld/kubernetes,fbc6e7f5f5361bfc7910d8ce5c6d3c81504fec7a,Merge pull request #11008 from krousey/nodesflake,"Merge pull request #11008 from krousey/nodesflake
+
+Adding polling to all node readiness",0,0,0,FALSE,,,TRUE,,duplicated,,
+boxcarrovers/swirl_courses,72a591d24172e06f275a140077f35ff589cb6c4a,Merge pull request #64 from swirldev/statinftweak,"Merge pull request #64 from swirldev/statinftweak
+
+made a few tweaks",0,0,0,FALSE,FALSE,made tweaks,TRUE,TRUE,,adaptive,
+jrfastab/hardware_maps,4617ea3a52cfe8ae407ef406ab999f40a558c369,Btrfs: fix necessary chunk tree space calculation when allocating a chunk,"Btrfs: fix necessary chunk tree space calculation when allocating a chunk
+
+When allocating a new chunk or removing one we need to update num_devs
+device items and insert or remove a chunk item in the chunk tree, so
+in the worst case the space needed in the chunk space_info is:
+
+  btrfs_calc_trunc_metadata_size(chunk_root, num_devs) +
+     btrfs_calc_trans_metadata_size(chunk_root, 1)
+
+That is, in the worst case we need to cow num_devs paths and cow 1 other
+path that can result in splitting every node and leaf, and each path
+consisting of BTRFS_MAX_LEVEL - 1 nodes and 1 leaf. We were requiring
+some additional chunk_root->nodesize * BTRFS_MAX_LEVEL * num_devs bytes,
+which were unnecessary since updating the existing device items does
+not result in splitting the nodes and leaf since after updating them
+they remain with the same size.
+
+Signed-off-by: Filipe Manana <e0fcd583df77ec6c08e6d1257619cc1216ddc994@suse.com>
+Signed-off-by: Chris Mason <e2e8c5702d8ed5f565988a1cf5bb35c9ce199e5e@fb.com>
+",1,1,0,FALSE,TRUE,fix,TRUE,TRUE,,corrective,FALSE
+jeremymcrhat/Nexus_5X_kernel,4617ea3a52cfe8ae407ef406ab999f40a558c369,Btrfs: fix necessary chunk tree space calculation when allocating a chunk,"Btrfs: fix necessary chunk tree space calculation when allocating a chunk
+
+When allocating a new chunk or removing one we need to update num_devs
+device items and insert or remove a chunk item in the chunk tree, so
+in the worst case the space needed in the chunk space_info is:
+
+  btrfs_calc_trunc_metadata_size(chunk_root, num_devs) +
+     btrfs_calc_trans_metadata_size(chunk_root, 1)
+
+That is, in the worst case we need to cow num_devs paths and cow 1 other
+path that can result in splitting every node and leaf, and each path
+consisting of BTRFS_MAX_LEVEL - 1 nodes and 1 leaf. We were requiring
+some additional chunk_root->nodesize * BTRFS_MAX_LEVEL * num_devs bytes,
+which were unnecessary since updating the existing device items does
+not result in splitting the nodes and leaf since after updating them
+they remain with the same size.
+
+Signed-off-by: Filipe Manana <e0fcd583df77ec6c08e6d1257619cc1216ddc994@suse.com>
+Signed-off-by: Chris Mason <e2e8c5702d8ed5f565988a1cf5bb35c9ce199e5e@fb.com>
+",1,1,0,FALSE,,,TRUE,,duplicated,,
+lopez567/patchwork,2f3c78a2358fb127b017fce8e92c34b9b8d0259e,Rebuilt index with bwobst,Rebuilt index with bwobst,0,0,0,FALSE,FALSE,rebuilt index,TRUE,TRUE,,adaptive,
+omnirom/android_kernel_samsung_lt03lte,e7fc6ae7446710a487510d212137a43289bbe90e,gpio/mxc: get rid of the uses of cpu_is_mx(),"gpio/mxc: get rid of the uses of cpu_is_mx()
+
+The patch removes all the uses of cpu_is_mx().  Instead, it utilizes
+platform_device_id to distinguish the different gpio types, IMX1_GPIO
+on i.mx1, IMX21_GPIO on i.mx21 and i.mx27, IMX31_GPIO on all other
+i.mx SoCs.
+
+Signed-off-by: Shawn Guo <912cf7eb7d8018e2943586ae6657d21fd4e38239@linaro.org>
+Signed-off-by: Grant Likely <9069e6f5a2b566e2674a0ba1e2bf39c12c195fad@secretlab.ca>
+",0,0,0,FALSE,FALSE,get rid,TRUE,TRUE,,perfective,TRUE
+sultanqasim/android_kernel_alcatel_alto45,c46a131c0c0f4c2457e6b1e430c578a5cb057334,xfs: fix ->mknod() return value on xfs_get_acl() failure,"xfs: fix ->mknod() return value on xfs_get_acl() failure
+
+->mknod() should return negative on errors and PTR_ERR() gives
+already negative value...
+
+Signed-off-by: Al Viro <de609eb4d5d70b1d38ec6642adbfc33a2781f63c@zeniv.linux.org.uk>
+Reviewed-by: Christoph Hellwig <923f7720577207a44b32e59bbfbea59d27f1ae8e@lst.de>
+Signed-off-by: Alex Elder <f556392d917047d964350b9c68912016c96d5e94@sgi.com>
+",2,0,0,TRUE,TRUE,fix but not errors,TRUE,TRUE,,corrective,FALSE
+quinonez/WordPress,bd7956b4f5aa816c98ea7fe443570ee1e35b88b5,"Update wp-logo.png version number. props zekeweeks, fixes #17402.","Update wp-logo.png version number. props zekeweeks, fixes #17402.
+
+git-svn-id: 33a53d2031ff1536f7722bcba09bc6642b9c080a@17905 1a063a9b-81f0-0310-95a4-ce76da25c4cd
+",1,0,0,TRUE,TRUE,fixes,FALSE,TRUE,,corrective,FALSE
+YUPlayGodDev/android_kernel_cyanogen_msm8916,94f1e9f316b10972b77a64344006c3bf8a4929b4,[WATCHDOG] s3c2410 watchdog - replace reboot notifier,"[WATCHDOG] s3c2410 watchdog - replace reboot notifier
+
+Patch from Dimitry Andric <0a02967e9a0c7095e3890a716636d88cd0cf5226@tomtom.com>
+
+Change to using platfrom driver's .shutdown method instead
+of an reboot notifier
+
+Signed-off-by: Dimitry Andric <0a02967e9a0c7095e3890a716636d88cd0cf5226@tomtom.com>
+Signed-off-by: Ben Dooks <1177f64998f284a7348354b8e91cbbe575d9858a@fluff.org>
+Signed-off-by: Wim Van Sebroeck <5f65f6985de1ebf15dde04e0dc4668211868bafa@iguana.be>
+",0,0,0,FALSE,FALSE,replace,TRUE,TRUE,,perfective,TRUE
+joel-porquet/tsar-linux,775ba7ad491a154f99871fe603f03366e84ae159,Merge git://git.kernel.org/pub/scm/linux/kernel/git/bunk/trivial,"Merge git://git.kernel.org/pub/scm/linux/kernel/git/bunk/trivial
+
+* git://git.kernel.org/pub/scm/linux/kernel/git/bunk/trivial:
+  Fix inotify maintainers entry
+  Fix typo in new debug options.
+  Jon needs a new shift key.
+  fs: Convert kmalloc() + memset() to kzalloc() in fs/.
+  configfs.h: Remove dead macro definitions.
+  kconfig: Standardize ""depends"" -> ""depends on"" in Kconfig files
+  e100: replace kmalloc with kcalloc
+  um: replace kmalloc+memset with kzalloc
+  fix typo in net/ipv4/ip_fragment.c
+  include/linux/compiler.h: reject gcc 3 < gcc 3.2
+  Kconfig: fix spelling error in config KALLSYMS help text
+  Remove duplicate ""have to"" in comment
+  Fix small typo in drivers/serial/icom.c
+  Use consistent casing in help message
+  EXT{2,3,4}_FS: remove outdated part of the help text
+",6,4,0,TRUE,TRUE,fix,TRUE,TRUE,duplicated,corrective,FALSE
+VRToxin-AOSP/android_kernel_moto_shamu,775ba7ad491a154f99871fe603f03366e84ae159,Merge git://git.kernel.org/pub/scm/linux/kernel/git/bunk/trivial,"Merge git://git.kernel.org/pub/scm/linux/kernel/git/bunk/trivial
+
+* git://git.kernel.org/pub/scm/linux/kernel/git/bunk/trivial:
+  Fix inotify maintainers entry
+  Fix typo in new debug options.
+  Jon needs a new shift key.
+  fs: Convert kmalloc() + memset() to kzalloc() in fs/.
+  configfs.h: Remove dead macro definitions.
+  kconfig: Standardize ""depends"" -> ""depends on"" in Kconfig files
+  e100: replace kmalloc with kcalloc
+  um: replace kmalloc+memset with kzalloc
+  fix typo in net/ipv4/ip_fragment.c
+  include/linux/compiler.h: reject gcc 3 < gcc 3.2
+  Kconfig: fix spelling error in config KALLSYMS help text
+  Remove duplicate ""have to"" in comment
+  Fix small typo in drivers/serial/icom.c
+  Use consistent casing in help message
+  EXT{2,3,4}_FS: remove outdated part of the help text
+",6,4,0,TRUE,,,TRUE,,duplicated,,
+unicell/redpatch,775ba7ad491a154f99871fe603f03366e84ae159,Merge git://git.kernel.org/pub/scm/linux/kernel/git/bunk/trivial,"Merge git://git.kernel.org/pub/scm/linux/kernel/git/bunk/trivial
+
+* git://git.kernel.org/pub/scm/linux/kernel/git/bunk/trivial:
+  Fix inotify maintainers entry
+  Fix typo in new debug options.
+  Jon needs a new shift key.
+  fs: Convert kmalloc() + memset() to kzalloc() in fs/.
+  configfs.h: Remove dead macro definitions.
+  kconfig: Standardize ""depends"" -> ""depends on"" in Kconfig files
+  e100: replace kmalloc with kcalloc
+  um: replace kmalloc+memset with kzalloc
+  fix typo in net/ipv4/ip_fragment.c
+  include/linux/compiler.h: reject gcc 3 < gcc 3.2
+  Kconfig: fix spelling error in config KALLSYMS help text
+  Remove duplicate ""have to"" in comment
+  Fix small typo in drivers/serial/icom.c
+  Use consistent casing in help message
+  EXT{2,3,4}_FS: remove outdated part of the help text
+",6,4,0,TRUE,,,TRUE,,duplicated,,
+VanirAOSP/kernel_lge_g3,775ba7ad491a154f99871fe603f03366e84ae159,Merge git://git.kernel.org/pub/scm/linux/kernel/git/bunk/trivial,"Merge git://git.kernel.org/pub/scm/linux/kernel/git/bunk/trivial
+
+* git://git.kernel.org/pub/scm/linux/kernel/git/bunk/trivial:
+  Fix inotify maintainers entry
+  Fix typo in new debug options.
+  Jon needs a new shift key.
+  fs: Convert kmalloc() + memset() to kzalloc() in fs/.
+  configfs.h: Remove dead macro definitions.
+  kconfig: Standardize ""depends"" -> ""depends on"" in Kconfig files
+  e100: replace kmalloc with kcalloc
+  um: replace kmalloc+memset with kzalloc
+  fix typo in net/ipv4/ip_fragment.c
+  include/linux/compiler.h: reject gcc 3 < gcc 3.2
+  Kconfig: fix spelling error in config KALLSYMS help text
+  Remove duplicate ""have to"" in comment
+  Fix small typo in drivers/serial/icom.c
+  Use consistent casing in help message
+  EXT{2,3,4}_FS: remove outdated part of the help text
+",6,4,0,TRUE,,,TRUE,,duplicated,,
+RobBrownNZ/android_kernel_zuk_z2_plus,6f9c04ff778e35aaad11266b55ef93f72224586e,[SCSI] bnx2i: Added the setting of target can_queue via target_alloc,"[SCSI] bnx2i: Added the setting of target can_queue via target_alloc
+
+This will set the target can_queue limit to the number of preallocated
+session tasks set during creation.
+
+""Could not send nopout"" messages were observed without this when the
+iSCSI connection experiences dropped frames under heavy I/O stress.
+
+Signed-off-by: Eddie Wai <d36954dadb74cdf92c251af893f283eb6ad265e3@broadcom.com>
+Reviewed-by: Mike Christie <6fe105eefab41990d7ec714c6c25ade3095cdb48@cs.wisc.edu>
+Signed-off-by: James Bottomley <1acebbdca565c7b6b638bdc23b58b5610d1a56b8@Parallels.com>
+",0,0,0,FALSE,FALSE,added,TRUE,TRUE,,adaptive,
+OpenELEC/linux,6f9c04ff778e35aaad11266b55ef93f72224586e,[SCSI] bnx2i: Added the setting of target can_queue via target_alloc,"[SCSI] bnx2i: Added the setting of target can_queue via target_alloc
+
+This will set the target can_queue limit to the number of preallocated
+session tasks set during creation.
+
+""Could not send nopout"" messages were observed without this when the
+iSCSI connection experiences dropped frames under heavy I/O stress.
+
+Signed-off-by: Eddie Wai <d36954dadb74cdf92c251af893f283eb6ad265e3@broadcom.com>
+Reviewed-by: Mike Christie <6fe105eefab41990d7ec714c6c25ade3095cdb48@cs.wisc.edu>
+Signed-off-by: James Bottomley <1acebbdca565c7b6b638bdc23b58b5610d1a56b8@Parallels.com>
+",0,0,0,FALSE,TRUE,added,TRUE,TRUE,,corrective,FALSE
+mathkid95/linux_samsung_jb,698d070746770aaaec78ab4ffa3ab1f1d5c6abe8,[PATCH] s390: lcs incorrect test,"[PATCH] s390: lcs incorrect test
+
+While debugging why our LCS emulator is having some problems I noticed the
+following weirdness in drivers/s390/net/lcs.c routine lcs_irq.  The `if'
+statement is always true since SCHN_STAT_PCI is defined as 0x80.
+
+Cc: Martin Schwidefsky <52616596d8f5df0d597e85ab515377f92f939c68@de.ibm.com>
+Cc: Heiko Carstens <8dcf0f69152f32f23184f83357a3731522e56b9c@de.ibm.com>
+Signed-off-by: Andrew Morton <5c1e68b099950c134891f0b6e179498a8ebe9cf9@osdl.org>
+Signed-off-by: Linus Torvalds <69652caca27c8b940640ad396ab71f93cacec34f@osdl.org>
+",2,0,0,TRUE,TRUE,"incorrect, problems",TRUE,TRUE,,corrective,FALSE
+lisa-project/lisa-kernel,9deff7f2365958c5c5aa8cb5a0dd651c4dd83f8f,[RXRPC]: Fix build failure introduced by skb->stamp changes.,"[RXRPC]: Fix build failure introduced by skb->stamp changes.
+
+Signed-off-by: Andrew Morton <5c1e68b099950c134891f0b6e179498a8ebe9cf9@osdl.org>
+Signed-off-by: David S. Miller <fe08d3c717adf2ae63592e4c9aec6e3e404d8e3e@davemloft.net>
+",2,0,0,TRUE,TRUE,"fix, failure",FALSE,TRUE,,corrective,FALSE
+systemd/linux,09c74a9d0b0bedff16d0881db8cc0054a5e34f47,ASoC: soc-cache: Fix memory overflow in LZO initialization,"ASoC: soc-cache: Fix memory overflow in LZO initialization
+
+The bitmap_zero() nbits argument was improperly set to reg_size
+but the underlying buffer was bmp_size long.  This caused the memset
+to zero past the end of the allocated buffer and into the kernel heap
+causing strange kernel crashes sometimes by overwriting critical
+kernel structures.
+
+Signed-off-by: Dimitris Papastamos <a91262282f71bb8488398dcc9202f777d0206664@opensource.wolfsonmicro.com>
+Acked-by: Liam Girdwood <a57ef363056e61beffa2efa59c68550d40db03b0@slimlogic.co.uk>
+Signed-off-by: Mark Brown <b51b9a92386687a9ac927cebfa0f978adeb8cea5@opensource.wolfsonmicro.com>
+",1,0,0,TRUE,TRUE,"fix, memory overflow, kernel crash",TRUE,TRUE,,corrective,FALSE
+KylinMod/android_kernel_motorola_msm8960-common,09c74a9d0b0bedff16d0881db8cc0054a5e34f47,ASoC: soc-cache: Fix memory overflow in LZO initialization,"ASoC: soc-cache: Fix memory overflow in LZO initialization
+
+The bitmap_zero() nbits argument was improperly set to reg_size
+but the underlying buffer was bmp_size long.  This caused the memset
+to zero past the end of the allocated buffer and into the kernel heap
+causing strange kernel crashes sometimes by overwriting critical
+kernel structures.
+
+Signed-off-by: Dimitris Papastamos <a91262282f71bb8488398dcc9202f777d0206664@opensource.wolfsonmicro.com>
+Acked-by: Liam Girdwood <a57ef363056e61beffa2efa59c68550d40db03b0@slimlogic.co.uk>
+Signed-off-by: Mark Brown <b51b9a92386687a9ac927cebfa0f978adeb8cea5@opensource.wolfsonmicro.com>
+",1,0,0,TRUE,,,TRUE,,duplicated,,
+radiohap/prd,d33b98fc82b0908e91fb05ae081acaed7323f9d2,block: partition: msdos: provide UUIDs for partitions,"block: partition: msdos: provide UUIDs for partitions
+
+The MSDOS/MBR partition table includes a 32-bit unique ID, often referred
+to as the NT disk signature.  When combined with a partition number within
+the table, this can form a unique ID similar in concept to EFI/GPT's
+partition UUID.  Constructing and recording this value in struct
+partition_meta_info allows MSDOS partitions to be referred to on the
+kernel command-line using the following syntax:
+
+root=PARTUUID=0002dd75-01
+
+Signed-off-by: Stephen Warren <5ef2a23ba3aff51d1cfc8c113c1ec34b608b3b13@nvidia.com>
+Cc: Tejun Heo <546b05909706652891a87f7bfe385ae147f61f91@kernel.org>
+Cc: Will Drewry <72416dde44ea762d19e3a7a555e3b59ce98f8eea@chromium.org>
+Cc: Kay Sievers <a591390dde1303c55d531fd687bfa5ffd43e435e@vrfy.org>
+Signed-off-by: Andrew Morton <5c1e68b099950c134891f0b6e179498a8ebe9cf9@linux-foundation.org>
+Signed-off-by: Jens Axboe <cd8c6775e60d6f67a6984377324e5290df3d5358@kernel.dk>
+",0,0,0,FALSE,FALSE,provide,TRUE,TRUE,,adaptive,
+olajep/parallella-linux,b060f3c4ac99b050b990b316637f7fd9898b9fd7,hwmon: (adm1031) Convert to devm_hwmon_device_register_with_groups,"hwmon: (adm1031) Convert to devm_hwmon_device_register_with_groups
+
+Use ATTRIBUTE_GROUPS macro and devm_hwmon_device_register_with_groups() to
+simplify the code a bit.
+
+Signed-off-by: Axel Lin <b6ffd6973e972cb999e8e535ab74da7fee0c035f@ingics.com>
+Signed-off-by: Guenter Roeck <ba324ca7b1c77fc20bb970d5aff6eea9377918a5@roeck-us.net>
+",0,0,0,FALSE,FALSE,convert,TRUE,TRUE,,perfective,TRUE
+MSM8916-Samsung/kernel_msm-3.10,49e928d6cfd4a27f2b2e0ea6cdcb9e853360a9a1,GPIO: mvebu: Allow all plat-orion platforms.,"GPIO: mvebu: Allow all plat-orion platforms.
+
+Kirkwood & Dove can also use this driver, so expand the scope to
+include all platform orion devices.
+
+Signed-off-by: Andrew Lunn <02e0a999c50b1f88df7a8f5a04e1b76b35ea6a88@lunn.ch>
+Signed-off-by: Jason Cooper <68c46a606457643eab92053c1c05574abb26f861@lakedaemon.net>
+",0,0,0,FALSE,FALSE,allow,TRUE,TRUE,,adaptive,
+alexshi/power-scheduling,49e928d6cfd4a27f2b2e0ea6cdcb9e853360a9a1,GPIO: mvebu: Allow all plat-orion platforms.,"GPIO: mvebu: Allow all plat-orion platforms.
+
+Kirkwood & Dove can also use this driver, so expand the scope to
+include all platform orion devices.
+
+Signed-off-by: Andrew Lunn <02e0a999c50b1f88df7a8f5a04e1b76b35ea6a88@lunn.ch>
+Signed-off-by: Jason Cooper <68c46a606457643eab92053c1c05574abb26f861@lakedaemon.net>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+honor6-dev/android_kernel_huawei_h60,49e928d6cfd4a27f2b2e0ea6cdcb9e853360a9a1,GPIO: mvebu: Allow all plat-orion platforms.,"GPIO: mvebu: Allow all plat-orion platforms.
+
+Kirkwood & Dove can also use this driver, so expand the scope to
+include all platform orion devices.
+
+Signed-off-by: Andrew Lunn <02e0a999c50b1f88df7a8f5a04e1b76b35ea6a88@lunn.ch>
+Signed-off-by: Jason Cooper <68c46a606457643eab92053c1c05574abb26f861@lakedaemon.net>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+shaqfu786/android_kernel_lge_omap4-common,08e850c6536db302050c0287649e68e3bbdfe2c7,KVM: MMU: Reinstate pte prefetch on invlpg,"KVM: MMU: Reinstate pte prefetch on invlpg
+
+Commit fb341f57 removed the pte prefetch on guest invlpg, citing guest races.
+However, the SDM is adamant that prefetch is allowed:
+
+  ""The processor may create entries in paging-structure caches for
+   translations required for prefetches and for accesses that are a
+   result of speculative execution that would never actually occur
+   in the executed code path.""
+
+And, in fact, there was a race in the prefetch code: we picked up the pte
+without the mmu lock held, so an older invlpg could install the pte over
+a newer invlpg.
+
+Reinstate the prefetch logic, but this time note whether another invlpg has
+executed using a counter.  If a race occured, do not install the pte.
+
+Signed-off-by: Avi Kivity <8f920f22884d6fea9df883843c4a8095a2e5ac6f@redhat.com>
+Signed-off-by: Marcelo Tosatti <958bcd1f4a7a8c36dca09fe3fa9cb5f1483adf51@redhat.com>
+",0,0,0,FALSE,TRUE,Reinstate,TRUE,TRUE,,corrective,FALSE
+snegovick/linux,1dcc336b02bff3d38f173feac55a2b6c25a5fb54,f2fs: enable rb-tree extent cache,"f2fs: enable rb-tree extent cache
+
+This patch enables rb-tree based extent cache in f2fs.
+
+When we mount with ""-o extent_cache"", f2fs will try to add recently accessed
+page-block mappings into rb-tree based extent cache as much as possible, instead
+of original one extent info cache.
+
+By this way, f2fs can support more effective cache between dnode page cache and
+disk. It will supply high hit ratio in the cache with fewer memory when dnode
+page cache are reclaimed in environment of low memory.
+
+Storage: Sandisk sd card 64g
+1.append write file (offset: 0, size: 128M);
+2.override write file (offset: 2M, size: 1M);
+3.override write file (offset: 4M, size: 1M);
+...
+4.override write file (offset: 48M, size: 1M);
+...
+5.override write file (offset: 112M, size: 1M);
+6.sync
+7.echo 3 > /proc/sys/vm/drop_caches
+8.read file (size:128M, unit: 4k, count: 32768)
+(time dd if=/mnt/f2fs/128m bs=4k count=32768)
+
+Extent Hit Ratio:
+		before		patched
+Hit Ratio	121 / 1071	1071 / 1071
+
+Performance:
+		before		patched
+real    	0m37.051s	0m35.556s
+user    	0m0.040s	0m0.026s
+sys     	0m2.990s	0m2.251s
+
+Memory Cost:
+		before		patched
+Tree Count:	0		1 (size: 24 bytes)
+Node Count:	0		45 (size: 1440 bytes)
+
+v3:
+ o retest and given more details of test result.
+
+Signed-off-by: Chao Yu <0cc5db7488e13b393f245aa6263acec5e92fdcc5@samsung.com>
+Signed-off-by: Jaegeuk Kim <71255387a32c360dfbe6dfb7aaeb123bf1dc8cb6@kernel.org>
+",0,0,0,FALSE,FALSE,enable,TRUE,TRUE,,adaptive,
+links234/qr-linux-kernel,5f614e6b7005685b3e34da0742f79389c858c7e1,caif-hsi: Free flip_buffer at shutdown,"caif-hsi: Free flip_buffer at shutdown
+
+Fix memory leak of RX flip-buffer.
+
+Signed-off-by: Sjur Brændeland <90c9f68dc7b20ac89683f2c4f55e4a05e8dbf9ad@stericsson.com>
+Signed-off-by: David S. Miller <fe08d3c717adf2ae63592e4c9aec6e3e404d8e3e@davemloft.net>
+",1,0,0,TRUE,TRUE,"fix, memory leak",FALSE,TRUE,,corrective,FALSE
+RenderBroken/ghost_render_kernel,1ac4594d88f63ba1557cc1a30ec1f915ca55b7cb,isdn: Convert vmalloc/memset to vzalloc,"isdn: Convert vmalloc/memset to vzalloc
+
+Signed-off-by: Joe Perches <16a9a54ddf4259952e3c118c763138e83693d7fd@perches.com>
+Signed-off-by: Jiri Kosina <ed58f755cc8caaf10c3e8c731a8b86fb8f13d6cb@suse.cz>
+",0,0,0,FALSE,FALSE,convert,FALSE,TRUE,,perfective,TRUE
+mathkid95/linux_lg_jb,1ac4594d88f63ba1557cc1a30ec1f915ca55b7cb,isdn: Convert vmalloc/memset to vzalloc,"isdn: Convert vmalloc/memset to vzalloc
+
+Signed-off-by: Joe Perches <16a9a54ddf4259952e3c118c763138e83693d7fd@perches.com>
+Signed-off-by: Jiri Kosina <ed58f755cc8caaf10c3e8c731a8b86fb8f13d6cb@suse.cz>
+",0,0,0,FALSE,,,FALSE,,duplicated,,
+jogger0703/linux,d2dd8b1fed314d22c50965f78f6895117c4abfc8,[ARM] 4342/2:  iop13xx: add resource definitions for the tpmi units,"[ARM] 4342/2:  iop13xx: add resource definitions for the tpmi units
+
+The tpmi units interface with the SAS controller on iop348.
+
+Signed-off-by: Dan Williams <24ee2bf0bd8ac766c348bf1f0639943bac1535c6@intel.com>
+Signed-off-by: Russell King <f6aa0246ff943bfa8602cdf60d40c481b38ed232@arm.linux.org.uk>
+",0,0,0,FALSE,FALSE,add,TRUE,TRUE,,adaptive,
+atniptw/PonyBuntu,d2dd8b1fed314d22c50965f78f6895117c4abfc8,[ARM] 4342/2:  iop13xx: add resource definitions for the tpmi units,"[ARM] 4342/2:  iop13xx: add resource definitions for the tpmi units
+
+The tpmi units interface with the SAS controller on iop348.
+
+Signed-off-by: Dan Williams <24ee2bf0bd8ac766c348bf1f0639943bac1535c6@intel.com>
+Signed-off-by: Russell King <f6aa0246ff943bfa8602cdf60d40c481b38ed232@arm.linux.org.uk>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+avisconti/prova,d2dd8b1fed314d22c50965f78f6895117c4abfc8,[ARM] 4342/2:  iop13xx: add resource definitions for the tpmi units,"[ARM] 4342/2:  iop13xx: add resource definitions for the tpmi units
+
+The tpmi units interface with the SAS controller on iop348.
+
+Signed-off-by: Dan Williams <24ee2bf0bd8ac766c348bf1f0639943bac1535c6@intel.com>
+Signed-off-by: Russell King <f6aa0246ff943bfa8602cdf60d40c481b38ed232@arm.linux.org.uk>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+dangowrt/linux,d2dd8b1fed314d22c50965f78f6895117c4abfc8,[ARM] 4342/2:  iop13xx: add resource definitions for the tpmi units,"[ARM] 4342/2:  iop13xx: add resource definitions for the tpmi units
+
+The tpmi units interface with the SAS controller on iop348.
+
+Signed-off-by: Dan Williams <24ee2bf0bd8ac766c348bf1f0639943bac1535c6@intel.com>
+Signed-off-by: Russell King <f6aa0246ff943bfa8602cdf60d40c481b38ed232@arm.linux.org.uk>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+1yfgT53/mysql,3d52b08751e802bc844db4225f981284a149a750,Merge acurtis@bk-internal.mysql.com:/home/bk/mysql-5.0 into xiphis.org:/usr/home/antony/work2/p3-bug7241.6,"Merge acurtis@bk-internal.mysql.com:/home/bk/mysql-5.0
+into xiphis.org:/usr/home/antony/work2/p3-bug7241.6
+
+--BZR--
+revision-id: cf00f27348d01d6118f17bc302c001c56470eb06@xiphis.org-20050524215102-31998
+property-file-info: le
+property-sp1-file-info: le
+testament3-sha1: ddef019ce1c375b85be1b26e49180d682e6895ec
+",0,0,0,FALSE,FALSE,No syntactic evidence,TRUE,TRUE,,other,
+OwnROM-Devices/OwnKernel-sprout,fae255253b393d5e4f0d77d5afa103bfc8b47a97,mtd: delete SBC82xx/SBC8560 MTD mapping support,"mtd: delete SBC82xx/SBC8560 MTD mapping support
+
+The SBC8260 support was dropped back when we moved from ppc to
+powerpc.  We are now also dropping the support for the EOL SBC8560,
+so we can also delete this mapping support, as they were the only
+users of it.
+
+Artem: also remove the symbol from the Makefile.
+
+Signed-off-by: Paul Gortmaker <ae947f3c8df96e1dc851c5e3e5a930ce6d3f1f74@windriver.com>
+Signed-off-by: Artem Bityutskiy <2f96f8cd3e2780a209d0ab27d1b44624d0019d3f@linux.intel.com>
+Signed-off-by: David Woodhouse <b460d66aaf00c296a3db1c1d9eeafc081d5f7d70@intel.com>
+",0,0,0,FALSE,FALSE,"delete support, drop back",TRUE,TRUE,no syntactic evidence,perfective,TRUE
+petkan/linux,fae255253b393d5e4f0d77d5afa103bfc8b47a97,mtd: delete SBC82xx/SBC8560 MTD mapping support,"mtd: delete SBC82xx/SBC8560 MTD mapping support
+
+The SBC8260 support was dropped back when we moved from ppc to
+powerpc.  We are now also dropping the support for the EOL SBC8560,
+so we can also delete this mapping support, as they were the only
+users of it.
+
+Artem: also remove the symbol from the Makefile.
+
+Signed-off-by: Paul Gortmaker <ae947f3c8df96e1dc851c5e3e5a930ce6d3f1f74@windriver.com>
+Signed-off-by: Artem Bityutskiy <2f96f8cd3e2780a209d0ab27d1b44624d0019d3f@linux.intel.com>
+Signed-off-by: David Woodhouse <b460d66aaf00c296a3db1c1d9eeafc081d5f7d70@intel.com>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+Adesh15/onyx_kernel,ee4799997950e81437ef9055a4b104099e3272c4,Input: add driver for Penmount serial touchscreens,"Input: add driver for Penmount serial touchscreens
+
+Signed-off-by: Rick Koch <90d554dd8748a30df24fe787217f5cf3147cd8f9@hotmail.com>
+Signed-off-by: Dmitry Torokhov <10a8c465cefc9bdd6c925e26964d23c90f1141cc@mail.ru>
+",0,0,0,FALSE,FALSE,add,TRUE,,,adaptive,
+ipaccess/fsm99xx-kernel-sources,ee4799997950e81437ef9055a4b104099e3272c4,Input: add driver for Penmount serial touchscreens,"Input: add driver for Penmount serial touchscreens
+
+Signed-off-by: Rick Koch <90d554dd8748a30df24fe787217f5cf3147cd8f9@hotmail.com>
+Signed-off-by: Dmitry Torokhov <10a8c465cefc9bdd6c925e26964d23c90f1141cc@mail.ru>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+philozheng/kernel-msm,ee4799997950e81437ef9055a4b104099e3272c4,Input: add driver for Penmount serial touchscreens,"Input: add driver for Penmount serial touchscreens
+
+Signed-off-by: Rick Koch <90d554dd8748a30df24fe787217f5cf3147cd8f9@hotmail.com>
+Signed-off-by: Dmitry Torokhov <10a8c465cefc9bdd6c925e26964d23c90f1141cc@mail.ru>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+yuvraj2987/Android_Samsung_Linux_Kernel,ee4799997950e81437ef9055a4b104099e3272c4,Input: add driver for Penmount serial touchscreens,"Input: add driver for Penmount serial touchscreens
+
+Signed-off-by: Rick Koch <90d554dd8748a30df24fe787217f5cf3147cd8f9@hotmail.com>
+Signed-off-by: Dmitry Torokhov <10a8c465cefc9bdd6c925e26964d23c90f1141cc@mail.ru>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+TEAM-RAZOR-DEVICES/kernel_lge_v500,ee4799997950e81437ef9055a4b104099e3272c4,Input: add driver for Penmount serial touchscreens,"Input: add driver for Penmount serial touchscreens
+
+Signed-off-by: Rick Koch <90d554dd8748a30df24fe787217f5cf3147cd8f9@hotmail.com>
+Signed-off-by: Dmitry Torokhov <10a8c465cefc9bdd6c925e26964d23c90f1141cc@mail.ru>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+TeamOrion-Devices/kernel_lge_msm8974,57c808e9ccec120341dea7f6d0eecd58adbb7a45,msm: 8960: Configure SDIO on SDC2 slot,"msm: 8960: Configure SDIO on SDC2 slot
+
+Configure SDIO over SDC2 slot.
+Do not enable SDC2 as the needed GPIO lines are already
+in use by HSIC(GPIO#91) and Ethernet(GPIO#89-90).
+
+CRs-fixed: 330232
+Change-Id: Ia6efc61f2cb898009be06b3b426e7da755fcfcd3
+Signed-off-by: Pratibhasagar V <bcb15852ab921cb854538b24f12d348f13e3784a@codeaurora.org>
+",0,0,0,FALSE,FALSE,configure,TRUE,TRUE,,adaptive,
+Orion116/kernel_samsung_lt03wifi_rebase,39fd33933b0209e4b6254743f2cede07c5ad4c52,userns: allow killing tasks in your own or child userns,"userns: allow killing tasks in your own or child userns
+
+Changelog:
+	Dec  8: Fixed bug in my check_kill_permission pointed out by
+	        Eric Biederman.
+	Dec 13: Apply Eric's suggestion to pass target task into kill_ok_by_cred()
+	        for clarity
+	Dec 31: address comment by Eric Biederman:
+		don't need cred/tcred in check_kill_permission.
+	Jan  1: use const cred struct.
+	Jan 11: Per Bastian Blank's advice, clean up kill_ok_by_cred().
+	Feb 16: kill_ok_by_cred: fix bad parentheses
+	Feb 23: per akpm, let compiler inline kill_ok_by_cred
+
+Signed-off-by: Serge E. Hallyn <3df611b026e4639bee8aef7a4beb2e39fcebb313@canonical.com>
+Acked-by: ""Eric W. Biederman"" <8a741aa8cbd77ebc4a56ddb528ce9fd15d42f034@xmission.com>
+Acked-by: Daniel Lezcano <e9fa45941f2ebe89c1b9d6c5f339ab42eadb8567@free.fr>
+Acked-by: David Howells <ebac1d06c1688626821bb0e574a037a7a5354e49@redhat.com>
+Cc: James Morris <10d11de3abc355eabe955bb734f0f8e71da56e16@namei.org>
+Signed-off-by: Andrew Morton <5c1e68b099950c134891f0b6e179498a8ebe9cf9@linux-foundation.org>
+Signed-off-by: Linus Torvalds <69652caca27c8b940640ad396ab71f93cacec34f@linux-foundation.org>
+",2,0,0,TRUE,,TRUE,TRUE,TRUE,,adaptive,
+davidmueller13/f2fs-backport,39fd33933b0209e4b6254743f2cede07c5ad4c52,userns: allow killing tasks in your own or child userns,"userns: allow killing tasks in your own or child userns
+
+Changelog:
+	Dec  8: Fixed bug in my check_kill_permission pointed out by
+	        Eric Biederman.
+	Dec 13: Apply Eric's suggestion to pass target task into kill_ok_by_cred()
+	        for clarity
+	Dec 31: address comment by Eric Biederman:
+		don't need cred/tcred in check_kill_permission.
+	Jan  1: use const cred struct.
+	Jan 11: Per Bastian Blank's advice, clean up kill_ok_by_cred().
+	Feb 16: kill_ok_by_cred: fix bad parentheses
+	Feb 23: per akpm, let compiler inline kill_ok_by_cred
+
+Signed-off-by: Serge E. Hallyn <3df611b026e4639bee8aef7a4beb2e39fcebb313@canonical.com>
+Acked-by: ""Eric W. Biederman"" <8a741aa8cbd77ebc4a56ddb528ce9fd15d42f034@xmission.com>
+Acked-by: Daniel Lezcano <e9fa45941f2ebe89c1b9d6c5f339ab42eadb8567@free.fr>
+Acked-by: David Howells <ebac1d06c1688626821bb0e574a037a7a5354e49@redhat.com>
+Cc: James Morris <10d11de3abc355eabe955bb734f0f8e71da56e16@namei.org>
+Signed-off-by: Andrew Morton <5c1e68b099950c134891f0b6e179498a8ebe9cf9@linux-foundation.org>
+Signed-off-by: Linus Torvalds <69652caca27c8b940640ad396ab71f93cacec34f@linux-foundation.org>
+",2,0,0,TRUE,,,TRUE,,duplicated,,
+xsilon/linux-xsilon,fed5b64a95326697f942f5003c138c7ff3043ef5,mm/migrate: fix comment typo syncronous->synchronous,"mm/migrate: fix comment typo syncronous->synchronous
+
+Signed-off-by: Jianguo Wu <bfa600f2f37bdb58cd7013a13133683dd75e8c4c@huawei.com>
+Signed-off-by: Andrew Morton <5c1e68b099950c134891f0b6e179498a8ebe9cf9@linux-foundation.org>
+Signed-off-by: Linus Torvalds <69652caca27c8b940640ad396ab71f93cacec34f@linux-foundation.org>
+",1,1,0,FALSE,FALSE,fixed comment,FALSE,TRUE,,perfective,FALSE
+SaberMod/android_kernel_moto_shamu,fed5b64a95326697f942f5003c138c7ff3043ef5,mm/migrate: fix comment typo syncronous->synchronous,"mm/migrate: fix comment typo syncronous->synchronous
+
+Signed-off-by: Jianguo Wu <bfa600f2f37bdb58cd7013a13133683dd75e8c4c@huawei.com>
+Signed-off-by: Andrew Morton <5c1e68b099950c134891f0b6e179498a8ebe9cf9@linux-foundation.org>
+Signed-off-by: Linus Torvalds <69652caca27c8b940640ad396ab71f93cacec34f@linux-foundation.org>
+",1,1,0,FALSE,,,FALSE,,duplicated,,
+kriegfrj/robolectric,9677b3a80b929a57a7ee1d4301d5e9ffb51f3182,"Added shadows for WebView clearFormData(), clearHistory(), clearView() and destroy().","Added shadows for WebView clearFormData(), clearHistory(), clearView() and destroy().
+",0,0,0,FALSE,FALSE,added,TRUE,TRUE,,adaptive,
+JianguoWEI/linux-efq-final,1c10070a55a38ad8489df8afd52c9a3ffd46bbb5,i386: do not restore reserved memory after hibernation,"i386: do not restore reserved memory after hibernation
+
+On some systems the ACPI NVS area is located in the first 1 MB of RAM and
+it is overwritten by the i386 code during the restore after hibernation.
+This confuses the ACPI platform firmware that doesn't update the AC adapter
+status appropriately as a result
+(http://bugzilla.kernel.org/show_bug.cgi?id=7995).
+
+The solution is to register the reserved memory in the first 1 MB as
+'nosave', so that swsusp doesn't touch it during the restore.  Also, this
+has been done on x86_64 for a long time now, so this patch makes the i386
+restore code behave like the x86_64 one.
+
+[5c1e68b099950c134891f0b6e179498a8ebe9cf9@linux-foundation.org: build fix]
+Signed-off-by: Rafael J. Wysocki <a11f87183a953ab11f50fbafff689c5a7fa3506c@sisk.pl>
+Acked-by: Pavel Machek <2375fa63e2908bb2df59f606483a3aa92321db7a@ucw.cz>
+Cc: David Rientjes <d8cd2994e15bc61ddb2b113030bda55eebc3a0fe@google.com>
+Signed-off-by: Andrew Morton <5c1e68b099950c134891f0b6e179498a8ebe9cf9@linux-foundation.org>
+Signed-off-by: Andi Kleen <0474aee45985f5ae829f53849df476200e876990@suse.de>
+Signed-off-by: Linus Torvalds <69652caca27c8b940640ad396ab71f93cacec34f@linux-foundation.org>
+",1,0,0,TRUE,TRUE,solution,TRUE,TRUE,,corrective,FALSE
+vathpela/linux-esrt,352d4657b23fbd329efccc396000a549e0150907,Merge branch 'for-linus' of git://git.kernel.org/pub/scm/linux/kernel/git/mattst88/alpha-2.6,"Merge branch 'for-linus' of git://git.kernel.org/pub/scm/linux/kernel/git/mattst88/alpha-2.6
+
+* 'for-linus' of git://git.kernel.org/pub/scm/linux/kernel/git/mattst88/alpha-2.6:
+  alpha: fix compile errors in dma-mapping-common.h
+  alpha: remove trailing spaces in messages
+  alpha: use __ratelimit
+",1,0,0,TRUE,TRUE,"fix, compile errors",TRUE,TRUE,,corrective,FALSE
+equinox0815/packages,314aad053be98c43e5e14fb5186e6bc022b5026a,git: update to 2.14.3,"git: update to 2.14.3
+
+Signed-off-by: Peter Wagner <c16e2946dd3475e527919707ebbda99e4997bcc4@gmx.at>
+",0,0,0,FALSE,FALSE,update,FALSE,TRUE,,other,
+kiriapurv/kiriyard-mako-kernel,0df4604ed09873c46ddb3232a3efc5a2798854cb,staging: brmc80211: remove sdio.h from fullmac,"staging: brmc80211: remove sdio.h from fullmac
+
+Use standard sdio.h from mmc core instead of private one
+
+Signed-off-by: Franky Lin <c740ae0f5dfc9bd2203ae1a0d3155a31e94c745d@broadcom.com>
+Reviewed-by: Roland Vossen <45182f14eed14f589e080b05abc22e5a7f6ee742@broadcom.com>
+Reviewed-by: Arend van Spriel <06447fbe43693466d3293d0b5eaeeb2efd3d7d3a@broadcom.com>
+Signed-off-by: Greg Kroah-Hartman <4645f7897fd33786a2ee1264d590b3c400559d85@suse.de>
+",0,0,0,FALSE,FALSE,remove,TRUE,TRUE,,perfective,TRUE
+Khaon/mi2_kernel,5919ce29085f4ca080054fde5feef8f8b3405261,[SCSI] ibmvfc: Fix command timeouts due to cached CRQ access,"[SCSI] ibmvfc: Fix command timeouts due to cached CRQ access
+
+The CRQs used by the ibmvfc driver are read and written by both
+the client and the server. Therefore, we need to mark them volatile
+so that we do not cache their contents when handling an interrupt.
+This fixes a problem which can surface as occasional command timeouts.
+No commands were actually timing out, but due to accessing cached data
+for the CRQ in the interrupt handler, the interrupt was not processing
+all command completions as it should.
+
+Signed-off-by: Brian King <bf668d4b220231d97fe248d4ae0ba63a1d887e4c@linux.vnet.ibm.com>
+Signed-off-by: James Bottomley <407b36959ca09543ccda8f8e06721c791bc53435@HansenPartnership.com>
+",2,0,0,TRUE,TRUE,fix,TRUE,TRUE,,corrective,FALSE
+MikeC84/mac_kernel_lge_hammerhead_lollipop,02b1bae5e1c0f810168037be0134685085e95e88,niu: Refinements to kernel logging.,"niu: Refinements to kernel logging.
+
+Fix unconditional empty kerne log message every interrupt.
+
+Kill some informational log messages that are superfluous
+and anyways occur before the netdev is registered.
+
+Signed-off-by: David S. Miller <fe08d3c717adf2ae63592e4c9aec6e3e404d8e3e@davemloft.net>
+",1,0,0,TRUE,TRUE,fix,TRUE,TRUE,,corrective,FALSE
+gxa/atlas,0067287728f8c762bab6e02b6caff75883a82d87,Use constructor injection instead of field injection. http://programmers.stackexchange.com/questions/300706/dependency-injection-field-injection-vs-constructor-injection http://olivergierke.de/2013/11/why-field-injection-is-evil/,"Use constructor injection instead of field injection.
+http://programmers.stackexchange.com/questions/300706/dependency-injection-field-injection-vs-constructor-injection
+http://olivergierke.de/2013/11/why-field-injection-is-evil/
+",0,0,0,FALSE,FALSE,use instead,TRUE,TRUE,,perfective,TRUE
+spvkgn/youtube-dl,15956b5aa1867e9511d5edeebc5d4e9e70ed39c0,[promptfile] Fix check for deleted videos,"[promptfile] Fix check for deleted videos
+",1,0,0,TRUE,TRUE,fix,TRUE,TRUE,,corrective,FALSE
+Infusion-OS/android_kernel_lge_gee,90736e20e3805dd1ffff60e4750495944956cd44,[PATCH] i386: Vmi timer race,"[PATCH] i386: Vmi timer race
+
+Because timer code moves around, and we might eventually move our init to a
+late_time_init hook, save and restore IRQs around this code because it is
+definitely not interrupt safe.
+
+Signed-off-by: Zachary Amsden <9de8c4480303b5335cd2a33eefe814615ba3612a@vmware.com>
+Signed-off-by: Andi Kleen <0474aee45985f5ae829f53849df476200e876990@suse.de>
+",0,0,0,FALSE,TRUE,"race, not interrupt safe",TRUE,TRUE,,corrective,FALSE
+wareash/linux-xylon,90736e20e3805dd1ffff60e4750495944956cd44,[PATCH] i386: Vmi timer race,"[PATCH] i386: Vmi timer race
+
+Because timer code moves around, and we might eventually move our init to a
+late_time_init hook, save and restore IRQs around this code because it is
+definitely not interrupt safe.
+
+Signed-off-by: Zachary Amsden <9de8c4480303b5335cd2a33eefe814615ba3612a@vmware.com>
+Signed-off-by: Andi Kleen <0474aee45985f5ae829f53849df476200e876990@suse.de>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+benatto/linux-1,90736e20e3805dd1ffff60e4750495944956cd44,[PATCH] i386: Vmi timer race,"[PATCH] i386: Vmi timer race
+
+Because timer code moves around, and we might eventually move our init to a
+late_time_init hook, save and restore IRQs around this code because it is
+definitely not interrupt safe.
+
+Signed-off-by: Zachary Amsden <9de8c4480303b5335cd2a33eefe814615ba3612a@vmware.com>
+Signed-off-by: Andi Kleen <0474aee45985f5ae829f53849df476200e876990@suse.de>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+cgvarela/composer,41f4451c203d2f964acbcd326c0b6e678062fe43,take care of retry-auth-failure:false in case of 403 as well,"take care of retry-auth-failure:false in case of 403 as well
+",0,0,0,FALSE,FALSE,other action,TRUE,TRUE,depends on whether the requirments were changed,adaptive,
+aidfarh/android_kernel_sony_apq8064,9a286097b027081c073addc2c55775340704c683,V4L/DVB (9458): Bugfix: gate control needs to be handled,"V4L/DVB (9458): Bugfix: gate control needs to be handled
+
+Signed-off-by: Manu Abraham <158873d90a7ef40f3637a222b7329c09d0222554@linuxtv.org>
+Signed-off-by: Mauro Carvalho Chehab <ad86ba2154032c9f55743a190faa2459a9d61d42@redhat.com>
+",1,0,0,TRUE,TRUE,bug fix,FALSE,TRUE,,corrective,FALSE
+TeslaProject/android_kernel_moto_shamu,9a286097b027081c073addc2c55775340704c683,V4L/DVB (9458): Bugfix: gate control needs to be handled,"V4L/DVB (9458): Bugfix: gate control needs to be handled
+
+Signed-off-by: Manu Abraham <158873d90a7ef40f3637a222b7329c09d0222554@linuxtv.org>
+Signed-off-by: Mauro Carvalho Chehab <ad86ba2154032c9f55743a190faa2459a9d61d42@redhat.com>
+",1,0,0,TRUE,,,FALSE,,duplicated,,
+Adrioid83/jflte_xxx,9a286097b027081c073addc2c55775340704c683,V4L/DVB (9458): Bugfix: gate control needs to be handled,"V4L/DVB (9458): Bugfix: gate control needs to be handled
+
+Signed-off-by: Manu Abraham <158873d90a7ef40f3637a222b7329c09d0222554@linuxtv.org>
+Signed-off-by: Mauro Carvalho Chehab <ad86ba2154032c9f55743a190faa2459a9d61d42@redhat.com>
+",1,0,0,TRUE,,,FALSE,,duplicated,,
+lgoptimusdev/lge-kernel-lproj,9a286097b027081c073addc2c55775340704c683,V4L/DVB (9458): Bugfix: gate control needs to be handled,"V4L/DVB (9458): Bugfix: gate control needs to be handled
+
+Signed-off-by: Manu Abraham <158873d90a7ef40f3637a222b7329c09d0222554@linuxtv.org>
+Signed-off-by: Mauro Carvalho Chehab <ad86ba2154032c9f55743a190faa2459a9d61d42@redhat.com>
+",1,0,0,TRUE,,,FALSE,,duplicated,,
+grogg/platform_device_asus_flo-kernel_kernel,605070952f0b41caaa211c47b02eeac703529008,[PATCH] i2c: Discard explicit static initializations to 0,"[PATCH] i2c: Discard explicit static initializations to 0
+
+Kill explicit static initializations to 0 in 10 i2c drivers.
+
+Signed-off-by: Jean Delvare <khali@linux-fr.org>
+Signed-off-by: Greg Kroah-Hartman <gregkh@suse.de>
+
+ drivers/i2c/algos/i2c-algo-pca.c    |    2 +-
+ drivers/i2c/algos/i2c-algo-sibyte.c |    2 +-
+ drivers/i2c/busses/i2c-ali15x3.c    |    4 ++--
+ drivers/i2c/busses/i2c-amd756.c     |    2 +-
+ drivers/i2c/busses/i2c-iop3xx.c     |    2 +-
+ drivers/i2c/busses/i2c-piix4.c      |    8 ++++----
+ drivers/i2c/busses/i2c-sis5595.c    |    4 ++--
+ drivers/i2c/busses/i2c-sis630.c     |    2 +-
+ drivers/i2c/busses/i2c-sis96x.c     |    2 +-
+ drivers/i2c/busses/i2c-via.c        |    2 +-
+ 10 files changed, 15 insertions(+), 15 deletions(-)
+",0,0,0,FALSE,FALSE,other action,FALSE,TRUE,,perfective,TRUE
+sudipm-mukherjee/parport,59758f44592b0930e83b190cf0206e59d616c983,[TCP]: Use read mostly for CUBIC parameters.,"[TCP]: Use read mostly for CUBIC parameters.
+
+These module parameters should be in the read mostly area to avoid
+cache pollution.
+
+Signed-off-by: Stephen Hemminger <a072e933f45880fe04500ea083d5c7f6e81a06f0@linux-foundation.org>
+Signed-off-by: David S. Miller <fe08d3c717adf2ae63592e4c9aec6e3e404d8e3e@davemloft.net>
+",0,0,0,FALSE,FALSE,use,TRUE,TRUE,,adaptive,
+guard163/linux,59758f44592b0930e83b190cf0206e59d616c983,[TCP]: Use read mostly for CUBIC parameters.,"[TCP]: Use read mostly for CUBIC parameters.
+
+These module parameters should be in the read mostly area to avoid
+cache pollution.
+
+Signed-off-by: Stephen Hemminger <a072e933f45880fe04500ea083d5c7f6e81a06f0@linux-foundation.org>
+Signed-off-by: David S. Miller <fe08d3c717adf2ae63592e4c9aec6e3e404d8e3e@davemloft.net>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+gromaudio/linux-imx6-31053,59758f44592b0930e83b190cf0206e59d616c983,[TCP]: Use read mostly for CUBIC parameters.,"[TCP]: Use read mostly for CUBIC parameters.
+
+These module parameters should be in the read mostly area to avoid
+cache pollution.
+
+Signed-off-by: Stephen Hemminger <a072e933f45880fe04500ea083d5c7f6e81a06f0@linux-foundation.org>
+Signed-off-by: David S. Miller <fe08d3c717adf2ae63592e4c9aec6e3e404d8e3e@davemloft.net>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+rossoldfield/kms,59758f44592b0930e83b190cf0206e59d616c983,[TCP]: Use read mostly for CUBIC parameters.,"[TCP]: Use read mostly for CUBIC parameters.
+
+These module parameters should be in the read mostly area to avoid
+cache pollution.
+
+Signed-off-by: Stephen Hemminger <a072e933f45880fe04500ea083d5c7f6e81a06f0@linux-foundation.org>
+Signed-off-by: David S. Miller <fe08d3c717adf2ae63592e4c9aec6e3e404d8e3e@davemloft.net>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+bboyfeiyu/linux,59758f44592b0930e83b190cf0206e59d616c983,[TCP]: Use read mostly for CUBIC parameters.,"[TCP]: Use read mostly for CUBIC parameters.
+
+These module parameters should be in the read mostly area to avoid
+cache pollution.
+
+Signed-off-by: Stephen Hemminger <a072e933f45880fe04500ea083d5c7f6e81a06f0@linux-foundation.org>
+Signed-off-by: David S. Miller <fe08d3c717adf2ae63592e4c9aec6e3e404d8e3e@davemloft.net>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+physycom/QGIS,7d79a73f587af021d7cd35588b2d972cbfec252b,"Importing a layer, create an autoincremental integer pk if either no pk was passed or it's an integer field","Importing a layer, create an autoincremental integer pk if either no pk was passed or it's an integer field
+",0,0,0,FALSE,FALSE,importing,FALSE,TRUE,,adaptive,
+jeffreyliu3230/osf.io,6b6dfa913aa16fb6513bb41becdb07fc27dbfe59,Remove old googleDriveNodeConfig.js,"Remove old googleDriveNodeConfig.js
+",0,0,0,FALSE,FALSE,remove,FALSE,,,perfective,TRUE
+Fusion-Devices/android_kernel_lge_g3,af18ddb8864b096e3ed4732e2d4b21c956dcfe3a,[GFS2] Eliminate one instance of __GFP_NOFAIL,"[GFS2] Eliminate one instance of __GFP_NOFAIL
+
+This removes one instance of GFP_NOFAIL from the glock callback
+function. It also fixes a bug where a , was used at a line end
+rather than ; causing unintended results.
+
+Signed-off-by: Steven Whitehouse <9801c4ef11586b619a1c43ac9377eea2aee672dd@redhat.com>
+",2,0,0,TRUE,TRUE,fixes a bug,TRUE,TRUE,,corrective,FALSE
+KangBangKreations/KangBangKore-Kernel,af18ddb8864b096e3ed4732e2d4b21c956dcfe3a,[GFS2] Eliminate one instance of __GFP_NOFAIL,"[GFS2] Eliminate one instance of __GFP_NOFAIL
+
+This removes one instance of GFP_NOFAIL from the glock callback
+function. It also fixes a bug where a , was used at a line end
+rather than ; causing unintended results.
+
+Signed-off-by: Steven Whitehouse <9801c4ef11586b619a1c43ac9377eea2aee672dd@redhat.com>
+",2,0,0,TRUE,,,TRUE,,duplicated,,
+gumstix/linux,377dd7b47c6247d3df7d97f756141d04a1e1b8fe,omap4-duovero-garret50c: Add a new Gumstix DuoVero expansion board,"omap4-duovero-garret50c: Add a new Gumstix DuoVero expansion board
+
+Signed-off-by: Arun Bharadwaj <9265c009aab3b8bbc91c4decd2db1a660c64ec70@gumstix.com>
+",0,0,0,FALSE,FALSE,add,TRUE,TRUE,,adaptive,
+qhh7812/android_kernel_htc_ville-lp,629928041c53771f9902753d50fef6b35f36d33d,tracing: create the C style tracing for the sched subsystem,"tracing: create the C style tracing for the sched subsystem
+
+This patch utilizes the TRACE_EVENT_FORMAT macro to enable the C style
+faster tracing for the sched subsystem trace points.
+
+Signed-off-by: Steven Rostedt <9d183ff83abfec5c556edaf86a280a53916a11d8@redhat.com>
+",0,0,0,FALSE,FALSE,"create, trace",TRUE,TRUE,,adaptive,
+linusw/linux-mt7630e,629928041c53771f9902753d50fef6b35f36d33d,tracing: create the C style tracing for the sched subsystem,"tracing: create the C style tracing for the sched subsystem
+
+This patch utilizes the TRACE_EVENT_FORMAT macro to enable the C style
+faster tracing for the sched subsystem trace points.
+
+Signed-off-by: Steven Rostedt <9d183ff83abfec5c556edaf86a280a53916a11d8@redhat.com>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+Garcia98/android_kernel_sony_u8500,629928041c53771f9902753d50fef6b35f36d33d,tracing: create the C style tracing for the sched subsystem,"tracing: create the C style tracing for the sched subsystem
+
+This patch utilizes the TRACE_EVENT_FORMAT macro to enable the C style
+faster tracing for the sched subsystem trace points.
+
+Signed-off-by: Steven Rostedt <9d183ff83abfec5c556edaf86a280a53916a11d8@redhat.com>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+javilonas/Lonas_KL-HTC-Desire-2.6.38.8,629928041c53771f9902753d50fef6b35f36d33d,tracing: create the C style tracing for the sched subsystem,"tracing: create the C style tracing for the sched subsystem
+
+This patch utilizes the TRACE_EVENT_FORMAT macro to enable the C style
+faster tracing for the sched subsystem trace points.
+
+Signed-off-by: Steven Rostedt <9d183ff83abfec5c556edaf86a280a53916a11d8@redhat.com>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+DeviousFusion/android_kernel_sony_msm8930,629928041c53771f9902753d50fef6b35f36d33d,tracing: create the C style tracing for the sched subsystem,"tracing: create the C style tracing for the sched subsystem
+
+This patch utilizes the TRACE_EVENT_FORMAT macro to enable the C style
+faster tracing for the sched subsystem trace points.
+
+Signed-off-by: Steven Rostedt <9d183ff83abfec5c556edaf86a280a53916a11d8@redhat.com>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+Split-Screen/android_kernel_htc_msm8960,b040b44c35c251882da8488a5f038435a531312c,kconfig: print symbol type in help text,"kconfig: print symbol type in help text
+
+Randy suggested to print out the symbol type in gconfig.
+
+Note this change does more than Randy's suggestion, that it also
+affects menuconfig and ""make config"".
+
+  │ Symbol: BLOCK [=y]
+  │ Type  : boolean
+  │ Prompt: Enable the block layer
+  │   Defined at block/Kconfig:4
+  │   Depends on: EMBEDDED [=n]
+
+Signed-off-by: Li Zefan <5dc16b054e85ffba6c8d314d8e55ae95dcab12a5@cn.fujitsu.com>
+Acked-by: Randy Dunlap <e1d10faa7e2a0c027bf1ff1d20e7fd10154be7ea@oracle.com>
+Signed-off-by: Michal Marek <0c835876a532a476f30fdb1f6e963bae6c5a1a04@suse.cz>
+",0,0,0,FALSE,FALSE,print,TRUE,TRUE,,adaptive,
+AOSPA-L/android_kernel_oppo_msm8974,fa69afd3c224252890cb30864dc648d1399dd9fe,[WATCHDOG] w83697hf/hg WDT driver - patch 14,"[WATCHDOG] w83697hf/hg WDT driver - patch 14
+
+This is patch 14 in the series of patches that converts
+Marcus Junker's w83697hf watchdog driver to Samuel Tardieau's
+w83697hf/hg watchdog driver.
+
+This patch contains following changes:
+ - Clean-up initialization code (part 1: remove
+   w83697hf_select_wd_register() and
+   w83697hf_unselect_wd_register() functions).
+ - Make sure that the watchdog device is stopped
+   as soon as we found it.
+
+Signed-off-by: Samuel Tardieu <f16bed56189e249fe4ca8ed10a1ecae60e8ceac0@rfc1149.net>
+Signed-off-by: Wim Van Sebroeck <5f65f6985de1ebf15dde04e0dc4668211868bafa@iguana.be>
+
+",0,0,0,FALSE,FALSE,convert,TRUE,TRUE,,adaptive,
+StelixROM/kernel_lge_msm8974,fa69afd3c224252890cb30864dc648d1399dd9fe,[WATCHDOG] w83697hf/hg WDT driver - patch 14,"[WATCHDOG] w83697hf/hg WDT driver - patch 14
+
+This is patch 14 in the series of patches that converts
+Marcus Junker's w83697hf watchdog driver to Samuel Tardieau's
+w83697hf/hg watchdog driver.
+
+This patch contains following changes:
+ - Clean-up initialization code (part 1: remove
+   w83697hf_select_wd_register() and
+   w83697hf_unselect_wd_register() functions).
+ - Make sure that the watchdog device is stopped
+   as soon as we found it.
+
+Signed-off-by: Samuel Tardieu <f16bed56189e249fe4ca8ed10a1ecae60e8ceac0@rfc1149.net>
+Signed-off-by: Wim Van Sebroeck <5f65f6985de1ebf15dde04e0dc4668211868bafa@iguana.be>
+
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+2nd-yacuken/android_kernel_samsung_espresso10,3fa37deb1a287e100c7db5b4f964784fd664bee9,V4L/DVB (9631): Make s2api work for ATSC support,"V4L/DVB (9631): Make s2api work for ATSC support
+
+ATSC should be considered a legacy delivery system, or else fields such as
+p->u.vsb.modulation do not get populated (resulting in set_frontend failures)
+
+Cc: Steven Toth <ae31a93692b10ade408f3513a9ded8dd6fce4478@linuxtv.org>
+Signed-off-by: Devin Heitmueller <dfe2e86fda4729274abf1cfa6ff13942758edc98@gmail.com>
+Signed-off-by: Mauro Carvalho Chehab <ad86ba2154032c9f55743a190faa2459a9d61d42@redhat.com>
+",1,0,0,TRUE,TRUE,"make work, failure",TRUE,TRUE,,corrective,FALSE
+viaembedded/vab820-kernel-bsp-old,8b36ac445ad5af861d05846029230b8c6b434efb,staging: brcm80211: reducing indentation levels in bcmsdh_sdmmc.c,"staging: brcm80211: reducing indentation levels in bcmsdh_sdmmc.c
+
+Some functions in the source file had a lot of indentation levels
+forcing statements to be spread over multiple lines impairing the
+readability of the code.
+
+Reported-by: Joe Perches <16a9a54ddf4259952e3c118c763138e83693d7fd@perches.com>
+Reviewed-by: Franky (Zhenhui) Lin <c740ae0f5dfc9bd2203ae1a0d3155a31e94c745d@broadcom.com>
+Reviewed-by: Roland Vossen <45182f14eed14f589e080b05abc22e5a7f6ee742@broadcom.com>
+Signed-off-by: Franky Lin <c740ae0f5dfc9bd2203ae1a0d3155a31e94c745d@broadcom.com>
+Signed-off-by: Greg Kroah-Hartman <4645f7897fd33786a2ee1264d590b3c400559d85@suse.de>
+",0,0,0,FALSE,FALSE,indentation,TRUE,TRUE,duplicated,,
+Khan/ReactiveCocoa,b1156844dadab431f6e60854eda297ee8079904a,Try a clearer `reentrantMainThreadScheduler` comment,"Try a clearer `reentrantMainThreadScheduler` comment
+",0,0,0,FALSE,FALSE,comment,FALSE,TRUE,,perfective,FALSE
+jdkernel/android-omap-tuna_3.0,c427d27452b41378e305af80db5757da048dd38e,[TCP]: Remove TCP Compound,"[TCP]: Remove TCP Compound
+
+This reverts: f890f921040fef6a35e39d15b729af1fd1a35f29
+
+The inclusion of TCP Compound needs to be reverted at this time
+because it is not 100% certain that this code conforms to the
+requirements of Developer's Certificate of Origin 1.1 paragraph (b).
+
+Signed-off-by: David S. Miller <fe08d3c717adf2ae63592e4c9aec6e3e404d8e3e@davemloft.net>
+",0,0,0,FALSE,TRUE,reverts,TRUE,TRUE,,corrective,FALSE
+krash86/android_kernel_google_pixel,a28abfe7f0dc5e421e360c468788a8be4c5578b5,scsi: ufs: debugfs: add option to read peer DME attribute,"scsi: ufs: debugfs: add option to read peer DME attribute
+
+This patch adds the debugfs capability to read the DME attribute of
+peer UniPro/M-PHY. This should help for debugging.
+
+Change-Id: I26d3675bdda8b9fdf0f9aa6b81a1ffafbd828fd0
+[8892145aa7c2bcafaa8055ef206043082445675b@codeaurora.org: resolved trivial merge conflicts]
+Signed-off-by: Subhash Jadavani <8892145aa7c2bcafaa8055ef206043082445675b@codeaurora.org>
+",0,0,0,FALSE,FALSE,add,TRUE,TRUE,,adaptive,
+JordiCruells/patchwork,c6769231fedca950e10c0da1aece1e2cb0422a80,commit,"commit
+",0,0,0,FALSE,FALSE,no syntactic evidence,FALSE,TRUE,not informative comment or code,other,
+raedwulf/linux,4555227211ae867d8f8ec9eb5182273f58b648c0,i2c: add debug info when class instantiation was dropped,"i2c: add debug info when class instantiation was dropped
+
+We have a warning already when support for old-fashioned class based
+instantiation is about to be dropped somewhen soon from a driver. Let's
+have another one when it was actually dropped. This allows to remove the
+cruft a little earlier and still let users know what happened in the
+rare case they are missing devices after the change. However, there is
+enough interest to get rid of class based instantiation rather sooner
+than later because it improves boot up time.
+
+Signed-off-by: Wolfram Sang <fd4ce474653598159cad06f3c83387a05cd53a44@the-dreams.de>
+",0,0,0,FALSE,FALSE,add,TRUE,TRUE,,adaptive,
+whluwit/free-programming-books,a26d858ad5d37edfb80ba20ab35970ed8af53d34,un oubli lors de la purge des livres anglais,"un oubli lors de la purge des livres anglais
+",0,0,0,FALSE,FALSE,Not in English,FALSE,FALSE,removed a reference to abook,?,
+Samsung-BCM/android_kernel_samsung_bcm,21956b61f594f7924d98240da74bc81c28601fa9,ALSA: ctxfi - fix PTP address initialization,"ALSA: ctxfi - fix PTP address initialization
+
+After hours of debugging, I finally found the reason why some source
+and runtime combination does not work. The PTP (page table pages)
+address must be aligned. I am not sure how much, but alignment to
+PAGE_SIZE is sufficient. Also, use ALSA's page allocation routines
+to ensure proper virtual -> physical address translation.
+
+Cc: <4fbacc2fa0ffdbb11bf1ad6925b886ebd08dd15f@kernel.org>
+Signed-off-by: Jaroslav Kysela <72edd5e1a572f82f059ccbb83c92b74d6cb051ff@perex.cz>
+",2,0,0,TRUE,TRUE,fix,TRUE,TRUE,,corrective,FALSE
+jacknb1ack/android_kernel_sony_msm8960t-test,21956b61f594f7924d98240da74bc81c28601fa9,ALSA: ctxfi - fix PTP address initialization,"ALSA: ctxfi - fix PTP address initialization
+
+After hours of debugging, I finally found the reason why some source
+and runtime combination does not work. The PTP (page table pages)
+address must be aligned. I am not sure how much, but alignment to
+PAGE_SIZE is sufficient. Also, use ALSA's page allocation routines
+to ensure proper virtual -> physical address translation.
+
+Cc: <4fbacc2fa0ffdbb11bf1ad6925b886ebd08dd15f@kernel.org>
+Signed-off-by: Jaroslav Kysela <72edd5e1a572f82f059ccbb83c92b74d6cb051ff@perex.cz>
+",2,0,0,TRUE,,,TRUE,,duplicated,,
+DirtyUnicorns/android_kernel_oppo_msm8974,21956b61f594f7924d98240da74bc81c28601fa9,ALSA: ctxfi - fix PTP address initialization,"ALSA: ctxfi - fix PTP address initialization
+
+After hours of debugging, I finally found the reason why some source
+and runtime combination does not work. The PTP (page table pages)
+address must be aligned. I am not sure how much, but alignment to
+PAGE_SIZE is sufficient. Also, use ALSA's page allocation routines
+to ensure proper virtual -> physical address translation.
+
+Cc: <4fbacc2fa0ffdbb11bf1ad6925b886ebd08dd15f@kernel.org>
+Signed-off-by: Jaroslav Kysela <72edd5e1a572f82f059ccbb83c92b74d6cb051ff@perex.cz>
+",2,0,0,TRUE,,,TRUE,,duplicated,,
+articu/linux,9de436cfc4e966652f8804f0dda8d338ca7fe89c,V4L/DVB (9077): gspca: Set the right V4L2_DEBUG values in the main driver.,"V4L/DVB (9077): gspca: Set the right V4L2_DEBUG values in the main driver.
+
+Signed-off-by: Frank Zago <86a8c2da8527a1c6978bdca6d7986fe14ae147fe@zago.net>
+Signed-off-by: Jean-Francois Moine <e5394ce9c4b9ae7d2c4686830c5ac5f3b9028b6a@free.fr>
+Signed-off-by: Mauro Carvalho Chehab <ad86ba2154032c9f55743a190faa2459a9d61d42@redhat.com>
+",0,0,0,FALSE,TRUE,set,TRUE,TRUE,,corrective,
+AccentureMobilityServices/kernel,9de436cfc4e966652f8804f0dda8d338ca7fe89c,V4L/DVB (9077): gspca: Set the right V4L2_DEBUG values in the main driver.,"V4L/DVB (9077): gspca: Set the right V4L2_DEBUG values in the main driver.
+
+Signed-off-by: Frank Zago <86a8c2da8527a1c6978bdca6d7986fe14ae147fe@zago.net>
+Signed-off-by: Jean-Francois Moine <e5394ce9c4b9ae7d2c4686830c5ac5f3b9028b6a@free.fr>
+Signed-off-by: Mauro Carvalho Chehab <ad86ba2154032c9f55743a190faa2459a9d61d42@redhat.com>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+blobgo/qTox,4eeabbbe8511fcf1fdff3c6eb78b010a30c4b352,Unhide faux offline messaging checkbox,"Unhide faux offline messaging checkbox
+",0,0,0,FALSE,FALSE,unhide,FALSE,TRUE,,adaptive,
+abev66/ubuntu-raring,6e623433f7f566d8aca64c519a19c2f7bbb686be,V4L/DVB (8970): mt2060: implement I2C-gate control,"V4L/DVB (8970): mt2060: implement I2C-gate control
+
+- implement I2C-gate control
+
+Signed-off-by: Antti Palosaari <293134fe763ce2d9d8609280ea107c73cbd2eb86@iki.fi>
+Signed-off-by: Mauro Carvalho Chehab <ad86ba2154032c9f55743a190faa2459a9d61d42@redhat.com>
+",0,0,0,FALSE,FALSE,implement,FALSE,TRUE,,adaptive,
+MoKee/android_kernel_htc_pyramid,da087bad810b48dd889a504e6af0a582ba18df0d,[XFS] Fix up a 32/64 local flags variable issue when enabling attr2 mode.,"[XFS] Fix up a 32/64 local flags variable issue when enabling attr2 mode.
+
+SGI-PV: 941645
+SGI-Modid: xfs-linux:xfs-kern:23925a
+
+Signed-off-by: Nathan Scott <e2e3f1f24cbc439f8c1ba9b08f9954237d64be64@sgi.com>
+",1,0,0,TRUE,TRUE,fix up,TRUE,TRUE,,corrective,FALSE
+myfluxi/android_kernel_oneplus_msm8974,da087bad810b48dd889a504e6af0a582ba18df0d,[XFS] Fix up a 32/64 local flags variable issue when enabling attr2 mode.,"[XFS] Fix up a 32/64 local flags variable issue when enabling attr2 mode.
+
+SGI-PV: 941645
+SGI-Modid: xfs-linux:xfs-kern:23925a
+
+Signed-off-by: Nathan Scott <e2e3f1f24cbc439f8c1ba9b08f9954237d64be64@sgi.com>
+",1,0,0,TRUE,,,TRUE,,duplicated,,
+thebyrd/homebrew,33b8eb53b0bdaf40f81e133d5b0234b83e0415a1,babeld 1.4.2,"babeld 1.4.2
+
+Closes #22892.
+
+Signed-off-by: Adam Vandenberg <34c2b6407fd5a10249a15d699d40f9ed1782e98c@gmail.com>
+",0,0,0,FALSE,FALSE,no syntactic evidence,FALSE,TRUE,,?,
+darrynten/homebrew,33b8eb53b0bdaf40f81e133d5b0234b83e0415a1,babeld 1.4.2,"babeld 1.4.2
+
+Closes #22892.
+
+Signed-off-by: Adam Vandenberg <34c2b6407fd5a10249a15d699d40f9ed1782e98c@gmail.com>
+",0,0,0,FALSE,,,FALSE,,duplicated,,
+alexreg/homebrew,bd7c658d9fe70ede87c1bc630da2c45323752afb,gpac: new URL (target of redirect for old URL),"gpac: new URL (target of redirect for old URL)
+
+Closes #23142.
+
+Signed-off-by: Adam Vandenberg <34c2b6407fd5a10249a15d699d40f9ed1782e98c@gmail.com>
+",0,0,0,FALSE,FALSE,new,TRUE,TRUE,,adaptive,
+hephaex/kernel,b8232e906381dcba2bb26f0d849d4c25cc9b1368,drm/i915: Disable LVDS i2c probing when using GPIO bit banging,"drm/i915: Disable LVDS i2c probing when using GPIO bit banging
+
+This check only appears to succeed when using GMBUS, so we need to skip
+it if we have fallen back to using GPIO bit banging.
+
+Signed-off-by: Chris Wilson <711c73f64afdce07b7e38039a96d2224209e9a6c@chris-wilson.co.uk>
+",0,0,0,FALSE,FALSE,disable,TRUE,TRUE,,adaptive,
+suesai/linux,cade715ff18440dda53e59c10c606586c92be33e,sfc: Implement asynchronous MCDI requests,"sfc: Implement asynchronous MCDI requests
+
+This will allow use of MCDI from the data path, in particular for
+accelerated RFS.
+
+Signed-off-by: Ben Hutchings <0672176982fbc629cc374f31a7a45ae1671abf90@solarflare.com>
+",0,0,0,FALSE,FALSE,implement,TRUE,TRUE,,adaptive,
+JoeGlancy/linux,cade715ff18440dda53e59c10c606586c92be33e,sfc: Implement asynchronous MCDI requests,"sfc: Implement asynchronous MCDI requests
+
+This will allow use of MCDI from the data path, in particular for
+accelerated RFS.
+
+Signed-off-by: Ben Hutchings <0672176982fbc629cc374f31a7a45ae1671abf90@solarflare.com>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+uoaerg/linux-dccp,cade715ff18440dda53e59c10c606586c92be33e,sfc: Implement asynchronous MCDI requests,"sfc: Implement asynchronous MCDI requests
+
+This will allow use of MCDI from the data path, in particular for
+accelerated RFS.
+
+Signed-off-by: Ben Hutchings <0672176982fbc629cc374f31a7a45ae1671abf90@solarflare.com>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+varunchitre15/thunderzap_sprout,4e04691bc600b53f6aab63404e58fae3bdf8e310,ARM: SAMSUNG: Add s3c_disable_clocks() and tidy init+disable usage,"ARM: SAMSUNG: Add s3c_disable_clocks() and tidy init+disable usage
+
+Add s3c_disable_clocks() and change the clock registration code to use
+the s3c_register_clocks() followed by s3c_disable_clocks() instead of
+the loops it was using.
+
+Signed-off-by: Ben Dooks <1177f64998f284a7348354b8e91cbbe575d9858a@fluff.org>
+",0,0,0,FALSE,FALSE,add,TRUE,TRUE,,adaptive,
+coreos/linux-deprecated,db3c9cc105ee844f6cd7a1beb9926fb8e9a093ae,firewire: replace get_features card driver hook,"firewire: replace get_features card driver hook
+
+by feature variables in the fw_card struct.  The hook appeared to be an
+unnecessary abstraction in the card driver interface.
+
+Cleaner would be to pass those feature flags as arguments to
+fw_card_initialize() or fw_card_add(), but the FairnessControl register
+is in the SCLK domain and may therefore not be accessible while Link
+Power Status is off, i.e. before the card->driver->enable call from
+fw_card_add().
+
+Signed-off-by: Stefan Richter <fbd796546fc801b34e01e453c6fd30283e012038@s5r6.in-berlin.de>
+",0,0,0,FALSE,FALSE,replace,TRUE,TRUE,,perfective,TRUE
+VM12/kernel_moto_shamu,b625883f24d018c989173aeb727f6de954fb154d,[PATCH] dmi: remove central blacklist,"[PATCH] dmi: remove central blacklist
+
+Since last dmi quirk looks useless (it just prints 404 compliant url) we can
+finally remove central dmi blacklist.
+
+Signed-off-by: Andrey Panin <0a247f16f75581eeab9cb67da00efc7d11505ea3@donpac.ru>
+Signed-off-by: Andrew Morton <5c1e68b099950c134891f0b6e179498a8ebe9cf9@osdl.org>
+Signed-off-by: Linus Torvalds <69652caca27c8b940640ad396ab71f93cacec34f@osdl.org>
+",0,0,0,FALSE,FALSE,remove,TRUE,TRUE,,perfective,TRUE
+syhost/linux-android-endeavoru-3.6,b625883f24d018c989173aeb727f6de954fb154d,[PATCH] dmi: remove central blacklist,"[PATCH] dmi: remove central blacklist
+
+Since last dmi quirk looks useless (it just prints 404 compliant url) we can
+finally remove central dmi blacklist.
+
+Signed-off-by: Andrey Panin <0a247f16f75581eeab9cb67da00efc7d11505ea3@donpac.ru>
+Signed-off-by: Andrew Morton <5c1e68b099950c134891f0b6e179498a8ebe9cf9@osdl.org>
+Signed-off-by: Linus Torvalds <69652caca27c8b940640ad396ab71f93cacec34f@osdl.org>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+nardholio/android_kernel_samsung_d2,b625883f24d018c989173aeb727f6de954fb154d,[PATCH] dmi: remove central blacklist,"[PATCH] dmi: remove central blacklist
+
+Since last dmi quirk looks useless (it just prints 404 compliant url) we can
+finally remove central dmi blacklist.
+
+Signed-off-by: Andrey Panin <0a247f16f75581eeab9cb67da00efc7d11505ea3@donpac.ru>
+Signed-off-by: Andrew Morton <5c1e68b099950c134891f0b6e179498a8ebe9cf9@osdl.org>
+Signed-off-by: Linus Torvalds <69652caca27c8b940640ad396ab71f93cacec34f@osdl.org>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+Project-Elite/elite_kernel_grouper,b625883f24d018c989173aeb727f6de954fb154d,[PATCH] dmi: remove central blacklist,"[PATCH] dmi: remove central blacklist
+
+Since last dmi quirk looks useless (it just prints 404 compliant url) we can
+finally remove central dmi blacklist.
+
+Signed-off-by: Andrey Panin <0a247f16f75581eeab9cb67da00efc7d11505ea3@donpac.ru>
+Signed-off-by: Andrew Morton <5c1e68b099950c134891f0b6e179498a8ebe9cf9@osdl.org>
+Signed-off-by: Linus Torvalds <69652caca27c8b940640ad396ab71f93cacec34f@osdl.org>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+rwaterspf1/android_kernel_lge_hammerheadcaf,ac331d158e198d2a91a5b0a3ec4ca9991fdb57af,call_usermodehelper(): increase reliability,"call_usermodehelper(): increase reliability
+
+Presently call_usermodehelper_setup() uses GFP_ATOMIC.  but it can return
+NULL _very_ easily.
+
+GFP_ATOMIC is needed only when we can't sleep.  and, GFP_KERNEL is robust
+and better.
+
+thus, I add gfp_mask argument to call_usermodehelper_setup().
+
+So, its callers pass the gfp_t as below:
+
+call_usermodehelper() and call_usermodehelper_keys():
+	depend on 'wait' argument.
+call_usermodehelper_pipe():
+	always GFP_KERNEL because always run under process context.
+orderly_poweroff():
+	pass to GFP_ATOMIC because may run under interrupt context.
+
+Signed-off-by: KOSAKI Motohiro <70a1d3ef3e17a2bb0f09a1b2e6c86f607ed1d6d9@jp.fujitsu.com>
+Cc: ""Paul Menage"" <a4e32ff3ad614f63c49bddfcf4b7598c6857b687@google.com>
+Reviewed-by: Li Zefan <5dc16b054e85ffba6c8d314d8e55ae95dcab12a5@cn.fujitsu.com>
+Acked-by: Jeremy Fitzhardinge <b3f594e10a9edcf5413cf1190121d45078c62290@xensource.com>
+Cc: Rusty Russell <df9728c9e5104131c08c7adb03af425394842596@rustcorp.com.au>
+Cc: Andi Kleen <dbd122ef7b6a09ffecf5db9c9296320f3c94e707@firstfloor.org>
+Signed-off-by: Andrew Morton <5c1e68b099950c134891f0b6e179498a8ebe9cf9@linux-foundation.org>
+Signed-off-by: Linus Torvalds <69652caca27c8b940640ad396ab71f93cacec34f@linux-foundation.org>
+",0,0,0,FALSE,FALSE,increase reliability,TRUE,,Not considered a fix since there is no known problem,perfective,TRUE
+akrzyzanowskino/TeamSE,997d9ac76b9cbe1c378dc172a444273bc63b5a10,New plugin for SVG markers,"New plugin for SVG markers
+
+Vector SVG markers for Leaflet, with an option for Font Awesome/Twitter Bootstrap icons. Inspired by Leaflet.AwesomeMarkers.",0,0,0,FALSE,FALSE,new,TRUE,TRUE,,adaptive,
+StelixROM/android_kernel_lge_hammerhead_kk,2dc27f01ec3990d79fc97386459191fc3da2b02f,x86: apply missing DMA/OOM prevention to floppy_32.h,"x86: apply missing DMA/OOM prevention to floppy_32.h
+
+commit 554d284ba90bc2306c31e5363789f05c320969c3 added _GPF_NORETRY
+to floppy_64.h to prevent OOM killer on floppy DMA allocations.
+
+Apply the same to the 32 bit variant.
+
+Found during the attempt to unify the _32/_64 variants. Seperate commit
+to document the resulting code change.
+
+Signed-off-by: Thomas Gleixner <00e4cf8f46a57000a44449bf9dd8cbbcc209fd2a@linutronix.de>
+",0,0,0,FALSE,TRUE,apply missing,TRUE,TRUE,,corrective,FALSE
+lawnn/Linux_3.4.y,2dc27f01ec3990d79fc97386459191fc3da2b02f,x86: apply missing DMA/OOM prevention to floppy_32.h,"x86: apply missing DMA/OOM prevention to floppy_32.h
+
+commit 554d284ba90bc2306c31e5363789f05c320969c3 added _GPF_NORETRY
+to floppy_64.h to prevent OOM killer on floppy DMA allocations.
+
+Apply the same to the 32 bit variant.
+
+Found during the attempt to unify the _32/_64 variants. Seperate commit
+to document the resulting code change.
+
+Signed-off-by: Thomas Gleixner <00e4cf8f46a57000a44449bf9dd8cbbcc209fd2a@linutronix.de>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+MSM8226-Samsung/android_kernel_samsung_s3ve3g,2dc27f01ec3990d79fc97386459191fc3da2b02f,x86: apply missing DMA/OOM prevention to floppy_32.h,"x86: apply missing DMA/OOM prevention to floppy_32.h
+
+commit 554d284ba90bc2306c31e5363789f05c320969c3 added _GPF_NORETRY
+to floppy_64.h to prevent OOM killer on floppy DMA allocations.
+
+Apply the same to the 32 bit variant.
+
+Found during the attempt to unify the _32/_64 variants. Seperate commit
+to document the resulting code change.
+
+Signed-off-by: Thomas Gleixner <00e4cf8f46a57000a44449bf9dd8cbbcc209fd2a@linutronix.de>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+rneugeba/linux-stable,932f0549f872cde022eed200910ee3291b1d3c69,s390/dasd: fix list corruption for sleep_on requests,"s390/dasd: fix list corruption for sleep_on requests
+
+Fix race for sleep_on requests leading to list corruption.
+The SLEEP_ON_END_TAG is set during CQR clean up. Remove it from
+interrupt handler to avoid the CQR from being cleared when it is
+still in the device_queue.
+
+Signed-off-by: Stefan Haberland <9e6a0bb809a7918e8f27f36fc1281e79ae9e5bd0@de.ibm.com>
+Signed-off-by: Martin Schwidefsky <52616596d8f5df0d597e85ab515377f92f939c68@de.ibm.com>
+",2,0,0,TRUE,TRUE,fix,TRUE,TRUE,,corrective,FALSE
+kmaloor/bluetooth-next-mirror,664b4973537068402954bee6e2959b858f263a6f,KVM: s390: Add access register mode,"KVM: s390: Add access register mode
+
+Access register mode is one of the modes that control dynamic address
+translation. In this mode the address space is specified by values of
+the access registers. The effective address-space-control element is
+obtained from the result of the access register translation. See
+the ""Access-Register Introduction"" section of the chapter 5 ""Program
+Execution"" in ""Principles of Operations"" for more details.
+
+Signed-off-by: Alexander Yarygin <9ca6bb7262616b7ce87466603a4e88c0d04eafde@linux.vnet.ibm.com>
+Reviewed-by: Thomas Huth <9e65be74847981e55b2564b6266c57d86d3bac05@linux.vnet.ibm.com>
+Signed-off-by: Christian Borntraeger <49712f635b03c16d7f4c43df70e49ec8c565813d@de.ibm.com>
+",0,0,0,FALSE,TRUE,add,TRUE,TRUE,,corrective,FALSE
+jonjonarnearne/smi2021,c76b638ca20d6cbf91ee017c6f2afd7d3fcd57ff,V4L/DVB (10263): zr364xx: add support for Aiptek DV T300,"V4L/DVB (10263): zr364xx: add support for Aiptek DV T300
+
+Tested-by: Hámorszky Balázs <74dc24e2bd0c77f4f8ed0897a76ec8571fd9b4a2@freepop.hu>
+Signed-off-by: Antoine Jacquet <c9b9ec15e49258a29b127652d20b593526abd63f@zerezo.com>
+Signed-off-by: Mauro Carvalho Chehab <ad86ba2154032c9f55743a190faa2459a9d61d42@redhat.com>
+",0,0,0,FALSE,TRUE,add support,TRUE,TRUE,,corrective,FALSE
+bendooks/amlogic-kenel,c76b638ca20d6cbf91ee017c6f2afd7d3fcd57ff,V4L/DVB (10263): zr364xx: add support for Aiptek DV T300,"V4L/DVB (10263): zr364xx: add support for Aiptek DV T300
+
+Tested-by: Hámorszky Balázs <74dc24e2bd0c77f4f8ed0897a76ec8571fd9b4a2@freepop.hu>
+Signed-off-by: Antoine Jacquet <c9b9ec15e49258a29b127652d20b593526abd63f@zerezo.com>
+Signed-off-by: Mauro Carvalho Chehab <ad86ba2154032c9f55743a190faa2459a9d61d42@redhat.com>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+martinvlk/cabal,19ea3cdeb4e5de0214648739141a241b9a41adf5,Add a few TODOs about package checks,Add a few TODOs about package checks,0,0,0,FALSE,FALSE,add TODO,TRUE,TRUE,,perfective,FALSE
+labertasch/sling,36242b35d9f47ba4a96d3b9196f9ae3727e6304f,SLING-5905 some files from felix.framework where missing includes shaded source attachments,"SLING-5905 some files from felix.framework where missing
+includes shaded source attachments
+
+git-svn-id: 6eed74fe9a15c8da84b9a8d7f2960c0406113ece@1754400 13f79535-47bb-0310-9956-ffa450edef68
+",0,0,0,FALSE,TRUE,missing include,TRUE,TRUE,,corrective,FALSE
+felixjimenez/django,a205fe9378fa0048aa7f24ad921b0c31ca5a1b21,Added notes in old generic views howto about the new class based approach.,"Added notes in old generic views howto about the new class based approach.
+
+git-svn-id: 4f9f921b081c523744c7bf24d959a0db39629563@14610 bcc190cf-cafb-0310-a4f2-bffc1f526a37
+",0,0,0,FALSE,FALSE,notes,TRUE,TRUE,,perfective,FALSE
+gregory-nisbet/emacs,d0a0a08a1fdf07a222ac1d972a74bc923c569c84,"(vc-stay-local, vc-stay-local-p): Move to vc-hooks.el.","(vc-stay-local, vc-stay-local-p): Move to vc-hooks.el.
+",0,0,0,FALSE,FALSE,move,FALSE,TRUE,,perfective,TRUE
+AICP/kernel_nvidia_shieldtablet,ed41390fa57a21d06e6e3a3c4bc238bab8957fbb,workqueue: deprecate cancel_rearming_delayed_work[queue](),"workqueue: deprecate cancel_rearming_delayed_work[queue]()
+
+There's no in-kernel user left for these two obsolete functions.  Mark
+them deprecated and schedule for removal during 2.6.39 cycle.
+
+Signed-off-by: Tejun Heo <546b05909706652891a87f7bfe385ae147f61f91@kernel.org>
+Acked-by: David S. Miller <fe08d3c717adf2ae63592e4c9aec6e3e404d8e3e@davemloft.net>
+",0,0,0,FALSE,FALSE,"deprecate, obsolete",TRUE,TRUE,,perfective,TRUE
+picturelink/appframework,b7783b691dbd5dd12d19150334de9c32d9cbfcad,Transitions with remote requests,"Transitions with remote requests
+
+Adding in the transition parameter for remote requests called with
+loadContent. Now, anchors making ajax requests with data-transition
+tags will perform transitions as documented.
+",0,0,0,FALSE,TRUE,will perform as documented,TRUE,TRUE,no syntactic evidence,corrective,
+IntegratedAlarmSystem-Group/ias,dd0924cf68705e45e57cfbc0bd6e2be3159706e7,Fixies bug detected by testing,"Fixies bug detected by testing
+
+- timestamp in submit mast is the last parameter
+- the timer must be started
+- sock was renamed _sock",1,0,0,TRUE,TRUE,"bug, fixies?",TRUE,TRUE,,corrective,FALSE
+goby/kubernetes,ecf39a6d10e667fbaa72f1c3a91992d9fba35550,Merge pull request #5414 from chuckbutler/juju-cluster-up,"Merge pull request #5414 from chuckbutler/juju-cluster-up
+
+Adds JUJU to the Kubernetes Provider listing",0,0,0,FALSE,FALSE,Adds,TRUE,TRUE,,adaptive,
+placiano/linux-3.10.y,1b0336bb36f88976f1210a65b62f6a3e9578ee7b,Bluetooth: Don't use hci_acl_connect_cancel() for incoming connections,"Bluetooth: Don't use hci_acl_connect_cancel() for incoming connections
+
+The connection setup phase takes around 2 seconds or longer and in
+that time it is possible that the need for an ACL connection is no
+longer present. If that happens then, the connection attempt will
+be canceled.
+
+This only applies to outgoing connections, but currently it can also
+be triggered by incoming connection. Don't call hci_acl_connect_cancel()
+on incoming connection since these have to be either accepted or rejected
+in this state. Once they are successfully connected they need to be
+fully disconnected anyway.
+
+Also remove the wrong hci_acl_disconn() call for SCO and eSCO links
+since at this stage they can't be disconnected either, because the
+connection handle is still unknown.
+
+Based on a report by Johan Hedberg <628991c7b0a19c384f9b99c21ec330ce952bb838@nokia.com>
+
+Signed-off-by: Marcel Holtmann <44592b4eea36663c86b994bb0ea99d15309c1c7d@holtmann.org>
+Tested-by: Johan Hedberg <628991c7b0a19c384f9b99c21ec330ce952bb838@nokia.com>
+",1,0,0,TRUE,TRUE,wrong,TRUE,TRUE,,corrective,FALSE
+netwolfuk/openhab,7cdab45a30d3678569f1b09911684ee673ab6f91,Merge pull request #1970 from cdjackson/zwave-database_updates,"Merge pull request #1970 from cdjackson/zwave-database_updates
+
+Zwave database updates",0,0,0,FALSE,FALSE,updates,TRUE,TRUE,,adaptive,
+braully/adempiere,829469294f975fdc9fd42b9ee132e552f0f1d087,Fixed [ adempiere-Bugs-1693362 ] current ADempiere show credit and debit negative http://sourceforge.net/tracker/?func=detail&atid=879332&aid=1693362&group_id=176962,"Fixed [ adempiere-Bugs-1693362 ] current ADempiere show credit and debit negative
+http://sourceforge.net/tracker/?func=detail&atid=879332&aid=1693362&group_id=176962
+",1,0,0,TRUE,TRUE,fixed,TRUE,TRUE,,corrective,FALSE
+libos-nuse/net-next-nuse,d580cd96c8ee0c2647b810a2a8762cf631a5f97b,sh: ftrace: Fix up syscall tracing build.,"sh: ftrace: Fix up syscall tracing build.
+
+Syscall tracing metadata was shuffled around, update accordingly.
+
+Signed-off-by: Paul Mundt <38b52dbb5f0b63d149982b6c5de788ec93a89032@linux-sh.org>
+",1,0,0,TRUE,TRUE,fix up,FALSE,TRUE,,corrective,FALSE
+phoneguy/ardupilot,76ebcb998090fb54a708d7ad5fae065653696897,PX4 makefile: 'make configure_px4fmu' on px4 source before build,"PX4 makefile: 'make configure_px4fmu' on px4 source before build
+
+Pull Request #37
+Ammended: squashed fixups down into a single commit
+
+Signed-off-by: Pat Hickey <7ffe1ba40f2584b96991dec44ac44fe7e8d6bc68@moreproductive.org>
+",1,0,0,TRUE,TRUE,fixup,TRUE,TRUE,,corrective,FALSE
+opsaaspo/void-packages,a4efb20eedc3fe90d6524d62468352c5a25b7585,libXres: cross build and dbg support.,"libXres: cross build and dbg support.
+",0,0,0,FALSE,FALSE,support,TRUE,TRUE,,adaptive,
+reesretuta/rmrholdings,5154887a3afdfb4f1d92e884c63268eb88af012e,update,"update
+",0,0,0,FALSE,FALSE,update,FALSE,TRUE,,adaptive,
+hamburger1984/KISS,b264938709dc09884226e611395d7c02510857de,v2.3.0,"v2.3.0
+",0,0,0,FALSE,FALSE,other action,FALSE,TRUE,,other,
+coreos/systemd-deprecated,d4b7fecb051142404da6bf587c1796a6de768990,dbus-manager: fix variable type introspection,"dbus-manager: fix variable type introspection
+",1,0,0,TRUE,TRUE,fix,FALSE,TRUE,,corrective,FALSE
+dbeckwith/DefinitelyTyped,e827d60b1a4f0278d5bb0022e7e5d416c642a8ae,jasmine: add missing variable DEFAULT_TIMEOUT_INTERVAL,"jasmine: add missing variable DEFAULT_TIMEOUT_INTERVAL
+",0,0,0,FALSE,TRUE,add missing,FALSE,TRUE,,corrective,FALSE
+JoinTheRealms/CopyCat-Kernel-P880,2f1936b87783a3a56c9441b27b9ba7a747f11e8e,[patch 3/5] vfs: change remove_suid() to file_remove_suid(),"[patch 3/5] vfs: change remove_suid() to file_remove_suid()
+
+All calls to remove_suid() are made with a file pointer, because
+(similarly to file_update_time) it is called when the file is written.
+
+Clean up callers by passing in a file instead of a dentry.
+
+Signed-off-by: Miklos Szeredi <84cd5483a2f9acd1c37251cba7c2908448f221b8@suse.cz>
+",0,0,0,FALSE,FALSE,change,TRUE,TRUE,,perfective,TRUE
+cyberhouse/typo3-doctrine-orm,93c6ed8319c9d66f14f27954c0735af38530bfd6,[TASK] Finally figure out how to get that bastard to work,"[TASK] Finally figure out how to get that bastard to work
+
+This updates the docs accordingly
+",0,0,0,FALSE,TRUE,no syntactic evidence,TRUE,TRUE,This is a good one,corrective,FALSE
+bsalamat/kubernetes,1beed0f4c6ecf225a6a869bfd92d1ac1274a7370,Remove unused code and modify tests to include set based selector,"Remove unused code and modify tests to include set based selector
+",0,0,0,FALSE,FALSE,remove unused,TRUE,TRUE,,perfective,FALSE
+ionux/linux,5c2068059a0e852f72b7c2608d92170b752d821f,perf top: Keep the default of asking for kernel module symbols,"perf top: Keep the default of asking for kernel module symbols
+
+Signed-off-by: Arnaldo Carvalho de Melo <293abb6b76d7791c0732cc517d38c4b5c734b87f@redhat.com>
+Cc: Frédéric Weisbecker <e8a1bf9163cb25e93cfd6540f223b3872ea7ee55@gmail.com>
+Cc: Peter Zijlstra <3fddac958924aef220f202ca567388ddab3f14a8@infradead.org>
+Cc: Mike Galbraith <3cfa3897b7f55b5396b7a47c83b66325184bc9b4@gmx.de>
+LKML-Reference: <new-submission>
+Signed-off-by: Ingo Molnar <9dbbbf0688fedc85ad4da37637f1a64b8c718ee2@elte.hu>
+",0,0,0,FALSE,FALSE,other action,TRUE,TRUE,,adaptive,
+Metallium-Devices/android_kernel_motorola_msm8226,5c2068059a0e852f72b7c2608d92170b752d821f,perf top: Keep the default of asking for kernel module symbols,"perf top: Keep the default of asking for kernel module symbols
+
+Signed-off-by: Arnaldo Carvalho de Melo <293abb6b76d7791c0732cc517d38c4b5c734b87f@redhat.com>
+Cc: Frédéric Weisbecker <e8a1bf9163cb25e93cfd6540f223b3872ea7ee55@gmail.com>
+Cc: Peter Zijlstra <3fddac958924aef220f202ca567388ddab3f14a8@infradead.org>
+Cc: Mike Galbraith <3cfa3897b7f55b5396b7a47c83b66325184bc9b4@gmx.de>
+LKML-Reference: <new-submission>
+Signed-off-by: Ingo Molnar <9dbbbf0688fedc85ad4da37637f1a64b8c718ee2@elte.hu>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+hwanju/demand-cosched,5c2068059a0e852f72b7c2608d92170b752d821f,perf top: Keep the default of asking for kernel module symbols,"perf top: Keep the default of asking for kernel module symbols
+
+Signed-off-by: Arnaldo Carvalho de Melo <293abb6b76d7791c0732cc517d38c4b5c734b87f@redhat.com>
+Cc: Frédéric Weisbecker <e8a1bf9163cb25e93cfd6540f223b3872ea7ee55@gmail.com>
+Cc: Peter Zijlstra <3fddac958924aef220f202ca567388ddab3f14a8@infradead.org>
+Cc: Mike Galbraith <3cfa3897b7f55b5396b7a47c83b66325184bc9b4@gmx.de>
+LKML-Reference: <new-submission>
+Signed-off-by: Ingo Molnar <9dbbbf0688fedc85ad4da37637f1a64b8c718ee2@elte.hu>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+gabriel-fernandez/kernel,5c2068059a0e852f72b7c2608d92170b752d821f,perf top: Keep the default of asking for kernel module symbols,"perf top: Keep the default of asking for kernel module symbols
+
+Signed-off-by: Arnaldo Carvalho de Melo <293abb6b76d7791c0732cc517d38c4b5c734b87f@redhat.com>
+Cc: Frédéric Weisbecker <e8a1bf9163cb25e93cfd6540f223b3872ea7ee55@gmail.com>
+Cc: Peter Zijlstra <3fddac958924aef220f202ca567388ddab3f14a8@infradead.org>
+Cc: Mike Galbraith <3cfa3897b7f55b5396b7a47c83b66325184bc9b4@gmx.de>
+LKML-Reference: <new-submission>
+Signed-off-by: Ingo Molnar <9dbbbf0688fedc85ad4da37637f1a64b8c718ee2@elte.hu>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+kennysgithub/toshp75a,d41bba2d3adcddbdd7b5ed4d4abf07890cf6006f,ieee1394: nodemgr: spaces to tabs,"ieee1394: nodemgr: spaces to tabs
+
+whitespace pedantry
+
+Signed-off-by: Stefan Richter <fbd796546fc801b34e01e453c6fd30283e012038@s5r6.in-berlin.de>
+",0,0,0,FALSE,FALSE,other action,FALSE,TRUE,,perfective,FALSE
+ivanich/wireless-testing_torvalds,d41bba2d3adcddbdd7b5ed4d4abf07890cf6006f,ieee1394: nodemgr: spaces to tabs,"ieee1394: nodemgr: spaces to tabs
+
+whitespace pedantry
+
+Signed-off-by: Stefan Richter <fbd796546fc801b34e01e453c6fd30283e012038@s5r6.in-berlin.de>
+",0,0,0,FALSE,,,FALSE,,duplicated,,
+OctaviaBlake/kernel-msm,d41bba2d3adcddbdd7b5ed4d4abf07890cf6006f,ieee1394: nodemgr: spaces to tabs,"ieee1394: nodemgr: spaces to tabs
+
+whitespace pedantry
+
+Signed-off-by: Stefan Richter <fbd796546fc801b34e01e453c6fd30283e012038@s5r6.in-berlin.de>
+",0,0,0,FALSE,,,FALSE,,duplicated,,
+rpodgorny/linux,4559154a58fdb18939dda8f1691a2aecf9154166,net: phy: mdio-bcm-unimac: NULL-terminate unimac_mdio_ids,"net: phy: mdio-bcm-unimac: NULL-terminate unimac_mdio_ids
+
+drivers/net/phy/mdio-bcm-unimac.c:195:37-38: unimac_mdio_ids is not NULL
+terminated at line 195
+
+Make sure of_device_id tables are NULL terminated
+Generated by: scripts/coccinelle/misc/of_table.cocci
+
+Signed-off-by: Fengguang Wu <24f7fe9d205c8a9f6ade0c2894e14303ca16087f@intel.com>
+Signed-off-by: Florian Fainelli <59190c1867e3222b932a0de3c668eb2d980d69a2@gmail.com>
+Signed-off-by: David S. Miller <fe08d3c717adf2ae63592e4c9aec6e3e404d8e3e@davemloft.net>
+",0,0,0,FALSE,FALSE,other action,TRUE,TRUE,,adaptive,
+TeamBliss-Devices/android_kernel_samsung_jflte,8c122b96866580c99e44f3f07ac93a993d964ec3,"RTC: add missing ""return 0"" in new alarm func for rtc-bfin.c","RTC: add missing ""return 0"" in new alarm func for rtc-bfin.c
+
+The new bfin_rtc_alarm_irq_enable function forgot to add a ""return 0"" to
+the end leading to the build warning:
+	drivers/rtc/rtc-bfin.c: In function 'bfin_rtc_alarm_irq_enable':
+	drivers/rtc/rtc-bfin.c:253: warning: control reaches end of non-void function
+
+CC: 4fbacc2fa0ffdbb11bf1ad6925b886ebd08dd15f@kernel.org
+CC: Thomas Gleixner <00e4cf8f46a57000a44449bf9dd8cbbcc209fd2a@linutronix.de>
+CC: Alessandro Zummo <f0b9bd96bf07bfecc189c62159960134588fafe5@towertech.it>
+Signed-off-by: Mike Frysinger <8f3f75c74bd5184edcfa6534cab3c13a00a2f794@gentoo.org>
+Signed-off-by: John Stultz <33837adfb53316eae44aad04041e1240088d76fd@linaro.org>
+",0,0,0,FALSE,TRUE,"add mising, forgot to",TRUE,TRUE,,corrective,FALSE
+ovr/postgres-xl,a31ff707a27b3ed4a1c082c131194995efbbce4b,"Make ascii-art in comments pgindent-safe, and some other formatting changes.","Make ascii-art in comments pgindent-safe, and some other formatting changes.
+
+Kevin Grittner
+",0,0,0,FALSE,FALSE,other action,TRUE,TRUE,,adaptive,
+arpith/zulip,02d8f2f0f0ef81a331acae199193fbfdfd224af7,Unbreak sending invites from the first user.,"Unbreak sending invites from the first user.
+
+The bug caused the wrong verb to be used, resulting in a 405.
+
+(imported from commit f9ad42e4a09e3a0dbd98bf4faa9ba57325d733c5)
+",2,0,0,TRUE,TRUE,"bug, wrong",TRUE,TRUE,,corrective,FALSE
+LairdCP/u-boot,161df9705fb15966dec889c29fa4d838c789048a,ppc/p4080: Add support for CoreNet style platform LAWs,"ppc/p4080: Add support for CoreNet style platform LAWs
+
+On CoreNet based platforms the LAW address is split between an high &
+low register and we no longer shift the address.  Also, the target IDs
+on CoreNet platforms have been completely re-assigned.
+
+Additionally, added a new find_law() API to which LAW an address hits in.
+This is need for the CoreNet style boot release code since it will need
+to determine what the target ID should be set to for boot window
+translation.
+
+Finally, enamed LAWAR_EN to LAW_EN and moved to header so we can use
+it elsewhere.
+
+Signed-off-by: Kumar Gala <383ef5577c6e1178b93f59ec8d0936f76d2a98c4@kernel.crashing.org>
+",0,0,0,FALSE,FALSE,add support,TRUE,TRUE,,adaptive,
+XeLabs/tokudb,612a8ccb2c9667fb57e92a7af5ede7cdf76fb884,Merge fix for BUG#43171.,Merge fix for BUG#43171.,1,0,0,TRUE,TRUE,"fix, bug#",TRUE,TRUE,,corrective,FALSE
+rkollataj/linux-can-next,9b4156cbe9c18605d42ecf80bb99364d0c5b884a,ASoC: alc5632: Added support of two undocumented registers,"ASoC: alc5632: Added support of two undocumented registers
+
+There are two undocumented registers in use in alc5632_i2c_probe
+function. It must be added to support future rewrite of this
+function to use regmap API completely.
+
+Signed-off-by: Leon Romanovsky <be92910ae7bb6f58bb9b7c6f845bc30640119592@leon.nu>
+Signed-off-by: Mark Brown <b51b9a92386687a9ac927cebfa0f978adeb8cea5@opensource.wolfsonmicro.com>
+",0,0,0,FALSE,FALSE,duplicated,TRUE,TRUE,,,
+ioolkos/vernemq,0e47a92185a121b3dfeb99850538d9e82183e941,added cuttlefish schema,"added cuttlefish schema
+",0,0,0,FALSE,FALSE,added,FALSE,TRUE,,adaptive,
+dukebarman/radare2,96102fb04b6ecb17f550e1101d40fcc20e6610f9,* Fix link of rabin2 in OpenBSD,"* Fix link of rabin2 in OpenBSD
+",1,0,0,TRUE,TRUE,fix,FALSE,TRUE,,corrective,FALSE
+balzarot/radare2,96102fb04b6ecb17f550e1101d40fcc20e6610f9,* Fix link of rabin2 in OpenBSD,"* Fix link of rabin2 in OpenBSD
+",1,0,0,TRUE,,,FALSE,,duplicated,,
+CyanogenMod/android_kernel_samsung_espresso10,af83632f98aefd1ae4d8ca3c7c285ccf6a7d3956,"perf report: Only load text symbols from kallsyms, fix","perf report: Only load text symbols from kallsyms, fix
+
+- allow 'W' symbols too
+ - Convert initializations to C99 style
+ - whitespace cleanups
+
+Cc: Arnaldo Carvalho de Melo <293abb6b76d7791c0732cc517d38c4b5c734b87f@redhat.com>
+Cc: Peter Zijlstra <645ca7d3a8d3d4f60557176cd361ea8351edc32b@chello.nl>
+Cc: Mike Galbraith <3cfa3897b7f55b5396b7a47c83b66325184bc9b4@gmx.de>
+Cc: Paul Mackerras <19a0ba370c443ba08d20b5061586430ab449ee8c@samba.org>
+Cc: Corey Ashford <d8c6f216c17042adc228efa9f1d34ca50bd37e4b@linux.vnet.ibm.com>
+Cc: Marcelo Tosatti <958bcd1f4a7a8c36dca09fe3fa9cb5f1483adf51@redhat.com>
+Cc: Arnaldo Carvalho de Melo <293abb6b76d7791c0732cc517d38c4b5c734b87f@redhat.com>
+Cc: John Kacur <dae4bd386fd4c6474c13eecbb94aa6e9e7589534@redhat.com>
+Cc: Steven Rostedt <43232e92d70cc7aa53504ad0397085ee47bad87f@goodmis.org>
+LKML-Reference: <26bf06b09e9bae946172c9196bb917a8fa89ab33@ghostprotocols.net>
+Signed-off-by: Ingo Molnar <9dbbbf0688fedc85ad4da37637f1a64b8c718ee2@elte.hu>
+",1,0,0,TRUE,TRUE,fix,TRUE,TRUE,,corrective,FALSE
+SOKP/kernel_samsung_hlte,af83632f98aefd1ae4d8ca3c7c285ccf6a7d3956,"perf report: Only load text symbols from kallsyms, fix","perf report: Only load text symbols from kallsyms, fix
+
+- allow 'W' symbols too
+ - Convert initializations to C99 style
+ - whitespace cleanups
+
+Cc: Arnaldo Carvalho de Melo <293abb6b76d7791c0732cc517d38c4b5c734b87f@redhat.com>
+Cc: Peter Zijlstra <645ca7d3a8d3d4f60557176cd361ea8351edc32b@chello.nl>
+Cc: Mike Galbraith <3cfa3897b7f55b5396b7a47c83b66325184bc9b4@gmx.de>
+Cc: Paul Mackerras <19a0ba370c443ba08d20b5061586430ab449ee8c@samba.org>
+Cc: Corey Ashford <d8c6f216c17042adc228efa9f1d34ca50bd37e4b@linux.vnet.ibm.com>
+Cc: Marcelo Tosatti <958bcd1f4a7a8c36dca09fe3fa9cb5f1483adf51@redhat.com>
+Cc: Arnaldo Carvalho de Melo <293abb6b76d7791c0732cc517d38c4b5c734b87f@redhat.com>
+Cc: John Kacur <dae4bd386fd4c6474c13eecbb94aa6e9e7589534@redhat.com>
+Cc: Steven Rostedt <43232e92d70cc7aa53504ad0397085ee47bad87f@goodmis.org>
+LKML-Reference: <26bf06b09e9bae946172c9196bb917a8fa89ab33@ghostprotocols.net>
+Signed-off-by: Ingo Molnar <9dbbbf0688fedc85ad4da37637f1a64b8c718ee2@elte.hu>
+",1,0,0,TRUE,,,TRUE,TRUE,duplicated,,
+tvall43/odroid-w_kernel,5919ce29085f4ca080054fde5feef8f8b3405261,[SCSI] ibmvfc: Fix command timeouts due to cached CRQ access,"[SCSI] ibmvfc: Fix command timeouts due to cached CRQ access
+
+The CRQs used by the ibmvfc driver are read and written by both
+the client and the server. Therefore, we need to mark them volatile
+so that we do not cache their contents when handling an interrupt.
+This fixes a problem which can surface as occasional command timeouts.
+No commands were actually timing out, but due to accessing cached data
+for the CRQ in the interrupt handler, the interrupt was not processing
+all command completions as it should.
+
+Signed-off-by: Brian King <bf668d4b220231d97fe248d4ae0ba63a1d887e4c@linux.vnet.ibm.com>
+Signed-off-by: James Bottomley <407b36959ca09543ccda8f8e06721c791bc53435@HansenPartnership.com>
+",2,0,0,TRUE,TRUE,"fix, problem",TRUE,TRUE,duplicated,corrective,FALSE
+mikehollinger/linux,a9629d7142ea22567eaa999232d8a31a7493665a,crypto: aes_ni - change to use shared ablk_* functions,"crypto: aes_ni - change to use shared ablk_* functions
+
+Remove duplicate ablk_* functions and make use of ablk_helper module instead.
+
+Signed-off-by: Jussi Kivilinna <1f0aa498f7c1bee2bd6061b97aca51d7b122cec0@mbnet.fi>
+Signed-off-by: Herbert Xu <ef65de1c7be0aa837fe7b25ba9a7739905af6a55@gondor.apana.org.au>
+",0,0,0,FALSE,FALSE,change,TRUE,TRUE,,perfective,TRUE
+hallfox/gitignore,2a42f5376adadc4afde08859180672fb53fa309c,Update Python.gitignore with some commonly used patterns for buildout-based projects,"Update Python.gitignore with some commonly used patterns for buildout-based projects
+",0,0,0,FALSE,FALSE,update,TRUE,TRUE,,adaptive,
+douglasvegas/ant-design,4296d9cf9bc0be54883c0db97b20ee141d87e0d5,update Modal,"update Modal
+",0,0,0,FALSE,FALSE,update,FALSE,TRUE,,adaptive,
+anjali009/linux,db3c9cc105ee844f6cd7a1beb9926fb8e9a093ae,firewire: replace get_features card driver hook,"firewire: replace get_features card driver hook
+
+by feature variables in the fw_card struct.  The hook appeared to be an
+unnecessary abstraction in the card driver interface.
+
+Cleaner would be to pass those feature flags as arguments to
+fw_card_initialize() or fw_card_add(), but the FairnessControl register
+is in the SCLK domain and may therefore not be accessible while Link
+Power Status is off, i.e. before the card->driver->enable call from
+fw_card_add().
+
+Signed-off-by: Stefan Richter <fbd796546fc801b34e01e453c6fd30283e012038@s5r6.in-berlin.de>
+",0,0,0,FALSE,FALSE,replace,TRUE,TRUE,,duplicated?,
+igor-eremeev/git,13d6ec913330ba90fb1a67ec5789e437f8ac4193,read_gitfile_gently(): rename misnamed function to read_gitfile(),"read_gitfile_gently(): rename misnamed function to read_gitfile()
+
+The function was not gentle at all to the callers and died without giving
+them a chance to deal with possible errors. Rename it to read_gitfile(),
+and update all the callers.
+
+As no existing caller needs a true ""gently"" variant, we do not bother
+adding one at this point.
+
+Signed-off-by: Junio C Hamano <a6723cc3f76163bf7adb636a73ac3b0ceb3e6b9b@pobox.com>
+",0,0,0,FALSE,FALSE,rename,TRUE,TRUE,,perfective,FALSE
+leexdon/linux,c46a131c0c0f4c2457e6b1e430c578a5cb057334,xfs: fix ->mknod() return value on xfs_get_acl() failure,"xfs: fix ->mknod() return value on xfs_get_acl() failure
+
+->mknod() should return negative on errors and PTR_ERR() gives
+already negative value...
+
+Signed-off-by: Al Viro <de609eb4d5d70b1d38ec6642adbfc33a2781f63c@zeniv.linux.org.uk>
+Reviewed-by: Christoph Hellwig <923f7720577207a44b32e59bbfbea59d27f1ae8e@lst.de>
+Signed-off-by: Alex Elder <f556392d917047d964350b9c68912016c96d5e94@sgi.com>
+",2,0,0,TRUE,,,TRUE,,duplicated,,
+kostasdizas/homebrew-fonts,e8a1a4ce69d0180fc4e9ce924872d373688132dc,new-style header in font-delius-swash-caps,"new-style header in font-delius-swash-caps
+",0,0,0,FALSE,FALSE,style,FALSE,TRUE,,adaptive,
+doomsterinc/odoo,b29e24b5d2388a09379fbc4e22694b66081119a8,[FIX] unmutable defaults in history,"[FIX] unmutable defaults in history
+
+bzr revid: ls@numerigraphe.fr-20111107154501-relcy0v6w1dl9jjr",1,0,0,TRUE,TRUE,[fix],FALSE,TRUE,,corrective,FALSE
+nevercast/cuberite,a8a45a4afc615926a705eee482c27ef166f2f9ec,Added button placement handler,"Added button placement handler
+
+Also removed an unneeded variable in the stair handler
+",0,0,0,FALSE,FALSE,added,TRUE,TRUE,,adaptive,
+fussl/elements,aa9348563c88b984d9c42c41aa5d227145c8ac4b,gitian: Make linux build of OpenSSL deterministic,"gitian: Make linux build of OpenSSL deterministic
+
+OpenSSL was embedding a timestamp causing its build to be
+non-deterministic.
+Change deps-linux to be deterministic by using FAKETIME
+as needed and disabling it when it gets in the way.
+",0,0,0,FALSE,FALSE,other action,TRUE,TRUE,,adaptive,
+alskjstl/linux,9cd9d65ba40aef21342bcdf0ea35d20c9a75be07,ARM: ux500: 8500: update SKE keypad pinctrl table,"ARM: ux500: 8500: update SKE keypad pinctrl table
+
+The old pinctrl table for the SKE keypad was using all the
+wrong settings and positions. Fixing it up to one that works!
+
+Signed-off-by: Patrice Chotard <d719ec623d33f81f80f0590564803dead94a5492@stericsson.com>nn
+Signed-off-by: Linus Walleij <9cd9d802d23c0ed5e224beabf4ae4a5c478746ef@linaro.org>
+",2,0,0,TRUE,TRUE,one that works,TRUE,TRUE,,corrective,FALSE
+otagi/vagrant,0915186b26dc53adbc93b3426ba12802d0e2962c,Fix guest plugin for RH & SUSE,"Fix guest plugin for RH & SUSE
+",1,0,0,TRUE,TRUE,fix,TRUE,TRUE,,corrective,FALSE
+anybodesign/sliding-faq,f8d644a68f60f0a514e5a53f8baa86defc0bb7b3,version 2.3,"version 2.3
+",0,0,0,FALSE,FALSE,other action,FALSE,TRUE,,other,
+Micr0Bit/OpenRA,912ab4d1b8cfbcaeb04345ffe31866d23035a927,added nod4b,"added nod4b
+",0,0,0,FALSE,FALSE,added,FALSE,TRUE,,adaptive,
+networks-lab/isilib,ba20a1645795106165db7b03a7fa61cd4d46b242,Made lines much bolder,"Made lines much bolder
+
+
+Former-commit-id: 1fdde392550bd9250647a9448d30dc85c5dc2798",0,0,0,FALSE,FALSE,other action,FALSE,TRUE,,adaptive,
+CyanogenMod/android_kernel_nvidia_roth,5acd6ff8ac09eb71f3aef2ccccefab658be8aff4,UBIFS: fix budgeting request alignment in xattr code,"UBIFS: fix budgeting request alignment in xattr code
+
+Data length has to be aligned in the budgeting request. Code
+in xattr.c did not do this.
+
+Signed-off-by: Zoltan Sogor <8f92539cee582ffc213cdcceffd2c5c17d819c5a@inf.u-szeged.hu>
+Signed-off-by: Artem Bityutskiy <19b5733dcea388885746d36043d3568bba5b4df7@nokia.com>
+",1,0,0,TRUE,TRUE,fix,TRUE,TRUE,,corrective,FALSE
+anyforever/shadowsocks-libev,75b2db33a188fc510dce8641aa1a2626041ef743,update manual,"update manual
+",0,0,0,FALSE,FALSE,manual,FALSE,TRUE,,perfective,FALSE
+mapbox/atom-shell,32432cc770eb49a612d37d89fee2e98fb0ba6422,"Convert ""Command"" to ""Ctrl"" in accelerators on non-Mac.","Convert ""Command"" to ""Ctrl"" in accelerators on non-Mac.
+",0,0,0,FALSE,FALSE,convert,FALSE,TRUE,,adaptive,
+mturquette/linux,a992241de614dd2b7c97a9ba64e28c0e563f19bf,sched: fix normalized sleeper,"sched: fix normalized sleeper
+
+Normalized sleeper uses calc_delta*() which requires that the rq load is
+already updated, so move account_entity_enqueue() before place_entity()
+
+Tested-by: Frans Pop <1dac9bba9cb569a6a8c1c01dfb685827c24c1aa3@planet.nl>
+Signed-off-by: Peter Zijlstra <645ca7d3a8d3d4f60557176cd361ea8351edc32b@chello.nl>
+Signed-off-by: Ingo Molnar <9dbbbf0688fedc85ad4da37637f1a64b8c718ee2@elte.hu>
+",1,0,0,TRUE,TRUE,fix,TRUE,TRUE,,corrective,FALSE
+paloda/android_kernel_htc_evita,a992241de614dd2b7c97a9ba64e28c0e563f19bf,sched: fix normalized sleeper,"sched: fix normalized sleeper
+
+Normalized sleeper uses calc_delta*() which requires that the rq load is
+already updated, so move account_entity_enqueue() before place_entity()
+
+Tested-by: Frans Pop <1dac9bba9cb569a6a8c1c01dfb685827c24c1aa3@planet.nl>
+Signed-off-by: Peter Zijlstra <645ca7d3a8d3d4f60557176cd361ea8351edc32b@chello.nl>
+Signed-off-by: Ingo Molnar <9dbbbf0688fedc85ad4da37637f1a64b8c718ee2@elte.hu>
+",1,0,0,TRUE,,,TRUE,,duplicated,,
+dkhoi1997/android_kernel_samsung_aries,a992241de614dd2b7c97a9ba64e28c0e563f19bf,sched: fix normalized sleeper,"sched: fix normalized sleeper
+
+Normalized sleeper uses calc_delta*() which requires that the rq load is
+already updated, so move account_entity_enqueue() before place_entity()
+
+Tested-by: Frans Pop <1dac9bba9cb569a6a8c1c01dfb685827c24c1aa3@planet.nl>
+Signed-off-by: Peter Zijlstra <645ca7d3a8d3d4f60557176cd361ea8351edc32b@chello.nl>
+Signed-off-by: Ingo Molnar <9dbbbf0688fedc85ad4da37637f1a64b8c718ee2@elte.hu>
+",1,0,0,TRUE,,,TRUE,,duplicated,,
+BoyGau/linux,a992241de614dd2b7c97a9ba64e28c0e563f19bf,sched: fix normalized sleeper,"sched: fix normalized sleeper
+
+Normalized sleeper uses calc_delta*() which requires that the rq load is
+already updated, so move account_entity_enqueue() before place_entity()
+
+Tested-by: Frans Pop <1dac9bba9cb569a6a8c1c01dfb685827c24c1aa3@planet.nl>
+Signed-off-by: Peter Zijlstra <645ca7d3a8d3d4f60557176cd361ea8351edc32b@chello.nl>
+Signed-off-by: Ingo Molnar <9dbbbf0688fedc85ad4da37637f1a64b8c718ee2@elte.hu>
+",1,0,0,TRUE,,,TRUE,,duplicated,,
+HelpMeRuth/ruthless,60b9df7a54804a965850db00beec4d3a2c002536,fuse: add flag to turn on async direct IO,"fuse: add flag to turn on async direct IO
+
+Without async DIO write requests to a single file were always serialized.
+With async DIO that's no longer the case.
+
+So don't turn on async DIO by default for fear of breaking backward
+compatibility.
+
+Signed-off-by: Miklos Szeredi <84cd5483a2f9acd1c37251cba7c2908448f221b8@suse.cz>
+",0,0,0,FALSE,FALSE,add,TRUE,TRUE,,adaptive,
+sivu/linux,60b9df7a54804a965850db00beec4d3a2c002536,fuse: add flag to turn on async direct IO,"fuse: add flag to turn on async direct IO
+
+Without async DIO write requests to a single file were always serialized.
+With async DIO that's no longer the case.
+
+So don't turn on async DIO by default for fear of breaking backward
+compatibility.
+
+Signed-off-by: Miklos Szeredi <84cd5483a2f9acd1c37251cba7c2908448f221b8@suse.cz>
+",0,0,0,FALSE,,,TRUE,,duplicated,,
+rlmh/OpenShadingLanguage,54f206cf2e83f3ce4e3c4b972d4df9705895ca29,Update PDF docs,"Update PDF docs
+",0,0,0,FALSE,FALSE,update,FALSE,TRUE,,perfective,FALSE
+vegetalte-dev/android_kernel_bq_vegetalte,5f8f718ae1e1a6b4e16e67e9e67aff1864419f2e,rt2x00: rt2800usb: do not check packedid for aggregated frames,"rt2x00: rt2800usb: do not check packedid for aggregated frames
+
+Tx statuses of aggregated subframes contain packetid of first subframe
+in the AMPDU. We can not identify AMPDU subframes based on packedid, so
+simply assume that status match first pending frame in the queue. Thats
+mostly the same what 2800pci do.
+
+Signed-off-by: Stanislaw Gruszka <1542dc81552e668e197a396f69e655c1621c300d@redhat.com>
+Acked-by: Gertjan van Wingerde <1a7d4b7fcc67848a7146b426400f699af933a40d@gmail.com>
+Acked-by: Helmut Schaa <b93afca131f86f2653331097f5dcdcaaa5682625@googlemail.com>
+Signed-off-by: John W. Linville <2a53bac7a5d324865ef46ec4c38b2c0fba1456b4@tuxdriver.com>
+",0,0,0,FALSE,FALSE,other action,TRUE,TRUE,,adaptive,
+TheTypoMaster/linux,41c21e351e79004dbb4efa4bc14a53a7e0af38c5,userns: Changing any namespace id mappings should require privileges,"userns: Changing any namespace id mappings should require privileges
+
+Changing uid/gid/projid mappings doesn't change your id within the
+namespace; it reconfigures the namespace.  Unprivileged programs should
+*not* be able to write these files.  (We're also checking the privileges
+on the wrong task.)
+
+Given the write-once nature of these files and the other security
+checks, this is likely impossible to usefully exploit.
+
+Signed-off-by: Andy Lutomirski <2cc0d0d76de2e6f37b92deeb83c85cb306fc5dc1@amacapital.net>
+",1,0,0,TRUE,TRUE,"wrong, should?",TRUE,TRUE,,corrective,FALSE
+caglar10ur/linux-2.6.27.y,b93b6ca3bf822a24e1535ee7c773740628bca1e6,i386: remove unnecessary code,"i386: remove unnecessary code
+
+Oleg Nesterov pointed out that the set_fs() calls in setup_frame()
+and setup_rt_frame() were superfluous.
+
+[ tglx: arch/x86 adaptation ]
+
+Signed-off-by: Ingo Molnar <9dbbbf0688fedc85ad4da37637f1a64b8c718ee2@elte.hu>
+Signed-off-by: Andi Kleen <0474aee45985f5ae829f53849df476200e876990@suse.de>
+Cc: Oleg Nesterov <20b70f0af00562e63758b9ee42012ecc96c58590@tv-sign.ru>
+Cc: Chuck Ebbert <b951995537429da8a77f77b3db331e2f955ae5e8@compuserve.com>
+Signed-off-by: Andrew Morton <5c1e68b099950c134891f0b6e179498a8ebe9cf9@linux-foundation.org>
+Signed-off-by: Thomas Gleixner <00e4cf8f46a57000a44449bf9dd8cbbcc209fd2a@linutronix.de>
+",0,0,0,FALSE,FALSE,remove unnecessary,TRUE,TRUE,,perfective,TRUE
+intelfx/linux,5f30a4ab4ac40a71ce7e2aaaab782284553b21a4,batman-adv: update README (date & ap isolation sysfs file),"batman-adv: update README (date & ap isolation sysfs file)
+
+Signed-off-by: Simon Wunderlich <ee8cb2fe367357431f9fb32cc761adf92c257cce@hrz.tu-chemnitz.de>
+Signed-off-by: Marek Lindner <104240d543ffdbcddd3f116d866dc6166bffcd7a@yahoo.de>
+",0,0,0,FALSE,FALSE,update,FALSE,TRUE,,perfective,FALSE
+jkrishnavs/linux,897f17a65389a26509bd0c79a9812d1c9ea8ea6f,tracing: combine the default tracers into one config,"tracing: combine the default tracers into one config
+
+Both event tracer and sched switch plugin are selected by default
+by all generic tracers. But if no generic tracer is enabled, their options
+appear. But ether one of them will select the other, thus it only
+makes sense to have the default tracers be selected by one option.
+
+[ Impact: clean up kconfig menu ]
+
+Signed-off-by: Steven Rostedt <43232e92d70cc7aa53504ad0397085ee47bad87f@goodmis.org>
+",0,0,0,FALSE,FALSE,combine,TRUE,TRUE,,perfective,TRUE
+andreyloktev/linux,ef04a29737dd08352fdf6431d119ca636d664efe,mac80211: handle station TX latency allocation errors,"mac80211: handle station TX latency allocation errors
+
+When the station's TX latency data structures need to be
+allocated, handle failures properly and also free all the
+structures if there are any other problems.
+
+Move the allocation code up so that allocation failures
+don't trigger rate control algorithm calls.
+
+Reported-by: ZHAO Gang <afc9accd6d61593e24a7fa4c4294166f24b95ffb@gmail.com>
+Signed-off-by: Johannes Berg <bff32994ff0f8d048f262a8388145a71b6071bfe@intel.com>
+",3,0,0,TRUE,TRUE,"faliure, error",TRUE,TRUE,,corrective,FALSE
+Ronmenator/Fayde,e81aa480cd693076c094ba6a9ae2ef69166c5923,Fixed older tests.,"Fixed older tests.
+",1,0,0,TRUE,TRUE,fixed,FALSE,TRUE,,corrective,FALSE
+TriJetScud/linux-vyatta,ed4f7c20b346294959a16d35443def922e5e1e59,hwmon: (f71882fg) Add F8000 support,"hwmon: (f71882fg) Add F8000 support
+
+And (finally) the patch actually adding f8000 support.
+
+Signed-off-by: Hans de Goede <9fa1be1a5b5729e4c6b404f34c9ce49ff4882fd8@redhat.com>
+Signed-off-by: Jean Delvare <49ad6a9f5aa17024c23048df346d55bda6837e01@linux-fr.org>
+",0,0,0,FALSE,FALSE,add support,TRUE,TRUE,,adaptive,
+Technux/linux,aadcec010127a20599500c7007fbe9998744be41,iscsi-target: Fix CONFIG_SMP=n and CONFIG_MODULES=n build failure,"iscsi-target: Fix CONFIG_SMP=n and CONFIG_MODULES=n build failure
+
+This patch fixes the following CONFIG_SMP=n and CONFIG_MODULES=n build
+failure, because iscsit_thread_get_cpumask() is defined as a macro in
+iscsi_target.c, but needed by iscsi_target_login.c
+
+drivers/built-in.o: In function `iscsi_post_login_handler':
+iscsi_target_login.c:(.text+0x13a315): undefined reference to `iscsit_thread_get_cpumask'
+iscsi_target_login.c:(.text+0x13a4b4): undefined reference to `iscsit_thread_get_cpumask'
+make: *** [.tmp_vmlinux1] Error 1
+
+Reported-by: Randy Dunlap <6f29df8e90a57f1ba61ffd63b0468c86bb6d3a99@xenotime.net>
+Signed-off-by: Nicholas Bellinger <978acd1567d5598152161fdf8bf3ca568f950c9b@linux-iscsi.org>
+",5,0,0,TRUE,TRUE,"fix, failure",TRUE,TRUE,,corrective,FALSE
+laufersteppenwolf/lge-kernel-p880,0029d64af5d72049e2170e4609fa83bd1f3f07cd,net: sh_eth: fix TX/RX descriptor not set physical memory,"net: sh_eth: fix TX/RX descriptor not set physical memory
+
+Fix the probrem that TX/RX descirptor not set physical memory.
+
+Signed-off-by: Yoshihiro Shimoda <5d82894f6463c1fe5aa75f94b84f214f49d204f0@renesas.com>
+Signed-off-by: Nobuhiro Iwamatsu <ba3ce62c270b7d092f09de66b1ca73edef16c484@renesas.com>
+Signed-off-by: David S. Miller <fe08d3c717adf2ae63592e4c9aec6e3e404d8e3e@davemloft.net>
+",2,0,0,TRUE,TRUE,fix problem,TRUE,TRUE,,corrective,FALSE
+padovan/bluetooth-next,15e6cb3673ea6277999642802406a764b49391b0,tracing: add a tracer to catch execution time of kernel functions,"tracing: add a tracer to catch execution time of kernel functions
+
+Impact: add new tracing plugin which can trace full (entry+exit) function calls
+
+This tracer uses the low level function return ftrace plugin to
+measure the execution time of the kernel functions.
+
+The first field is the caller of the function, the second is the
+measured function, and the last one is the execution time in
+nanoseconds.
+
+- v3:
+
+- HAVE_FUNCTION_RET_TRACER have been added. Each arch that support ftrace return
+  should enable it.
+- ftrace_return_stub becomes ftrace_stub.
+- CONFIG_FUNCTION_RET_TRACER depends now on CONFIG_FUNCTION_TRACER
+- Return traces printing can be used for other tracers on trace.c
+- Adapt to the new tracing API (no more ctrl_update callback)
+- Correct the check of ""disabled"" during insertion.
+- Minor changes...
+
+Signed-off-by: Frederic Weisbecker <e8a1bf9163cb25e93cfd6540f223b3872ea7ee55@gmail.com>
+Cc: Steven Rostedt <43232e92d70cc7aa53504ad0397085ee47bad87f@goodmis.org>
+Signed-off-by: Ingo Molnar <9dbbbf0688fedc85ad4da37637f1a64b8c718ee2@elte.hu>
+",1,0,0,TRUE,TRUE,correct,TRUE,TRUE,,corrective,FALSE
+coldnew/linux,abe1c3638ccf8b68536afb52b111f6ad46d1cf71,igb: cap interrupts at 20K per queue when in itr mode 3,"igb: cap interrupts at 20K per queue when in itr mode 3
+
+In order to maintain similar performance between MSI-X and
+legacy/MSI interrupts, this patch reduces the number of interrupts
+when receiving small packets to 20K when in interrupt throttle
+rate mode 3.
+
+Signed-off-by: Nicholas Nunley <ee86a797761eecd1790d51a78ecb30184e14d0dd@intel.com>
+Signed-off-by: Jeff Kirsher <87e35f5be20bb3e67f4ba6b86f5f6be3085b1b3a@intel.com>
+Signed-off-by: David S. Miller <fe08d3c717adf2ae63592e4c9aec6e3e404d8e3e@davemloft.net>
+",0,0,0,FALSE,FALSE,other action,TRUE,TRUE,,adaptive,
+emceethemouth/kernel_mainline,3f359a7cb1847900bc87b3498f72c1ee848942a7,[media] v4l: Fix colorspace conversion error in sample code,"[media] v4l: Fix colorspace conversion error in sample code
+
+The sample code erroneously scales the y1, pb and pr variables from the
+[0.0 .. 1.0] and [-0.5 .. 0.5] ranges to [0 .. 255] and [-128 .. 127].
+Fix it.
+
+Signed-off-by: Laurent Pinchart <3ded2f39a78f0d7044839546f95841842b4d7c96@ideasonboard.com>
+Acked-by: Hans Verkuil <3a513708f73c27e7d36ebc496aa41dad6a3153ea@cisco.com>
+Signed-off-by: Mauro Carvalho Chehab <0cae1d1e981e84d16b82ca3d17be8a7f826608d3@samsung.com>
+",3,1,0,TRUE,TRUE,"fix, error",TRUE,TRUE,,corrective,FALSE
+NextThingCo/CHIP-linux,645ae3bce3e62541f8dc2701dde2a2791d842b6c,common: dma-mapping: remove old alloc_coherent and free_coherent methods,"common: dma-mapping: remove old alloc_coherent and free_coherent methods
+
+Remove old, unused alloc_coherent and free_coherent methods from
+dma_map_ops structure.
+
+Signed-off-by: Marek Szyprowski <2a0259761cc3e88db42be5300c1579a67c77e65e@samsung.com>
+Acked-by: Kyungmin Park <504c23c4986a3760712724894be3105092c27331@samsung.com>
+Reviewed-by: Arnd Bergmann <f2c659f01951776204a6c5b902787d9019fbeebd@arndb.de>
+",0,0,0,FALSE,FALSE,remove,TRUE,TRUE,,perfective,FALSE
+ResurrectionRemix-Devices/android_kernel_lge_hammerhead,c976bc82339437e840f7dbf0b8c89c09d3fcd75e,"V4L/DVB (5922): ivtv, cx25840: postpone fw load until first use","V4L/DVB (5922): ivtv, cx25840: postpone fw load until first use
+
+The firmware is now loaded when the driver is actually used for the first
+time. This allows the driver to be compiled in-kernel instead of as a module.
+
+Signed-off-by: Hans Verkuil <f625be9dbdcbbd12a043857af148e8fb895d9a1d@xs4all.nl>
+Signed-off-by: Mauro Carvalho Chehab <ad86ba2154032c9f55743a190faa2459a9d61d42@infradead.org>
+",0,0,0,FALSE,FALSE,other action,TRUE,TRUE,,adaptive,
+tarunkapadia93/android_kernel_xiaomi_armani,c976bc82339437e840f7dbf0b8c89c09d3fcd75e,"V4L/DVB (5922): ivtv, cx25840: postpone fw load until first use","V4L/DVB (5922): ivtv, cx25840: postpone fw load until first use
+
+The firmware is now loaded when the driver is actually used for the first
+time. This allows the driver to be compiled in-kernel instead of as a module.
+
+Signed-off-by: Hans Verkuil <f625be9dbdcbbd12a043857af148e8fb895d9a1d@xs4all.nl>
+Signed-off-by: Mauro Carvalho Chehab <ad86ba2154032c9f55743a190faa2459a9d61d42@infradead.org>
+",0,0,0,FALSE,,,TRUE,TRUE,duplicated,,
+vegetalte-dev/android_kernel_bq_vegetalte_LP,ab1b32bb96022ecfbb34af15a5e63a8b8da39536,platform: qpnp-power-on: Simulate press event,"platform: qpnp-power-on: Simulate press event
+
+Status of the keys connected to the KPDPWR and RESIN lines
+are identified by reading corresponding bits in RT status
+register. If the state has been changed by the time interrupt
+is delivered then the press event will be missed.
+
+Maintain a state variable to find unbalanced release events
+and simulate a press event.
+
+Change-Id: I809c8166796e2436dbd203e4aa0c304d3d612226
+Signed-off-by: Mohan Pallaka <86b27591cb54bdf386dca3681de7fd1b51fc95fc@codeaurora.org>
+",0,0,0,FALSE,FALSE,other action,TRUE,TRUE,,adaptive,
+erikcas/kernel-tianchi,a7ca08038b990e2cbed324948664b2d8940fd782,Merge tag 'perf-urgent-for-mingo' of git://git.kernel.org/pub/scm/linux/kernel/git/acme/linux into perf/urgent,"Merge tag 'perf-urgent-for-mingo' of git://git.kernel.org/pub/scm/linux/kernel/git/acme/linux into perf/urgent
+
+Pull various perf tooling fixes from Arnaldo Carvalho de Melo.
+",1,0,0,TRUE,TRUE,fixes,TRUE,TRUE,,corrective,FALSE
+jswope00/griffinx,413202e7d66a7388d6e786a87fb66890e64569b7,Merged ned/whitelistable-sandbox,"Merged ned/whitelistable-sandbox
+",0,0,0,FALSE,FALSE,other action,FALSE,TRUE,,adaptive,
+kaneawk/android_kernel_motorola_msm8996,b6de860651d5a9e56ba4f4e3edc1aa52ac2ac849,rtc-bfin: fix state restoration when resuming,"rtc-bfin: fix state restoration when resuming
+
+Much (but not all) of the RTC state is kept in the RTC peripheral which
+has its own power domain.  Periodically (1 HZ), that state is synced from
+one power domain to the other (peripheral->core).  When we are resuming,
+we need to wait for the sync to occur so that we don't get a mismatch of
+reading undefined state in the rest of the driver.
+
+Further, once the externally maintained bits have been synced back into
+the core, we then need to restore the bits maintained in the core.  In our
+particular case, that is just the write completion interrupt bit.
+
+If we don't do any of this, working with the RTC causes ~5 second delays
+from time to time after waking up due to the write completion interrupt
+never firing.
+
+Reported-by: Michael Dean <02f991b48f2026392006a6087ea965fe79d2392f@aeronix.com>
+Reported-by: Michael Hennerich <38f18d03059a1bc88082b55d7ca2d9b1ebfaffe0@analog.com>
+Signed-off-by: Mike Frysinger <8f3f75c74bd5184edcfa6534cab3c13a00a2f794@gentoo.org>
+Acked-by: Alessandro Zummo <f0b9bd96bf07bfecc189c62159960134588fafe5@towertech.it>
+Signed-off-by: Andrew Morton <5c1e68b099950c134891f0b6e179498a8ebe9cf9@linux-foundation.org>
+Signed-off-by: Linus Torvalds <69652caca27c8b940640ad396ab71f93cacec34f@linux-foundation.org>
+",1,0,0,TRUE,TRUE,fix,TRUE,TRUE,,corrective,FALSE
+aalto-speech/flatcat,0f55b9e2008d94120c16de99cd2d0a663bf08a35,Bumped version to 2.0.0alpha3,"Bumped version to 2.0.0alpha3
+",0,0,0,FALSE,FALSE,other action,FALSE,TRUE,,other,
+ashwinr64/android_kernel_motorola_msm8952,2249ca9d60d3a8a1f6f223f0f0a0283fcb7ce33e,powerpc: Various UP build fixes,"powerpc: Various UP build fixes
+
+Mostly this involves adding #include <asm/smp.h>, since that defines
+things like boot_cpuid[_phys] and [gs]et_hard_smp_processor_id, which
+are SMP-related but still needed on UP.  This incorporates fixes
+posted by Olof Johansson and Heikki Lindholm.
+
+Signed-off-by: Paul Mackerras <19a0ba370c443ba08d20b5061586430ab449ee8c@samba.org>
+",2,0,0,TRUE,TRUE,fixes,TRUE,TRUE,,corrective,FALSE
+University-of-Potsdam-MM/moodle,b964171cbf5649fd043a80a420a557e3c3ecad92,mod-scorm MDL-25792 Fixed database discrepancies between a fresh install and an upgraded site within the SCORM module,"mod-scorm MDL-25792 Fixed database discrepancies between a fresh install and an upgraded site within the SCORM module
+",1,0,0,TRUE,TRUE,fixed,TRUE,TRUE,,corrective,FALSE
+Burick/moodle,b964171cbf5649fd043a80a420a557e3c3ecad92,mod-scorm MDL-25792 Fixed database discrepancies between a fresh install and an upgraded site within the SCORM module,"mod-scorm MDL-25792 Fixed database discrepancies between a fresh install and an upgraded site within the SCORM module
+",1,0,0,TRUE,,,TRUE,TRUE,duplicated,,
+MikeDK/linux,4e4c9a140fc2ecf5e086922ccd2022bdabe509b6,cpuset: cleanup cpuset[_can]_attach(),"cpuset: cleanup cpuset[_can]_attach()
+
+cpuset_can_attach() prepare global variables cpus_attach and
+cpuset_attach_nodemask_{to|from} which are used by cpuset_attach().
+There is no reason to prepare in cpuset_can_attach().  The same
+information can be accessed from cpuset_attach().
+
+Move the prepartion logic from cpuset_can_attach() to cpuset_attach()
+and make the global variables static ones inside cpuset_attach().
+
+With this change, there's no reason to keep
+cpuset_attach_nodemask_{from|to} global.  Move them inside
+cpuset_attach().  Unfortunately, we need to keep cpus_attach global as
+it can't be allocated from cpuset_attach().
+
+v2: cpus_attach not converted to cpumask_t as per Li Zefan and Rusty
+    Russell.
+
+Signed-off-by: Tejun Heo <546b05909706652891a87f7bfe385ae147f61f91@kernel.org>
+Acked-by: Li Zefan <a8167b9d27aca9c6624754deb52c4c6420eded04@huawei.com>
+Cc: Rusty Russell <df9728c9e5104131c08c7adb03af425394842596@rustcorp.com.au>
+",0,0,0,FALSE,FALSE,cleanup,TRUE,TRUE,,perfective,TRUE
+lg-devs/android_kernel_lge_msm8994,ad46c54868078440b4538fa263a5fd2f124b5a57,"[PARISC] kobject is embedded in subsys, not kset","[PARISC] kobject is embedded in subsys, not kset
+
+Signed-off-by: Kyle McMartin <3c25b01657254677d3e1a8fd1f0742c5d489bd39@parisc-linux.org>
+",0,0,0,FALSE,FALSE,other action,TRUE,TRUE,,adaptive,
+toli/docker,f4abc6406e5837cee33763b6784b89578045d4db,Using checkers assert for integration-cli/docker_cli_attach_unix_test.go,"Using checkers assert for integration-cli/docker_cli_attach_unix_test.go
+
+Fixes part of #16756
+
+Signed-off-by: Wen Cheng Ma <484c768444514799b39aebd3c7a0b244f5784570@cn.ibm.com>
+",1,0,0,TRUE,TRUE,fixed,TRUE,TRUE,,corrective,FALSE
+aopp/android_kernel_lge_hammerhead,cbe487fac7fc016dbabbcbe83f11384e1803a56d,KVM: PPC: Add mtsrin PV code,"KVM: PPC: Add mtsrin PV code
+
+This is the guest side of the mtsr acceleration. Using this a guest can now
+call mtsrin with almost no overhead as long as it ensures that it only uses
+it with (MSR_IR|MSR_DR) == 0. Linux does that, so we're good.
+
+Signed-off-by: Alexander Graf <3ad82b0c937b9aa51276120cedd545efc822be04@suse.de>
+",0,0,0,FALSE,FALSE,add,TRUE,TRUE,,adaptive,
+wolfgar/utilite,73a5f4196dcdf1f5b0bcfa208cb485c4fde840cc,V4L/DVB (13348): cx23885: update model matrix for models 85021 and 85721,"V4L/DVB (13348): cx23885: update model matrix for models 85021 and 85721
+
+Signed-off-by: Michael Krufky <00524723a60798c74a43fcc620c25dd7b9ece078@kernellabs.com>
+Signed-off-by: Mauro Carvalho Chehab <ad86ba2154032c9f55743a190faa2459a9d61d42@redhat.com>
+",0,0,0,FALSE,FALSE,update,TRUE,TRUE,,adaptive,
+georaldc/yii2,d1ebf655974093388b4e01551aa8303b7e82414a,Fixed the issue that ActiveQuery::one() doesn't bring back related objects when asArray is true.,"Fixed the issue that ActiveQuery::one() doesn't bring back related objects when asArray is true.
+",1,0,0,TRUE,TRUE,fixed,TRUE,TRUE,,corrective,FALSE
+wangcy6/docker,b55346b3279a3243da8cab82a7ddc427454aba61,Fix 'docker stats' help message,"Fix 'docker stats' help message
+
+Closes #10771
+
+Signed-off-by: Doug Davis <ff3bde741799c0eff815b83a54eda3fc494df54f@us.ibm.com>
+",1,1,0,FALSE,TRUE,fixed help message,FALSE,TRUE,,corrective,FALSE
+Vungle/vowpal_wabbit,0733727589287b75b88261d1d060d22bac114900,Merge pull request #95 from nicknussbaum/master,"Merge pull request #95 from nicknussbaum/master
+
+Do utf-16 to utf-8 conversion on marshalling from C# to VW",0,0,0,FALSE,FALSE,conversion,TRUE,TRUE,,adaptive,
+RepoB/android_kernel_sony_msm8974-GreatDevs,4d85b471593d03e141f9160a58574b9204363267,[SCSI] sym53c8xx: Simplify DAC DMA handling,"[SCSI] sym53c8xx: Simplify DAC DMA handling
+
+By introducing the use_dac(), set_dac() and DMA_DAC_MASK macros, we can
+eliminate a lot of ifdefs from the code.  We now rely on the compiler to
+optimise away a few things that we'd formerly relied on the preprocessor
+to do.  This makes sym_setup_bus_dma_mask() small enough to inline into
+its only caller.
+
+Signed-off-by: Matthew Wilcox <990c37a323daf1549bdd24197927625080ee16b8@linux.intel.com>
+Signed-off-by: James Bottomley <407b36959ca09543ccda8f8e06721c791bc53435@SteelEye.com>
+",0,0,0,FALSE,FALSE,simplify,TRUE,TRUE,,perfective,TRUE
+jimix/linux-poweren,ea57f80c8c0e59cfc5095f7e856ce7c8e6ac2984,sgi-xp: eliminate '>>>' in comments,"sgi-xp: eliminate '>>>' in comments
+
+Comments in /drivers/misc/sgi-xp has been using '>>>' as a means to draw
+attention to something that needs to be done or considered.  To avoid
+colliding with git rejects, '>>>' will now be replaced by '!!!' to
+indicate something to do, and by '???' to indicate something to be
+considered.
+
+Signed-off-by: Dean Nelson <23d1cd5a7cb5dacfcd2e05aa62142e62bfcaa7b3@sgi.com>
+Signed-off-by: Andrew Morton <5c1e68b099950c134891f0b6e179498a8ebe9cf9@linux-foundation.org>
+Signed-off-by: Linus Torvalds <69652caca27c8b940640ad396ab71f93cacec34f@linux-foundation.org>
+",0,0,0,FALSE,FALSE,comments,TRUE,TRUE,,perfective,FALSE
+cosmoecho/linux_xenvnuma,56847d857cb0c3ee78c22ce776a26f88d9ffd4d4,Merge branch 'akpm' (incoming from Andrew),"Merge branch 'akpm' (incoming from Andrew)
+
+Merge second batch of fixes from Andrew Morton:
+
+ - various misc bits
+
+ - some printk updates
+
+ - a new ""SRAM"" driver.
+
+ - MAINTAINERS updates
+
+ - the backlight driver queue
+
+ - checkpatch updates
+
+ - a few init/ changes
+
+ - a huge number of drivers/rtc changes
+
+ - fatfs updates
+
+ - some lib/idr.c work
+
+ - some renaming of the random driver interfaces
+
+* emailed patches from Andrew Morton <akpm@linux-foundation.org>: (285 commits)
+  net: rename random32 to prandom
+  net/core: remove duplicate statements by do-while loop
+  net/core: rename random32() to prandom_u32()
+  net/netfilter: rename random32() to prandom_u32()
+  net/sched: rename random32() to prandom_u32()
+  net/sunrpc: rename random32() to prandom_u32()
+  scsi: rename random32() to prandom_u32()
+  lguest: rename random32() to prandom_u32()
+  uwb: rename random32() to prandom_u32()
+  video/uvesafb: rename random32() to prandom_u32()
+  mmc: rename random32() to prandom_u32()
+  drbd: rename random32() to prandom_u32()
+  kernel/: rename random32() to prandom_u32()
+  mm/: rename random32() to prandom_u32()
+  lib/: rename random32() to prandom_u32()
+  x86: rename random32() to prandom_u32()
+  x86: pageattr-test: remove srandom32 call
+  uuid: use prandom_bytes()
+  raid6test: use prandom_bytes()
+  sctp: convert sctp_assoc_set_id() to use idr_alloc_cyclic()
+  ...
+",1,0,0,TRUE,TRUE,fixes,TRUE,TRUE,,corrective,FALSE
+chuck1/kernel,c0929b499f834210561fe5e8c48bcad4f2130d25,drm/nouveau: quirk for XFX GT-240X-YA,"drm/nouveau: quirk for XFX GT-240X-YA
+
+Signed-off-by: Ben Skeggs <d9f27fb07c1e9f131223ad827fa5179f3846c30b@redhat.com>
+",0,0,0,FALSE,FALSE,quirk,TRUE,TRUE,,adaptive,
+ndufresne/linux-meson,9990bfd0e5d4aae9c33693aef8b0a36577c63677,fbdev: bfin-t350mcqb-fb: drop unused local variables,"fbdev: bfin-t350mcqb-fb: drop unused local variables
+
+The local fbinfo/info vars in the suspend functions don't actually get
+used which cause ugly gcc warnings, so drop them.
+
+Signed-off-by: Mike Frysinger <8f3f75c74bd5184edcfa6534cab3c13a00a2f794@gentoo.org>
+Cc: Krzysztof Helt <e36322531041744f35a39a40f0faffcfb5b388ff@poczta.fm>
+Signed-off-by: Andrew Morton <5c1e68b099950c134891f0b6e179498a8ebe9cf9@linux-foundation.org>
+Signed-off-by: Linus Torvalds <69652caca27c8b940640ad396ab71f93cacec34f@linux-foundation.org>
+",0,0,0,FALSE,FALSE,unused,TRUE,TRUE,,perfective,FALSE
+ivanmeler/android_kernel_samsung_zerolte,f8c07de6beac55c3273cbd679bfa67555ef14ef5,[ARM] nommu: add nommu specific Kconfig and MMUEXT variable in Makefile,"[ARM] nommu: add nommu specific Kconfig and MMUEXT variable in Makefile
+
+This patch adds Kconfig-nommu for noMMU specific configurations
+and MMUEXT variable into Makefile.
+
+Signed-off-by: Hyok S. Choi <200fb88b4ba90542ec4d4a656184b93856e83093@samsung.com>
+Signed-off-by: Russell King <f6aa0246ff943bfa8602cdf60d40c481b38ed232@arm.linux.org.uk>
+",0,0,0,FALSE,FALSE,add,TRUE,TRUE,,adaptive,
+kazuho/homebrew,7d226b12df414df3214745100c1bbec8e3d7768b,ruby-build 20150818,"ruby-build 20150818
+
+Closes #43065.
+
+Signed-off-by: Dominyk Tiller <53e438f55903875d07efdd98a8aaf887e7208dd3@gmail.com>
+",0,0,0,FALSE,FALSE,build,FALSE,TRUE,,adaptive,
+jzarl/inVRs-superbuild,ebc4791e7f548146eae15587168dc88d4c9ee845,Add OpenSG Support libs.,"Add OpenSG Support libs.
+",0,0,0,FALSE,FALSE,add,FALSE,TRUE,,adaptive,
+1N4148/android_kernel_samsung_smdk4412,6895b5262ea80c99e526d40d39e0ca48014bdb95,ALSA: es1968: Clear interrupts before enabling them,"ALSA: es1968: Clear interrupts before enabling them
+
+Avoid spurious interrupts when initializing the device.
+
+Signed-off-by: Ville Syrjälä <48bd072f57a62745d96f34f7d7d8cf0b89f84886@sci.fi>
+Signed-off-by: Takashi Iwai <4596b3305151c7ee743192a95d394341e3d3b644@suse.de>
+",0,0,0,FALSE,FALSE,other action,TRUE,TRUE,,adaptive,
+OpenClovis/linux_tipc,a3f6ce6345771932f4d4ba080d3a5f0846293983,[media] usb/gspca/cpia1.c: use IS_ENABLED() macro,"[media] usb/gspca/cpia1.c: use IS_ENABLED() macro
+
+replace:
+ #if defined(CONFIG_INPUT) || \
+     defined(CONFIG_INPUT_MODULE)
+with:
+ #if IS_ENABLED(CONFIG_INPUT)
+This change was made for: CONFIG_INPUT
+
+Reported-by: Mauro Carvalho Chehab <ad86ba2154032c9f55743a190faa2459a9d61d42@redhat.com>
+Signed-off-by: Peter Senna Tschudin <d897b756ebf1c425d034f7458a172204a9625378@gmail.com>
+Signed-off-by: Hans de Goede <9fa1be1a5b5729e4c6b404f34c9ce49ff4882fd8@redhat.com>
+Signed-off-by: Mauro Carvalho Chehab <ad86ba2154032c9f55743a190faa2459a9d61d42@redhat.com>
+",0,0,0,FALSE,FALSE,use,TRUE,TRUE,,perfective,TRUE
+pauloremoli/terrama2,2320f2373326269f16961b7ffc114cd5f20b88e5,Merge branch 'master' of https://github.com/TerraMA2/terrama2,"Merge branch 'master' of https://github.com/TerraMA2/terrama2
+",0,0,0,FALSE,FALSE,no syntactic evidence,FALSE,TRUE,,other,
+Note-2/android_kernel_samsung_smdk4412,7c31625aa844d549cbb8a7aafb94ec4fde8b54a3,"[PATCH] ppc32: Add cputable entry for 750CXe DD2.4 (""Gekko"")","[PATCH] ppc32: Add cputable entry for 750CXe DD2.4 (""Gekko"")
+
+Add a table entry for 750CXe DD2.4 (""Gekko"") as found in the GameCube from
+Nintendo:
+
+  http://www-306.ibm.com/chips/techlib/techlib.nsf/techdocs/291C8D0EF3EAEC1687256B72005C745C#C1
+
+Signed-off-by: Arthur Othieno <e089ed3552f5ca2f0938ff5768b6be863018167f@bluewin.ch>
+Signed-off-by: Andrew Morton <5c1e68b099950c134891f0b6e179498a8ebe9cf9@osdl.org>
+Signed-off-by: Linus Torvalds <69652caca27c8b940640ad396ab71f93cacec34f@osdl.org>
+",0,0,0,FALSE,FALSE,add,TRUE,,,adaptive,

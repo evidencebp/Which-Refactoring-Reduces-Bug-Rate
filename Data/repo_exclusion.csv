@@ -1,0 +1,14 @@
+﻿repo_name,description,exclude,exclude_from_c,justification
+kfowler/emacs,emacs,FALSE,TRUE,mirror; mix of languages; not typical
+stinsonga/emacs-mirror,emacs,FALSE,TRUE,mirror; mix of languages; not typical
+0xAX/emacs,emacs,FALSE,TRUE,mirror; mix of languages; not typical
+emacs-mirror/emacs,emacs,FALSE,TRUE,mirror; mix of languages; not typical
+cirosantilli/linux-kernel-module-cheat,kernal emulation,FALSE,FALSE,By API python but actually C
+siconos/siconos,Simulation framework for nonsmooth dynamical systems ,FALSE,TRUE,Mixes C; C++; Python
+mongodb/mongo-php-driver,A driver for Mongo for PHP,FALSE,FALSE,Driver for PHP but in C
+erlang/otp,The Erlang language library,FALSE,TRUE,The Erlang language library
+MesserLab/SLiM,Genetic simulation,FALSE,TRUE,C++
+frida/glib,,TRUE,TRUE,Based on GNOME/glib
+raonix-github/openwrt,,TRUE,TRUE,Based on openwrt/openwrt
+anlaneg/dpdk,,TRUE,TRUE,Based on Broadcom/dpdk
+napatech/dpdk,,TRUE,TRUE,Based on Broadcom/dpdk

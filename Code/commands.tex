@@ -1,0 +1,80 @@
+\usepackage{enumitem}
+\usepackage{subfigure}
+\usepackage{amsmath}
+\usepackage{euscript}
+\usepackage{centernot}
+\usepackage{multirow}
+%\usepackage{algorithm,algpseudocode}
+\usepackage[]{algorithm2e}
+
+% Usage
+% Add
+%\input{commands.tex}
+% Before
+%\begin{document}
+
+% \usepackage{tabularx}
+
+% \newcolumntype{C}{>{\centering\arraybackslash}X}
+% % Number of multicolumns      here ↓   and ↓ here (source: https://tex.stackexchange.com/a/236156/134574)
+% \newcolumntype{D}{>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}C}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+%\usetikzlibrary{arrows.meta}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes}
+\newcommand{\mymkmath}[1]{%
+  \tikz[baseline=(char.base)]\node[anchor=south west, draw,rectangle, rounded corners, inner sep=1pt, minimum size=4mm,
+    text height=1.5mm](char){\ensuremath{#1}} ;}
+\newcommand{\mymk}[1]{%
+  \tikz[baseline=(char.base)]\node[anchor=south west, draw,rectangle, rounded corners, inner sep=1pt, minimum size=4mm,
+    text height=1.5mm](char){{#1}} ;}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+\newcommand{\Paragraph}[1]{~\vspace*{-0.8\baselineskip}\\{\bf #1}}
+
+% Comment and hid are the same
+\newcommand{\hide}[1]{}
+\newcommand{\comment}[1]{}
+
+
+
+\newif\ifshowcomment
+\showcommenttrue
+%\showcommentfalse
+
+% comment
+\ifshowcomment
+    \newcommand{\todo}[1]{\textsf{\color{red}{[{TODO: #1}]}}}
+    \newcommand{\ad}{\textsf{\color{red}{[{Add reference}]}}}
+    \newcommand{\highlight}[1]{{\color{blue}{#1}}}
+
+    % Show public part when editing    
+    \newcommand{\anon}[2]{#1}
+
+
+    \newcommand{\author1}[1]{\textsf{\color{purple}{[{Author1: #1}]}}}
+    \newcommand{\author2}[1]{\textsf{\color{violet}{[{Author2: #1}]}}}
+    
+
+    
+\else
+    \newcommand{\todo}[1]{}
+    \newcommand{\highlight}[1]{{\color{black}{#1}}}
+    \newcommand{\ad}{}
+
+    % Show annonimized part for review
+    \newcommand{\anon}[2]{#2}
+    
+    \newcommand{\author1}[1]{}
+    \newcommand{\author2}[1]{}
+\fi
+
+
+\newcommand{\remove}[1]{}
+

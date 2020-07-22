@@ -1,4 +1,10 @@
+"""
 
+######################################################################################################################
+better performing language model is avilibale now at https://github.com/evidencebp/commit-classification
+######################################################################################################################
+
+"""
 """
 This file contain a python implementation of the corrective commit linguistic model
 and the English linguistic model.

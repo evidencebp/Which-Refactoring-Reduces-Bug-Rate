@@ -22,3 +22,5 @@ Please cite as
  keywords = {Code quality, machine learning, refactoring},
 } 
 ```
+
+An updated, [better performing language model is avilibale now](https://github.com/evidencebp/commit-classification)
